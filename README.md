@@ -35,11 +35,11 @@ truth (`python3 spectral.py`, no torch, no model download).
 ## What the case study found (and what it did *not*)
 
 The paper is deliberately framed as a **methods contribution with a cautionary case study**,
-not a "dissociation" findings paper. The honest, reproducible chain:
+not a "dissociation" findings paper. The reproducible chain:
 
 - The leading amplification `sigma_max` is only **weakly related to the output-entropy
-  *level*** (`|r| ≤ 0.11`) — but that compares a hidden-state *sensitivity* to an output
-  *level*, which is the wrong comparison.
+  *level*** (`R² ≤ 0.10` at every model and scale tested, sign unstable) — but that compares a
+  hidden-state *sensitivity* to an output *level*, which is the wrong comparison.
 - The **like-for-like** comparison against the entropy's *input sensitivity* `‖∇_{H₀}H‖`
   gives `r = 0.45`, which is **mostly shared Jacobian magnitude**: partialling out the bulk
   norm drops it to a **partial correlation of 0.10–0.30** across three models (residual 95% CI
@@ -47,9 +47,10 @@ not a "dissociation" findings paper. The honest, reproducible chain:
 - A **collinearity-free geometric check** (`cos∠(∇_{H₀}H, v_lead)` = 0.41, ~90× the random
   baseline, but `cos² = 0.24`) shows the two input directions are **partially aligned, not
   orthogonal and not collinear** — a genuine but modest directional overlap.
-- `sigma_max` is ~**80% redundant** with the bulk norm for the categorical contrast, and a
-  trivial linear probe separates the categories at **99%** — so the spectral observables are
-  *characterizations of response geometry, not classifiers*.
+- `sigma_max` is **strongly correlated with the bulk norm** for the categorical contrast
+  (`r = 0.80`, i.e. 64% shared variance), and a trivial linear probe separates the categories
+  at **99%** — so the spectral observables are *characterizations of response geometry, not
+  classifiers*.
 
 **Lesson:** naive single-direction / level summaries of Jacobian geometry are easy to
 over-read; the correct like-for-like, magnitude-controlled comparisons must be made. The
@@ -169,7 +170,7 @@ python3 scripts/make_figures_twoaxis.py
 `torch.autograd.functional.jvp`'s double-backward is unstable on MPS for RMSNorm models, so
 `runner.py` **forces CPU on Apple silicon** (Algorithm 1 needs no autograd and has no such
 restriction). With defaults (`k_top=6, n_probes=32, n_iter=15`), Algorithm 2 costs ~180
-autograd calls per prompt per `final_index`, ≈35–60 s per prompt per index for a 0.5B model at
+autograd calls per prompt per `final_index`, ≈35–110 s per prompt per index for a 0.5B model at
 `T ≤ 32`. A full sweep (60 prompts × 4 categories × 2 indices) is ~5–10 h per model. Halving
 `n_iter` ≈ halves wall-clock and usually keeps the top 2–3 singular values within 1%; halving
 `n_probes` doubles the Monte-Carlo noise on `stable_rank` (O(1/√m)). The legacy sweep is ~1 s

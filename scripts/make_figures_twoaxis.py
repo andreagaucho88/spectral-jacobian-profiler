@@ -41,7 +41,7 @@ for ax, (name, path, ci) in zip(axes, PANELS):
     ax.set_title(f"{name}\npre-norm: Pearson r={rr:+.2f}  ({ci})")
 axes[0].legend(fontsize=8, title="category", title_fontsize=8, loc="upper right")
 fig.suptitle("Hidden amplification $\\sigma_{\\max}$ vs. output-entropy LEVEL across three architectures "
-             "($|r|<0.3$) — but the like-for-like sensitivity comparison is coupled (r=0.45, see text)",
+             "($R^2 \\leq 0.10$, sign unstable) — but the like-for-like sensitivity comparison is coupled (r=0.45, see text)",
              y=1.02, fontsize=10)
 fig.tight_layout()
 fig.savefig(FIG/"two_axis_sigma_entropy.pdf"); plt.close(fig)

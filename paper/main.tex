@@ -23,12 +23,12 @@
   booktitle={Advances in Neural Information Processing Systems}, volume={30}, year={2017}
 }
 @article{oseledets1968multiplicative,
-  title={A Multiplicative Ergodic Theorem. Lyapunov Characteristic Numbers for Dynamical Systems},
+  title={A Multiplicative Ergodic Theorem. {Lyapunov} Characteristic Numbers for Dynamical Systems},
   author={Oseledets, Valery I.}, journal={Transactions of the Moscow Mathematical Society},
   volume={19}, pages={197--231}, year={1968}
 }
 @article{shadden2005definition,
-  title={Definition and Properties of Lagrangian Coherent Structures from Finite-Time Lyapunov Exponents in Two-Dimensional Aperiodic Flows},
+  title={Definition and Properties of {Lagrangian} Coherent Structures from Finite-Time {Lyapunov} Exponents in Two-Dimensional Aperiodic Flows},
   author={Shadden, Shawn C. and Lekien, Francois and Marsden, Jerrold E.},
   journal={Physica D: Nonlinear Phenomena}, volume={212}, number={3--4}, pages={271--304}, year={2005}
 }
@@ -42,7 +42,7 @@
   journal={ACM Computing Surveys}, volume={55}, number={12}, pages={1--38}, year={2023}
 }
 @inproceedings{lin2022truthfulqa,
-  title={TruthfulQA: Measuring How Models Mimic Human Falsehoods},
+  title={{TruthfulQA}: Measuring How Models Mimic Human Falsehoods},
   author={Lin, Stephanie and Hilton, Jacob and Evans, Owain},
   booktitle={Proceedings of the 60th Annual Meeting of the Association for Computational Linguistics},
   pages={3214--3252}, year={2022}
@@ -185,7 +185,7 @@
   booktitle={International Conference on Learning Representations (ICLR)}, year={2023}
 }
 @article{kossen2024semantic,
-  title={Semantic Entropy Probes: Robust and Cheap Hallucination Detection in LLMs},
+  title={Semantic Entropy Probes: Robust and Cheap Hallucination Detection in {LLMs}},
   author={Kossen, Jannik and Han, Jiatong and Razzak, Muhammed and Schut, Lisa and Malik, Shreshth and Gal, Yarin},
   journal={arXiv preprint arXiv:2406.15927}, year={2024}
 }
@@ -215,12 +215,27 @@
   author={Radford, Alec and Wu, Jeffrey and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
   journal={OpenAI technical report}, year={2019}
 }
+@inproceedings{pennington2017resurrecting,
+  title={Resurrecting the Sigmoid in Deep Learning through Dynamical Isometry: Theory and Practice},
+  author={Pennington, Jeffrey and Schoenholz, Samuel S. and Ganguli, Surya},
+  booktitle={Advances in Neural Information Processing Systems (NeurIPS)}, year={2017}
+}
+@article{yoshida2017spectral,
+  title={Spectral Norm Regularization for Improving the Generalizability of Deep Learning},
+  author={Yoshida, Yuichi and Miyato, Takeru},
+  journal={arXiv preprint arXiv:1705.10941}, year={2017}
+}
+@article{hoffman2019robust,
+  title={Robust Learning with {Jacobian} Regularization},
+  author={Hoffman, Judy and Roberts, Daniel A. and Yaida, Sho},
+  journal={arXiv preprint arXiv:1908.02729}, year={2019}
+}
 \end{filecontents*}
 
-\title{\bfseries Matrix-Free Spectral Profiling of Prompt-Conditioned Input$\to$Output Jacobians in Transformer Language Models}
+\title{\bfseries Matrix-Free Spectral Profiling of Prompt-Conditioned Input-to-Output Jacobians in Transformer Language Models}
 
 \author{%
-  Andrea Gaudiello\,\orcidlink{0000-0001-7721-8217}, Ph.D., MBA\\
+  Andrea Gaudiello\,\orcidlink{0000-0001-7721-8217}\\
   Leonardo Hypercomputing Continuum (LHyC)\\
   Deep-Stack Architecture -- DevOps \& Middleware\\
   Leonardo S.p.A., Via Pieragostini 80, 16151 Genova, Italy\\
@@ -234,31 +249,26 @@
 \headertitle{Matrix-Free Spectral Profiling of Prompt-Conditioned Jacobians}
 
 \begin{abstract}
-We introduce a matrix-free toolkit for \emph{offline spectral profiling} of the prompt-conditioned
-geometry of Transformer inference: from exact input$\to$final-token Jacobian--vector products we
-recover, per prompt, the leading amplification $\sigma_{\max}$, an unbiased estimator of the bulk
-norm $\|J\|_F$, and a Fisher/KL output susceptibility $\chi_F$, with a cheap sampled-direction
-baseline and a numerical
-core validated against dense ground truth. We demonstrate the toolkit on a prompt-category case study
-under exact token-length matching and cluster-aware, prompt-level inference, and --- rather than sell
-a headline --- we use it to \emph{measure the couplings honestly}. The leading hidden amplification
-$\sigma_{\max}$ is only weakly related to output-entropy \emph{level} (Pearson $|r|\le0.11$), but that
-near-zero number compares a sensitivity to a level; the like-for-like comparison against the entropy's
-\emph{input sensitivity} $\|\nabla_{H_0}H\|$ gives $r=0.45$, which is \emph{mostly shared Jacobian
-magnitude} --- partialling out the bulk norm drops it to $0.10$--$0.30$ across models (residual CI
-including zero on two of three), while a partialling-free geometric check finds the two input
-directions only partially aligned ($|\!\cos\angle(\nabla_{H_0}H,v_{\mathrm{lead}})|=0.41$,
-$\sim\!90\times$ chance but $\cos^2\!=\!0.24$). The coupling is thus a shared common scale plus a
-modest, genuinely directional residual --- neither independence nor strong coupling. The leading value is also largely redundant with
-the bulk norm for the categorical contrast ($r(\sigma_{\max},\lambda_{\mathrm{bulk}})=0.80$, expected
-from stable rank $\approx4$), and a trivial linear probe separates the categories at $99\%$, so the
-observables are characterizations of response geometry, not classifiers. The category orderings are
-model- and scale-dependent (on GPT-2 and Qwen-1.5B/3B a different class leads), and $\chi_F$ partially
-tracks entropy with an analytic skeleton; we therefore report the method as an \emph{offline
-diagnostic}, not a general finding. Our positive contribution is the profiler and the controlled
-methodology; the substantive lesson is negative and worth stating: single-direction/level summaries
-of hidden geometry are easy to over-read, and the correct like-for-like comparisons must be made.
-All metrics are Euclidean and representation-dependent.
+We present a matrix-free toolkit for \emph{offline spectral profiling} of the prompt-conditioned
+input-to-output Jacobian of Transformer language models. From exact Jacobian--vector products it
+recovers, per prompt, the leading amplification $\sigma_{\max}$, an unbiased estimate of the bulk norm
+$\|J\|_F$, the stable rank, and a Fisher/KL output susceptibility $\chi_F$, with a cheap
+sampled-direction baseline and a numerical core validated against dense ground truth. We apply it to
+four prompt categories (factual, coding, reasoning, hallucination-prone) on Qwen2.5-0.5B,
+SmolLM2-360M and GPT-2, under exact token-length matching and cluster-robust, prompt-level inference.
+The case study is a controlled demonstration of how easily this geometry is over-read. The correlation
+between $\sigma_{\max}$ and the output-entropy \emph{level} is weak at every model and scale tested
+($\mathrm{R}^2\le0.10$, sign unstable), but it compares a sensitivity to a level: against the entropy's
+input sensitivity $\|\nabla H\|$ the like-for-like correlation is $r=0.45$, mostly shared Jacobian
+magnitude --- partialling out the bulk norm leaves $0.10$--$0.30$ (residual CI including zero on two of
+three models) --- while the two input directions are only partially aligned (mean $|\!\cos|=0.41$,
+$\cos^2=0.24$). $\sigma_{\max}$ is largely redundant with the bulk norm for the categorical contrast
+($r=0.80$, stable rank $\approx4$), the category orderings are model- and scale-dependent, and a
+trivial linear probe already separates the categories, so the observables characterize response
+geometry rather than classify prompts. We release the profiler, the length-matched prompt sets and all
+per-prompt results. The lesson: single-direction or level summaries of hidden geometry invite spurious
+dissociations that magnitude-controlled comparisons dissolve. All hidden-state metrics are Euclidean
+and representation-dependent.
 \end{abstract}
 
 \keywords{Transformer language models, input$\to$output Jacobian, matrix-free spectral profiling,
@@ -316,7 +326,7 @@ output yet exhibit a small hidden-state response, or the reverse; the two notion
 complementary, not interchangeable, and hallucination-prone behaviour should not be reduced to
 output entropy alone. Our case study measures how these quantities relate, and the lesson is a
 cautionary one about \emph{how not to read them}: the leading hidden amplification $\sigma_{\max}$ is
-nearly uncorrelated with the output-entropy \emph{level} ($|r|\le0.11$), but this near-zero number is
+nearly uncorrelated with the output-entropy \emph{level} ($\mathrm{R}^2\le0.10$ at every model and scale tested, sign unstable), but this near-zero number is
 an artifact of comparing a \emph{sensitivity} to a \emph{level} --- compared like-for-like against
 the entropy's input sensitivity $\|\nabla_{H_0}H\|$ they are correlated ($r=0.45$), and most of that
 correlation is shared Jacobian magnitude (partial correlation given the bulk norm drops to
@@ -356,7 +366,15 @@ loses rank doubly exponentially with depth (rank collapse), stopped by residual 
 \cite{dong2021attention}, and rank collapse governs signal propagation and gradient behaviour at
 initialization \cite{noci2022signal}; the Lipschitz constant of self-attention
 \cite{kim2021lipschitz} and the depth-wise clustering dynamics of tokens viewed as interacting
-particles \cite{geshkovski2023emergence} bound and describe this evolution. Our contribution is
+particles \cite{geshkovski2023emergence} bound and describe this evolution. Two threads bear directly
+on the object we measure. The \emph{distribution} of the input$\to$output Jacobian's singular values
+--- \emph{dynamical isometry} --- has been analyzed for trainability at initialization
+\cite{pennington2017resurrecting}; and the leading singular value $\sigma_{\max}(J)$ \emph{is} the
+local Lipschitz constant of the input$\to$output map, the very quantity that spectral-norm and
+Jacobian regularization control for adversarial robustness \cite{yoshida2017spectral,hoffman2019robust}.
+The $\sigma_{\max}\!\sim\!10^3$ we measure (in input-embedding coordinates) is therefore a direct read
+of local adversarial sensitivity in that space; we study how it is conditioned on the prompt rather
+than regularize it. Our contribution is
 empirical and instrumental rather than theoretical: we do not analyze random or asymptotic-depth
 networks but \emph{profile the exact finite-depth input$\to$output Jacobian of a trained model,
 matrix-free}, and study how its spectrum varies with the prompt.
@@ -497,7 +515,7 @@ $\lambda_L^{(\epsilon)}$ is a finite-depth, Lyapunov-inspired, sampled-direction
 \label{sec:methods-alg2}
 
 Algorithm~1 samples one direction; the object underneath is the tangent map
-$J=\partial h_{L,T}/\partial H_0\in\mathbb{R}^{d\times n}$, $n=Td$. We characterize $J$
+$J=\partial h_{L,T}/\partial H_0\in\mathbb{R}^{d\times N}$, $N=Td$. We characterize $J$
 per prompt without ever forming it, using exact Jacobian--vector products (JVP) and their
 transposes (VJP).
 
@@ -513,12 +531,12 @@ $\sigma_{\max}=\sigma_1$ and its per-layer log-rate $\lambda_{\max}=\tfrac1L\log
 exact analogue of Algorithm~1's leading growth.
 
 \paragraph{(ii) Bulk amplification and the identity behind Algorithm 1.}
-For $v$ isotropic on the unit sphere $S^{n-1}$ one has $\mathbb E[vv^\top]=\tfrac1n I$, hence
-$\mathbb E\|Jv\|_2^2=\operatorname{tr}\!\big(J\,\mathbb E[vv^\top]\,J^\top\big)=\|J\|_F^2/n$
+For $v$ isotropic on the unit sphere $S^{N-1}$ one has $\mathbb E[vv^\top]=\tfrac1N I$, hence
+$\mathbb E\|Jv\|_2^2=\operatorname{tr}\!\big(J\,\mathbb E[vv^\top]\,J^\top\big)=\|J\|_F^2/N$
 exactly; this identity is the basis of the classical stochastic (Hutchinson) trace/Frobenius
 estimator \cite{hutchinson1990stochastic}. By the same isotropy $\|Jv\|_2$ concentrates around
-$\|J\|_F/\sqrt n$, but --- and this is easy to get wrong --- the \emph{relative} fluctuation of
-$\|Jv\|_2^2$ is set by the \emph{spectrum} of $A=J^\top J$, not by $n$: it is of order
+$\|J\|_F/\sqrt N$, but --- and this is easy to get wrong --- the \emph{relative} fluctuation of
+$\|Jv\|_2^2$ is set by the \emph{spectrum} of $A=J^\top J$, not by $N$: it is of order
 $\operatorname{tr}(A^2)^{1/2}/\operatorname{tr}(A)=r_{\mathrm{eff}}^{-1/2}$, where
 $r_{\mathrm{eff}}=\operatorname{tr}(A)^2/\operatorname{tr}(A^2)$ is the spectral participation ratio,
 comparable here to the stable rank $r_{\mathrm{stable}}\approx4$ reported below. With
@@ -529,9 +547,9 @@ $n^{-1/2}$ concentration does \emph{not} apply. Two facts nonetheless make Algor
 $\lambda_L^{(\epsilon)}=\tfrac1L\log(\delta_L/\epsilon)$, so a tens-of-percent multiplicative swing
 on $\|Jv\|_2$ becomes only $O(\log(1.5)/L)\approx0.017$ in $\lambda$-units at $L=24$, and it is
 averaged over $K$ directions. Its normalized logarithm should therefore track
-$\lambda_{\mathrm{bulk}}=\tfrac{1}{2L}\log(\|J\|_F^2/n)$, and the empirical agreement (median relative
+$\lambda_{\mathrm{bulk}}=\tfrac{1}{2L}\log(\|J\|_F^2/N)$, and the empirical agreement (median relative
 error $3.3\%$; Figure~\ref{fig:bulk}) confirms this. We estimate $\|J\|_F^2$ by the
-\emph{unbiased} sphere estimator $n\cdot\mathrm{mean}_i\|J\xi_i\|_2^2$ (the mean of the squared
+\emph{unbiased} sphere estimator $N\cdot\mathrm{mean}_i\|J\xi_i\|_2^2$ (the mean of the squared
 probe norms \cite{hutchinson1990stochastic}; the Jensen-biased $n(\mathrm{mean}_i\|J\xi_i\|)^2$ is
 low by construction), and we report the anisotropy through the \emph{stable rank}
 $r_{\mathrm{stable}}=\|J\|_F^2/\sigma_{\max}^2$ --- the noise-robust numerical rank of Rudelson and
@@ -574,7 +592,7 @@ $v_{\mathrm{lead}}$ agrees with $\sigma_{\max}$ as $\epsilon$ shrinks. All check
 The two algorithms differ by orders of magnitude in cost and in role. Algorithm~1 is a cheap
 \emph{bulk} estimator: two forward passes per direction, no autograd, $\sim\!1$\,s per prompt
 per direction, and by the identity of Section~\ref{sec:methods-alg2}(ii) its single-direction
-statistic estimates the bulk quantity $\|J\|_F/\sqrt n$, not the leading amplification.
+statistic estimates the bulk quantity $\|J\|_F/\sqrt N$, not the leading amplification.
 Algorithm~2 is an \emph{exact spectral profiler}: with defaults $k{=}6$ block size, $32$ probes,
 and $15$ subspace iterations it costs on the order of $180$ autograd calls (each a
 double-backward JVP) per prompt per read-out site --- roughly $35$--$110$\,s per prompt on a CPU
@@ -603,17 +621,29 @@ record the output distribution and the final-token trajectory. No text is genera
 sampling is performed.
 
 \begin{table}[t]\centering\small
-\begin{tabular}{lrrr}
+\begin{tabular}{llrrl}
 \toprule
-Model & Parameters & Blocks $L$ & Hidden $d$ \\
+Model & Params & $L$ & $d$ & Role (norm; experiments) \\
 \midrule
-Qwen2.5-0.5B-Instruct & $\approx0.49$\,B & 24 & 896 \\
-SmolLM2-360M-Instruct & $\approx0.36$\,B & 32 & 960 \\
+Qwen2.5-0.5B-Instruct & $\approx0.49$\,B & 24 & 896 & primary (RMSNorm; Alg.\,1\,\&\,2, both sites) \\
+SmolLM2-360M-Instruct & $\approx0.36$\,B & 32 & 960 & primary (RMSNorm; Alg.\,1\,\&\,2, both sites) \\
+GPT-2 (base) & $\approx0.12$\,B & 12 & 768 & LayerNorm check (Alg.\,2, both sites) \\
+Qwen2.5-1.5B-Instruct & $\approx1.5$\,B & 28 & 1536 & scale check (RMSNorm; Alg.\,2, pre-norm) \\
+Qwen2.5-3B-Instruct & $\approx3.1$\,B & 36 & 2048 & scale check (RMSNorm; Alg.\,2, pre-norm) \\
 \bottomrule
 \end{tabular}
-\caption{Models used; $L$ and $d$ are read at run time from \texttt{model.config}.}
+\caption{All models used. The two primary models carry the main analysis; GPT-2 tests the LayerNorm
+architecture and Qwen2.5-1.5B/3B the scale axis (Section~\ref{sec:scale}). $L$ and $d$ are read at run
+time from \texttt{model.config}.}
 \label{tab:models}
 \end{table}
+
+\paragraph{Read-out convention.} We profile the Jacobian at two \emph{read-out} sites: the
+\emph{pre-final-norm} hidden state $h_{L,T}$, before the model's single final normalization
+(\texttt{final\_index}$=-2$), and the \emph{post-final-norm} state the logit head reads
+(\texttt{final\_index}$=-1$, with $\mathrm{lm\_head}(h_{-1})=\text{logits}$). We abbreviate these
+``pre-norm''/``post-norm'' read-out throughout; this is \emph{not} the pre-norm \emph{architecture}
+(RMSNorm applied before each block), which all our RMSNorm models share regardless of read-out site.
 
 We compare four prompt categories: \emph{factual} (real-world recall, ``What is the capital of
 France?''), \emph{coding} (structured program synthesis), \emph{reasoning} (constrained
@@ -624,8 +654,14 @@ inference.
 
 \paragraph{Length-matched construction.}
 \label{sec:methods-lengthmatch}
-The categories differ systematically in token length, and because the input perturbation has
-unit Frobenius norm over the whole $T\times d$ sequence its per-token magnitude scales as
+We perturb the \emph{whole} input with unit Frobenius norm --- so $J$ is exactly the Jacobian of the
+complete input sequence and $\sigma_{\max}$, $\|J\|_F$ etc.\ are its true spectral quantities --- rather
+than normalizing per token. A per-token normalization would cancel the length dependence by
+construction, but it would also make the perturbed object depend on $T$ (a $T$-varying rescaling of $J$)
+and no longer be the Jacobian of the input as a whole; we prefer the clean full-sequence Jacobian and
+control length \emph{post hoc}. The price is that the categories differ systematically in token length,
+and because the perturbation has unit Frobenius norm over the whole $T\times d$ sequence its per-token
+magnitude scales as
 $\sim\!1/\sqrt T$; a longer prefix also changes causal integration at the final token. Token
 length is therefore a candidate confounder for any difference in $\lambda_L^{(\epsilon)}$. To
 obtain a confound-free comparison we construct, \emph{separately for each model}, a length-matched
@@ -672,7 +708,8 @@ Holm-adjusted permutation $p$ is our significance bar throughout.
 \label{sec:results-output}
 
 On the read-out side the separation is large and does not require length control. On the
-length-matched sets we re-derive here (both models, $n=200$/category for the output observables),
+length-matched sets we re-derive here (both models, the first $n=200$ of the length-matched
+$207$/$205$ per category for the output observables),
 hallucination-prone prompts have the \emph{highest} output entropy $H(p)$ and the \emph{lowest}
 top-1 probability $p_{\max}$ on Qwen (entropy $1.95$ vs.\ factual $0.83$; $|d|$ against the other
 three classes $1.05$--$2.17$). This ranking is corroborated by the original broad sweep --- two
@@ -722,7 +759,10 @@ the contrast against factual (signed difference; Cohen's $d$). Length distributi
 across categories in each model; length adjustment shrinks the contrasts by $<10^{-10}$. In both
 models factual induces the largest response and reasoning/coding the smallest; all
 factual-vs-\{coding,reasoning\} contrasts have permutation $p<10^{-3}$, whereas factual vs.\
-hallucination-prone is not significant in Qwen.}
+hallucination-prone is not significant in Qwen. These are \emph{prompt-level} permutation $p$; as
+elsewhere, the reasoning-involving contrasts are \emph{not} cluster-robust under template-level
+permutation (only five reasoning templates; Section~\ref{sec:methods-data}) and are shown for
+completeness, whereas factual\,$>$\,coding survives clustering.}
 \label{tab:lm-dynamics}
 \end{table}
 
@@ -762,7 +802,7 @@ correlation $0.30$ here, so this paragraph describes the level view, not an inde
 pre-norm site factual is again the \emph{highest}-amplification class ($\sigma_{\max}=1715$, vs.\
 coding $1618$, hallucination-prone $1375$, reasoning $1247$) and the \emph{lowest}-entropy class
 ($2.52$ vs.\ $3.4$--$3.8$), so it again occupies the low-entropy/high-amplification corner. Three
-honest qualifications follow. \emph{(i) The weak level-correlation is not even sign-stable.} On
+qualifications follow. \emph{(i) The weak level-correlation is not even sign-stable.} On
 SmolLM2 the $\sigma_{\max}$--entropy(level) correlation is $r=-0.29$ with a template cluster-bootstrap
 $95\%$ CI $[-0.49,-0.04]$ that \emph{excludes} zero, versus $r=-0.01$, CI $[-0.21,0.17]$ on Qwen: the
 level correlation is weak on both but small-and-nonzero rather than clean-zero, and its magnitude and
@@ -794,7 +834,7 @@ Section~\ref{sec:results-alg2} it partially tracks entropy.
 \subsection{Controls: what the near-zero correlation does and does not mean}
 \label{sec:controls}
 The near-zero correlation between $\sigma_{\max}$ and output entropy is easy to over-read as
-``independent axes.'' It is not, and the honest analysis is instructive --- it is the main lesson of
+``independent axes.'' It is not, and the analysis is instructive --- it is the main lesson of
 this case study. All tests below are on the Qwen $n=40$/category data (forward passes; one backward
 per prompt for the gradient test; the geometric-alignment check additionally reuses the Algorithm~2
 leading singular vector $v_{\mathrm{lead}}$).
@@ -833,16 +873,18 @@ Jacobian $J$ (the input-embedding direction most amplified into the final pre-no
 Algorithm~2) and $\nabla_{H_0}H$ the entropy input-gradient (the direction that most increases output
 entropy; one backward). Both live in the same $T\times d$ input space, so their angle is well defined.
 Over the Qwen $n=160$ prompts the mean absolute cosine is
-$|\!\cos\angle(\nabla_{H_0}H,v_{\mathrm{lead}})|=0.41$ (median $0.37$), far above the random-vector
-baseline $\sqrt{2/(\pi N)}\approx0.004$ for $N=T\!\cdot\!d\approx3\times10^4$ --- roughly $90\times$
-chance. So the two directions are \emph{not} orthogonal: the input direction that most stretches the
-hidden state carries a genuine component of the entropy sensitivity. But the alignment is partial, not
-dominant ($\overline{\cos^2}=0.24$: about three-quarters of the entropy-sensitivity direction lies
-\emph{outside} the leading stretch direction), it is largest for hallucination-prone prompts
-($0.55$, consistent with the along-$v_{\mathrm{lead}}$ susceptibility of
-Section~\ref{sec:results-alg2} and, like it, partly entropy-related), and part of even this overlap is
-shared token-position support --- both quantities concentrate on the last few positions --- which a
-position-whitened metric would discount (future work). The two analyses agree on an intermediate
+$|\!\cos\angle(\nabla_{H_0}H,v_{\mathrm{lead}})|=0.41$ (median $0.37$). Because both vectors concentrate
+their energy on the last token positions, the fully-random null $\sqrt{2/(\pi N)}\approx0.0046$
+($N=T\!\cdot\!d\approx3\times10^4$) understates chance; the honest comparison is a
+\emph{position-matched} null --- random directions carrying $\nabla_{H_0}H$'s per-position energy
+profile --- which raises the null only to $0.008$ (Monte-Carlo and closed form agree). Against it
+$|\!\cos|=0.41$ is still $\approx\!53\times$ chance, and $97.5\%$ of prompts exceed their own
+position-matched null, so the alignment is genuine \emph{within}-position directional structure, not a
+positional-support artifact. The two directions are thus \emph{not} orthogonal. But the alignment is
+partial, not dominant ($\overline{\cos^2}=0.24$: about three-quarters of the entropy-sensitivity
+direction lies \emph{outside} the leading stretch direction), and it is largest for
+hallucination-prone prompts ($0.55$, consistent with the along-$v_{\mathrm{lead}}$ susceptibility of
+Section~\ref{sec:results-alg2} and, like it, partly entropy-related). The two analyses agree on an intermediate
 picture: \emph{across} prompts the magnitude co-variation is dominated by a common scale (partial
 correlation $0.1$--$0.3$), while \emph{within} a prompt the hidden-amplification and output-sensitivity
 directions share a real but modest overlap. Neither ``independent axes'' nor ``strongly coupled'' is
@@ -887,9 +929,10 @@ subset preserves the exact token-length matching of the full set (identical per-
 histograms, Kruskal--Wallis $p=1.000$; Appendix~\ref{sec:robustness}), so it introduces no length
 confound. We use $n_{\mathrm{iter}}=15$ (median
 convergence residual $4\times10^{-4}$; $5\%$ of prompts above $10^{-2}$). This is our exact-Jacobian
-profiling at both read-out sites on Qwen; the SmolLM2 pre-norm profiling (which shows the same
-weak $\sigma_{\max}$--entropy-level pattern) is reported in Section~\ref{sec:results-inversion}, and SmolLM2 post-norm and
-the intermediate-scale sanity check (Section~\ref{sec:scale}) are offline follow-ups. The
+profiling at both read-out sites on Qwen; the SmolLM2 profiling, \emph{also at both read-out sites}
+and showing the same weak $\sigma_{\max}$--entropy-level pattern, is reported in
+Section~\ref{sec:results-inversion} (post-norm in Section~\ref{sec:results-inversion}(iii)). Only the
+intermediate-scale sanity check (Section~\ref{sec:scale}) is an offline follow-up. The
 significance bar is the Holm-adjusted permutation $p$ (with cluster-aware inference below), and every
 number in this subsection is a mean over $n=40$ prompts/category on Qwen.
 
@@ -930,7 +973,7 @@ compared like-for-like (Section~\ref{sec:controls}).}
 \includegraphics[width=\linewidth]{figures/bulk_identity.pdf}
 \caption{The bulk identity on both models: the Algorithm-1 sampled-direction statistic
 $\lambda_L^{(\epsilon)}$ (\texttt{ftle\_final}) against the Algorithm-2 exact bulk prediction
-$\lambda_{\mathrm{bulk}}=\tfrac1{2L}\log(\|J\|_F^2/n)$, per prompt ($n=160$ each). Points track the
+$\lambda_{\mathrm{bulk}}=\tfrac1{2L}\log(\|J\|_F^2/N)$, per prompt ($n=160$ each). Points track the
 $y{=}x$ line with median relative error $3.3\%$ (Pearson $r=0.79$) on Qwen and $1.9\%$ ($r=0.88$) on
 SmolLM2; the small systematic offset is the Jensen bias discussed in the text. The identity
 replicates on both models.}
@@ -961,7 +1004,7 @@ perturbation} to \emph{movement} of the output distribution, and its residuals r
 non-entropy structure (a coding-vs-reasoning contrast). We report it as an output-side,
 entropy-related susceptibility, not an independent axis. The hidden amplification $\sigma_{\max}$ is
 likewise not an independent axis: it is only weakly related to the entropy \emph{level} but
-moderately coupled to the entropy's input \emph{sensitivity} (Section~\ref{sec:controls}); the honest
+moderately coupled to the entropy's input \emph{sensitivity} (Section~\ref{sec:controls}); the
 summary is that these Jacobian quantities are correlated mainly through shared magnitude.
 
 \begin{figure}[t]\centering
@@ -1040,7 +1083,9 @@ hallucination-prone on SmolLM2 ($p=0.000$); reasoning-involving contrasts are ne
 (only five reasoning templates), and factual vs.\ hallucination-prone on Qwen is underpowered, not
 equal. At the post-norm site factual is no longer the most expansive on either model, consistent
 with a radial component removed by the final RMSNorm. The bulk identity replicates (Qwen rel.\ err.\
-$3.3\%$, $r=0.79$; SmolLM2 $1.9\%$, $r=0.88$). The output ordering $\chi_F^{\max}$ is
+$3.3\%$, $r=0.79$; SmolLM2 $1.9\%$, $r=0.88$); the ``---'' in the post-norm bulk column marks that the
+Algorithm-1 identity is defined only at the pre-norm site it tracks, so no post-norm bulk error is
+computed. The output ordering $\chi_F^{\max}$ is
 representation-independent on the output side but partially tracks entropy and does \emph{not}
 replicate across models (Section~\ref{sec:results-alg2}, Figure~\ref{fig:confound}); it is not an
 independent axis. Algorithm-1 results for both models are in Table~\ref{tab:lm-dynamics}; the
@@ -1053,7 +1098,8 @@ intermediate-scale check is Section~\ref{sec:scale}.}
 A natural objection is that both primary models are sub-billion and might not represent larger
 Transformers. Because Algorithm~2 is expensive (Section~\ref{sec:methods-cost}), a full sweep at
 larger scale is not affordable here; instead we run a deliberately \emph{minimal} sanity check on
-two intermediate-scale models, Qwen2.5-1.5B and Qwen2.5-3B, as an offline follow-up to the main
+two intermediate-scale models, Qwen2.5-1.5B-Instruct and Qwen2.5-3B-Instruct (both instruction-tuned,
+matching our primary models --- so the check varies scale, not the instruction-tuning axis), as an offline follow-up to the main
 sweep. The configuration is reduced across every axis --- $n{=}8$ prompts/category, pre-norm
 read-out only, block size $k{=}3$, $6$ sphere probes, $8$ subspace iterations, Fisher enabled ---
 and writes to a separate directory with the same checkpointing (per-row flush, resume by
@@ -1132,12 +1178,12 @@ Our primary contribution is instrumental: a matrix-free spectral profiler for th
 prompt-conditioned input$\to$output Jacobian, with a cheap baseline, correct cluster-aware inference,
 and a validated numerical core. The scientific lesson of the case study is deliberately measured. The
 leading hidden amplification and the output-entropy \emph{level} are only weakly related
-($|r|\le0.11$, distance correlation $0.20$), but this is \emph{not} evidence that hidden and output
+($\mathrm{R}^2\le0.10$ at every scale, sign unstable; distance correlation $0.20$), but this is \emph{not} evidence that hidden and output
 response geometries are independent: compared like-for-like (sensitivity to sensitivity), hidden
 amplification and the entropy's input-sensitivity are moderately correlated ($r=0.45$), mostly through
 a shared Jacobian scale (partial correlation $0.1$--$0.3$) but with a genuine directional overlap a
 partialling analysis alone would miss (the two input directions are aligned at
-$|\!\cos|=0.41$, $\sim\!90\times$ chance; Section~\ref{sec:controls}). We therefore do \emph{not} claim
+$|\!\cos|=0.41$, $\approx\!53\times$ a position-matched null; Section~\ref{sec:controls}). We therefore do \emph{not} claim
 a dissociation of independent axes. What
 we do claim is narrower and, we believe, useful: prompt-conditioned Jacobian geometry is
 \emph{measurable, model-dependent, and easy to over-read} --- a level-vs-sensitivity or
@@ -1159,28 +1205,23 @@ not which category leads. We therefore retire the ``two-tier''
 narrative as a claim about Transformers and keep it only as a description of the two primary models.
 
 \paragraph{The lesson, and what it is not.}
-The case study's lesson is methodological, not a dissociation. Measured naively, hidden amplification
-$\sigma_{\max}$ looks unrelated to output entropy; but that compares a sensitivity to a level, and the
-corrected sensitivity-to-sensitivity comparison is coupled ($r=0.45$), mostly through shared
-Jacobian magnitude (partial correlation $0.10$--$0.30$; on two of three models the residual
-$95\%$ CI includes zero; Section~\ref{sec:controls}). We therefore
-\emph{do not} claim two independent axes. The one robust output-side statement is that
-impossible/fictional/hallucination-prone prompts are the entropy outlier --- a near-manipulation-check
-(such prompts have diffuse continuations by construction), not a hidden-state finding. On the hidden
-side, $\sigma_{\max}$ is strongly correlated with the bulk norm ($r=0.80$, i.e.\ $64\%$ shared variance) for the categorical contrast; the
-Fisher/KL $\chi_F$ tracks entropy with an analytic reason and flips sign across models; and which
-class leads $\sigma_{\max}$ is model-specific (factual only on the two sub-billion instruction-tuned
-models; coding on GPT-2 and $\ge1.5$B). We are also careful about what this does \emph{not} say: we do
-not detect hallucinations (we never evaluate answers; the category is a prompt proxy), and
-$\lambda_L^{(\epsilon)}$ is a finite-depth response, not evidence of chaotic dynamics. What we do
-offer is the profiler and the discipline of measuring these couplings correctly --- and a concrete
+The case study's lesson is methodological. The naive $\sigma_{\max}$--entropy comparison invites a
+``dissociation'' reading; the magnitude-controlled and geometric comparisons of
+Section~\ref{sec:controls} dissolve it into a common-scale coupling with a modest directional residual
+(the numbers are collected there and not repeated here). We therefore \emph{do not} claim two
+independent axes. The one robust output-side statement is that impossible/fictional/hallucination-prone
+prompts are the entropy outlier --- a near-manipulation-check (diffuse continuations by construction),
+not a hidden-state finding. We are equally careful about what this does \emph{not} say: we do not
+detect hallucinations (we never evaluate answers; the category is a prompt proxy), and
+$\lambda_L^{(\epsilon)}$ is a finite-depth response, not evidence of chaotic dynamics. What we offer is
+the profiler and the discipline of measuring these couplings correctly --- with a concrete
 demonstration of how a level-vs-sensitivity or single-direction summary manufactures a spurious
-``dissociation'' that a magnitude-controlled comparison dissolves.
+dissociation that a magnitude-controlled comparison dissolves.
 
 \paragraph{Scale sanity check: a split, pre-specified outcome.}
 Because our primary models are sub-billion, we pre-specified three readings of the
 intermediate-scale check (Section~\ref{sec:scale}). The completed check ($1.5$B and $3$B, $n=8$/cat)
-supports a \emph{split} of readings (i) and (ii), which we state honestly, and with an important
+supports a \emph{split} of readings (i) and (ii), which we report with an important
 scope limit: the scale check re-ran only the \emph{naive} level comparison, not the corrected
 magnitude-controlled one. What agrees with reading (i) is narrow --- the \emph{smallness} of the
 $\sigma_{\max}$--entropy level correlation persists ($\mathrm{R}^2\le0.10$ at every scale, though its
@@ -1191,7 +1232,7 @@ sensitivity-to-sensitivity relationship, and that corrected test was not repeate
 \emph{specific category ordering} on the hidden axis follows reading (ii): the sub-billion result that
 factual has the highest $\sigma_{\max}$ does not persist --- coding leads at $1.5$B and $3$B --- so that
 ordering is model-scale-limited and we report Algorithm~2 as a diagnostic framework rather than a
-general law. This is the honest position: only the coarse, naive level statistic is scale-stable in
+general law. In sum: only the coarse, naive level statistic is scale-stable in
 our check; both the fine structure (which class is most amplified) and the corrected coupling test are
 not established beyond $0.5$B. With $n=8$/category this is a sanity check, not a powered result.
 
@@ -1217,8 +1258,8 @@ future work.
 \paragraph{Limitations.}
 We list the caveats that bound our claims. \emph{(1)~Model scale.} Our primary evidence is two
 sub-billion-parameter models of similar design; the exact-Jacobian (Algorithm~2) profiling is
-completed for Qwen2.5-0.5B (both read-out sites) and SmolLM2-360M (pre-norm), and the
-intermediate-scale check ($1.5$B/$3$B) uses only $n=8$/category. Only the \emph{naive} level
+completed for Qwen2.5-0.5B and SmolLM2-360M (both read-out sites each), and the
+intermediate-scale check ($1.5$B/$3$B, pre-norm) uses only $n=8$/category. Only the \emph{naive} level
 statistic is shown to be scale-stable --- the $\sigma_{\max}$--entropy level correlation stays small at
 every scale tested ($0.36$B--$3$B) though model-dependent in sign
 ($r=-0.01,-0.29,+0.32,-0.01$) --- and we caution that a small level correlation is \emph{not}
@@ -1354,9 +1395,13 @@ precise scope of each.
   SmolLM2, $0.38$ GPT-2), so the shrinkage removes a genuine common scale, not just a collinear
   covariate. A partialling-free geometric check corroborates this and adds nuance: the leading
   hidden-stretch direction $v_{\mathrm{lead}}$ and the entropy input-gradient $\nabla_{H_0}H$ (same
-  $T\times d$ space) have mean $|\!\cos|=0.41$ (Qwen, $n=160$), $\sim\!90\times$ the random baseline
-  $\sqrt{2/(\pi N)}$ but only $\overline{\cos^2}=0.24$, so the directions are partially aligned, not
-  orthogonal and not collinear (partly shared token-position support). There is also a
+  $T\times d$ space) have mean $|\!\cos|=0.41$ (Qwen, $n=160$). Both concentrate on the last token
+  positions, so we compare against a \emph{position-matched} null (random directions with
+  $\nabla_{H_0}H$'s per-position energy profile), which is $0.008$ (vs.\ the fully-random
+  $\sqrt{2/(\pi N)}=0.0046$); $|\!\cos|=0.41$ is still $\approx\!53\times$ this null and $97.5\%$ of
+  prompts exceed their own null, so the alignment is genuine within-position structure. But only
+  $\overline{\cos^2}=0.24$, so the directions are partially aligned --- not orthogonal and not
+  collinear. There is also a
   weak \emph{nonlinear} dependence of $\sigma_{\max}$ on the entropy level that Pearson $r$ ($-0.01$)
   misses: pooled distance correlation $0.20$ (permutation $p=0.04$ over $2000$ label shuffles). This is
   \emph{not} merely between-category centroid separation --- the \emph{within-category} mean distance
@@ -1372,7 +1417,7 @@ precise scope of each.
   \item \textbf{Bulk identity.} The Algorithm-1 sampled statistic matches the exact bulk
   prediction $\lambda_{\mathrm{bulk}}$ to median relative error $3.3\%$ (Pearson $r=0.79$,
   Figure~\ref{fig:bulk}), confirming that a single random direction estimates the bulk
-  $\|J\|_F/\sqrt n$, not the leading amplification --- so the flat sampled-direction contrast is a
+  $\|J\|_F/\sqrt N$, not the leading amplification --- so the flat sampled-direction contrast is a
   prediction, not a null result.
   \item \textbf{Pre/post-norm analysis.} We profile both read-out sites. The hidden ordering
   differs between them (factual leads only pre-norm), \emph{consistent with} a radial component
@@ -1383,7 +1428,7 @@ precise scope of each.
   $\tfrac12$ Fisher factor against a stable KL; a linearity check tying finite differences to
   $\sigma_{\max}$); all checks pass, establishing estimator correctness (distinct from the
   finite-iteration accuracy of the deployed run).
-  \item \textbf{Scale sanity check.} A deliberately minimal check on Qwen2.5-1.5B/3B
+  \item \textbf{Scale sanity check.} A deliberately minimal check on Qwen2.5-1.5B/3B-Instruct
   (Section~\ref{sec:scale}) probes whether the weak $\sigma_{\max}$--entropy \emph{level} correlation
   (the naive comparison only) persists beyond sub-billion models; the corrected,
   magnitude-controlled test was not repeated at scale. It is a presence/absence test at small

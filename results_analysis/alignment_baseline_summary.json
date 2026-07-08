@@ -1,0 +1,11 @@
+{
+  "n": 160,
+  "mean_cos": 0.41,
+  "median_cos": 0.372,
+  "mean_rand_baseline": 0.0045,
+  "mean_pos_baseline_mc": 0.008,
+  "mean_pos_baseline_ana": 0.008,
+  "ratio_vs_rand": 92.2,
+  "ratio_vs_pos": 53.45,
+  "frac_cos_above_pos": 0.975
+}
