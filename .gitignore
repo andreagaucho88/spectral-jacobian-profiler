@@ -11,6 +11,7 @@ venv/
 
 # Local agent / IDE config
 .claude/
+CLAUDE.md
 .vscode/
 .idea/
 

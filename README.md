@@ -96,7 +96,7 @@ profiler is the contribution; the case study is how to use it honestly.
 ├── results_spectral_scalecheck/    # Qwen 1.5B / 3B sanity check
 ├── results_analysis/               # joint-analysis CSVs/JSON + per-model subdirs
 │
-├── requirements.txt   LICENSE   CLAUDE.md
+├── requirements.txt   LICENSE
 ```
 
 Every model directory/file is keyed by a slug of the HF model name with `/` → `__`
