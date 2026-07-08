@@ -56,7 +56,7 @@ not a "dissociation" findings paper. The reproducible chain:
 
 **Lesson:** naive single-direction / level summaries of Jacobian geometry are easy to
 over-read; the correct like-for-like, magnitude-controlled comparisons must be made. The
-profiler is the contribution; the case study is how to use it honestly.
+profiler is the contribution; the case study is how to read it without over-claiming.
 
 ---
 

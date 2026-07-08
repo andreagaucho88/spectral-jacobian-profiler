@@ -80,7 +80,7 @@
   volume={10}, number={2}, pages={251--276}, year={1998}
 }
 @article{hutchinson1990stochastic,
-  title={A Stochastic Estimator of the Trace of the Influence Matrix for Laplacian Smoothing Splines},
+  title={A Stochastic Estimator of the Trace of the Influence Matrix for {Laplacian} Smoothing Splines},
   author={Hutchinson, Michael F.},
   journal={Communications in Statistics -- Simulation and Computation},
   volume={19}, number={2}, pages={433--450}, year={1990}
@@ -135,7 +135,7 @@
   journal={arXiv preprint arXiv:1607.06450}, year={2016}
 }
 @article{su2024roformer,
-  title={RoFormer: Enhanced Transformer with Rotary Position Embedding},
+  title={{RoFormer}: Enhanced Transformer with Rotary Position Embedding},
   author={Su, Jianlin and Ahmed, Murtadha and Lu, Yu and Pan, Shengfeng and Bo, Wen and Liu, Yunfeng},
   journal={Neurocomputing}, volume={568}, pages={127063}, year={2024}
 }
@@ -165,7 +165,7 @@
   booktitle={Advances in Neural Information Processing Systems}, volume={35}, year={2022}
 }
 @inproceedings{kim2021lipschitz,
-  title={The Lipschitz Constant of Self-Attention},
+  title={The {Lipschitz} Constant of Self-Attention},
   author={Kim, Hyunjik and Papamakarios, George and Mnih, Andriy},
   booktitle={International Conference on Machine Learning (ICML)}, year={2021}
 }
@@ -256,7 +256,7 @@ four prompt categories (factual, coding, reasoning, hallucination-prone) on Qwen
 SmolLM2-360M and GPT-2, under exact token-length matching and cluster-robust, prompt-level inference.
 The case study is a controlled demonstration of how easily this geometry is over-read. The correlation
 between $\sigma_{\max}$ and the output-entropy \emph{level} is weak at every model and scale tested
-($\mathrm{R}^2\le0.10$, sign unstable), but it compares a sensitivity to a level: against the entropy's
+($\mathrm{R}^2\le0.11$, sign unstable), but it compares a sensitivity to a level: against the entropy's
 input sensitivity $\|\nabla H\|$ the like-for-like correlation is $r=0.45$, mostly shared Jacobian
 magnitude --- partialling out the bulk norm leaves $0.10$--$0.30$ (residual CI including zero on two of
 three models) --- while the two input directions are only partially aligned (mean $|\!\cos|=0.41$,
@@ -324,7 +324,7 @@ output yet exhibit a small hidden-state response, or the reverse; the two notion
 complementary, not interchangeable, and hallucination-prone behaviour should not be reduced to
 output entropy alone. Our case study measures how these quantities relate, and the lesson is a
 cautionary one about \emph{how not to read them}: the leading hidden amplification $\sigma_{\max}$ is
-nearly uncorrelated with the output-entropy \emph{level} ($\mathrm{R}^2\le0.10$ at every model and scale tested, sign unstable), but this near-zero number is
+nearly uncorrelated with the output-entropy \emph{level} ($\mathrm{R}^2\le0.11$ at every model and scale tested, sign unstable), but this near-zero number is
 an artifact of comparing a \emph{sensitivity} to a \emph{level} --- compared like-for-like against
 the entropy's input sensitivity $\|\nabla_{H_0}H\|$ they are correlated ($r=0.45$), and most of that
 correlation is shared Jacobian magnitude (partial correlation given the bulk norm drops to
@@ -540,7 +540,7 @@ $r_{\mathrm{eff}}=\operatorname{tr}(A)^2/\operatorname{tr}(A^2)$ is the spectral
 comparable here to the stable rank $r_{\mathrm{stable}}\approx4$ reported below. With
 $r_{\mathrm{eff}}\approx4$ these single-direction fluctuations are \emph{not} small
 ($\sim\!50\%$ on $\|Jv\|_2^2$), so the raw sampled amplification is prompt-noisy and the naive
-$n^{-1/2}$ concentration does \emph{not} apply. Two facts nonetheless make Algorithm~1's statistic a stable
+$N^{-1/2}$ concentration does \emph{not} apply. Two facts nonetheless make Algorithm~1's statistic a stable
 \emph{bulk} quantity: it is the normalized \emph{logarithm}
 $\lambda_L^{(\epsilon)}=\tfrac1L\log(\delta_L/\epsilon)$, so a tens-of-percent multiplicative swing
 on $\|Jv\|_2$ becomes only $O(\log(1.5)/L)\approx0.017$ in $\lambda$-units at $L=24$, and it is
@@ -548,7 +548,7 @@ averaged over $K$ directions. Its normalized logarithm should therefore track
 $\lambda_{\mathrm{bulk}}=\tfrac{1}{2L}\log(\|J\|_F^2/N)$, and the empirical agreement (median relative
 error $3.3\%$; Figure~\ref{fig:bulk}) confirms this. We estimate $\|J\|_F^2$ by the
 \emph{unbiased} sphere estimator $N\cdot\mathrm{mean}_i\|J\xi_i\|_2^2$ (the mean of the squared
-probe norms \cite{hutchinson1990stochastic}; the Jensen-biased $n(\mathrm{mean}_i\|J\xi_i\|)^2$ is
+probe norms \cite{hutchinson1990stochastic}; the Jensen-biased $N(\mathrm{mean}_i\|J\xi_i\|)^2$ is
 low by construction), and we report the anisotropy through the \emph{stable rank}
 $r_{\mathrm{stable}}=\|J\|_F^2/\sigma_{\max}^2$ --- the noise-robust numerical rank of Rudelson and
 Vershynin \cite{rudelson2007sampling}, an effective count of the leading directions of $J$.
@@ -581,7 +581,7 @@ hidden state is also the direction that most moves the logits.
 The estimator ships a self-test against dense linear-algebra ground truth: block iteration
 recovers well-separated singular values to machine precision; the sphere estimator of
 $\|J\|_F^2$ is unbiased within Monte-Carlo error while the Jensen variant is low by $\sim22\%$;
-the identity $a^2=n/r_{\mathrm{stable}}$ holds to floating point; the $\tfrac12$ factor of the
+the anisotropy identity $\sigma_{\max}^2/(\|J\|_F^2/N)=N/r_{\mathrm{stable}}$ holds to floating point; the $\tfrac12$ factor of the
 Fisher form matches a numerically stable log-sum-exp KL; and a linearity check along
 $v_{\mathrm{lead}}$ agrees with $\sigma_{\max}$ as $\epsilon$ shrinks. All checks pass.
 
@@ -608,8 +608,8 @@ report them with the results.
 \subsection{Models and datasets}
 \label{sec:methods-data}
 
-We study two publicly available, instruction-tuned, decoder-only Transformers
-(Table~\ref{tab:models}) --- Qwen2.5-0.5B-Instruct \cite{qwen2025technical} and
+Our two \emph{primary} models are publicly available, instruction-tuned, decoder-only Transformers
+(Table~\ref{tab:models}, top two rows) --- Qwen2.5-0.5B-Instruct \cite{qwen2025technical} and
 SmolLM2-360M-Instruct \cite{allal2025smollm2} --- chosen to differ in scale and pre-training while sharing modern
 architecture (rotary position embeddings \cite{su2024roformer}, RMSNorm pre-normalization
 \cite{zhang2019root} in place of LayerNorm \cite{ba2016layer}, and gated feed-forward blocks).
@@ -804,7 +804,7 @@ qualifications follow. \emph{(i) The weak level-correlation is not even sign-sta
 SmolLM2 the $\sigma_{\max}$--entropy(level) correlation is $r=-0.29$ with a template cluster-bootstrap
 $95\%$ CI $[-0.49,-0.04]$ that \emph{excludes} zero, versus $r=-0.01$, CI $[-0.21,0.17]$ on Qwen: the
 level correlation is weak on both but small-and-nonzero rather than clean-zero, and its magnitude and
-CI are model-dependent ($R^2\le0.09$ throughout). \emph{(ii) Which pairwise contrast survives
+CI are model-dependent ($R^2\le0.09$ on the two primary models). \emph{(ii) Which pairwise contrast survives
 clustering is model-dependent.} On SmolLM2 factual $>$ hallucination-prone is cluster-robust
 ($d=1.40$, cluster permutation $p=0.000$) while factual $>$ coding is not ($d=0.34$, $p=0.19$) --- the
 mirror image of Qwen (factual $>$ coding robust, factual vs.\ hallucination-prone underpowered),
@@ -873,10 +873,10 @@ entropy; one backward). Both live in the same $T\times d$ input space, so their 
 Over the Qwen $n=160$ prompts the mean absolute cosine is
 $|\!\cos\angle(\nabla_{H_0}H,v_{\mathrm{lead}})|=0.41$ (median $0.37$). Because both vectors concentrate
 their energy on the last token positions, the fully-random null $\sqrt{2/(\pi N)}\approx0.0046$
-($N=T\!\cdot\!d\approx3\times10^4$) understates chance; the honest comparison is a
+($N=T\!\cdot\!d\approx3\times10^4$) understates chance; the appropriate comparison is a
 \emph{position-matched} null --- random directions carrying $\nabla_{H_0}H$'s per-position energy
-profile --- which raises the null only to $0.008$ (Monte-Carlo and closed form agree). Against it
-$|\!\cos|=0.41$ is still $\approx\!53\times$ chance, and $97.5\%$ of prompts exceed their own
+profile --- which raises the null only to $0.0075$ (Monte-Carlo and closed form agree). Against it
+$|\!\cos|=0.41$ is still $\approx\!55\times$ chance, and $97.5\%$ of prompts exceed their own
 position-matched null, so the alignment is genuine \emph{within}-position directional structure, not a
 positional-support artifact. The two directions are thus \emph{not} orthogonal. But the alignment is
 partial, not dominant ($\overline{\cos^2}=0.24$: about three-quarters of the entropy-sensitivity
@@ -1136,7 +1136,7 @@ reinforcing its demotion. A qualitative sanity check ($n=8$), not a scaling law.
 \end{figure}}{}%
 \paragraph{Outcome.} The check gives a \emph{split} result (Figure~\ref{fig:scale}). What is stable:
 the weak $\sigma_{\max}$--entropy-level correlation persists ($r=+0.32$ and $-0.01$ at $1.5$B/$3$B, as
-$-0.01$ at $0.5$B; $\mathrm{R}^2\le0.10$ throughout), and factual remains the \emph{lowest}-entropy
+$-0.01$ at $0.5$B; $\mathrm{R}^2\le0.11$ throughout), and factual remains the \emph{lowest}-entropy
 class at all three scales ($H(p)=0.79,0.29,0.00$). We caution that this is the \emph{naive} summary;
 the corrected sensitivity-to-sensitivity, magnitude-controlled comparison (Section~\ref{sec:controls})
 was performed only on Qwen-0.5B and should not be assumed to scale. What does \emph{not} persist: the
@@ -1181,12 +1181,12 @@ Our primary contribution is instrumental: a matrix-free spectral profiler for th
 prompt-conditioned input$\to$output Jacobian, with a cheap baseline, correct cluster-aware inference,
 and a validated numerical core. The scientific lesson of the case study is deliberately measured. The
 leading hidden amplification and the output-entropy \emph{level} are only weakly related
-($\mathrm{R}^2\le0.10$ at every scale, sign unstable; distance correlation $0.20$), but this is \emph{not} evidence that hidden and output
+($\mathrm{R}^2\le0.11$ at every scale, sign unstable; distance correlation $0.20$), but this is \emph{not} evidence that hidden and output
 response geometries are independent: compared like-for-like (sensitivity to sensitivity), hidden
 amplification and the entropy's input-sensitivity are moderately correlated ($r=0.45$), mostly through
 a shared Jacobian scale (partial correlation $0.1$--$0.3$) but with a genuine directional overlap a
 partialling analysis alone would miss (the two input directions are aligned at
-$|\!\cos|=0.41$, $\approx\!53\times$ a position-matched null; Section~\ref{sec:controls}). We therefore do \emph{not} claim
+$|\!\cos|=0.41$, $\approx\!55\times$ a position-matched null; Section~\ref{sec:controls}). We therefore do \emph{not} claim
 a dissociation of independent axes. What
 we do claim is narrower and, we believe, useful: prompt-conditioned Jacobian geometry is
 \emph{measurable, model-dependent, and easy to over-read} --- a level-vs-sensitivity or
@@ -1227,7 +1227,7 @@ intermediate-scale check (Section~\ref{sec:scale}). The completed check ($1.5$B 
 supports a \emph{split} of readings (i) and (ii), which we report with an important
 scope limit: the scale check re-ran only the \emph{naive} level comparison, not the corrected
 magnitude-controlled one. What agrees with reading (i) is narrow --- the \emph{smallness} of the
-$\sigma_{\max}$--entropy level correlation persists ($\mathrm{R}^2\le0.10$ at every scale, though its
+$\sigma_{\max}$--entropy level correlation persists ($\mathrm{R}^2\le0.11$ at every scale, though its
 sign is not stable), and factual stays the lowest-entropy class. We are explicit that this is
 \emph{not} evidence that two axes stay distinct at scale: as Section~\ref{sec:controls} shows on the
 $0.5$B model, a near-zero level correlation is compatible with a coupled ($r=0.45$)
@@ -1400,8 +1400,8 @@ precise scope of each.
   hidden-stretch direction $v_{\mathrm{lead}}$ and the entropy input-gradient $\nabla_{H_0}H$ (same
   $T\times d$ space) have mean $|\!\cos|=0.41$ (Qwen, $n=160$). Both concentrate on the last token
   positions, so we compare against a \emph{position-matched} null (random directions with
-  $\nabla_{H_0}H$'s per-position energy profile), which is $0.008$ (vs.\ the fully-random
-  $\sqrt{2/(\pi N)}=0.0046$); $|\!\cos|=0.41$ is still $\approx\!53\times$ this null and $97.5\%$ of
+  $\nabla_{H_0}H$'s per-position energy profile), which is $0.0075$ (vs.\ the fully-random
+  $\sqrt{2/(\pi N)}=0.0046$); $|\!\cos|=0.41$ is still $\approx\!55\times$ this null and $97.5\%$ of
   prompts exceed their own null, so the alignment is genuine within-position structure. But only
   $\overline{\cos^2}=0.24$, so the directions are partially aligned --- not orthogonal and not
   collinear. There is also a
@@ -1452,7 +1452,7 @@ included. Hardware and per-run configuration (model, dtype, device, $k$, probes,
 completed/failed counts) are recorded in a \texttt{run\_manifest.json} per run. The complete artifact
 --- code, template inventory, length-matched prompt sets, and per-prompt result CSVs --- is released
 under the MIT license at \url{https://github.com/andreagaucho88/spectral-jacobian-profiler}; the
-tagged release \texttt{v1.0} corresponds to the version reported here.
+git tag \texttt{v1.0} marks the version reported here.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
