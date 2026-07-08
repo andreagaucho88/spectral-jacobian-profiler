@@ -44,9 +44,11 @@ not a "dissociation" findings paper. The reproducible chain:
   gives `r = 0.45`, which is **mostly shared Jacobian magnitude**: partialling out the bulk
   norm drops it to a **partial correlation of 0.10–0.30** across three models (residual 95% CI
   **includes zero on two of three**).
-- A **collinearity-free geometric check** (`cos∠(∇_{H₀}H, v_lead)` = 0.41, ~90× the random
-  baseline, but `cos² = 0.24`) shows the two input directions are **partially aligned, not
-  orthogonal and not collinear** — a genuine but modest directional overlap.
+- A **collinearity-free geometric check** (`cos∠(∇_{H₀}H, v_lead)` = 0.41) against a
+  **position-matched null** — random directions carrying ∇H's per-position energy profile
+  (null = 0.008; ~53× against it, 97.5% of prompts exceed their own null) — shows the two input
+  directions are **partially aligned** (`cos² = 0.24`): a genuine within-position directional
+  overlap, **not** a positional-support artifact, but modest.
 - `sigma_max` is **strongly correlated with the bulk norm** for the categorical contrast
   (`r = 0.80`, i.e. 64% shared variance), and a trivial linear probe separates the categories
   at **99%** — so the spectral observables are *characterizations of response geometry, not

@@ -905,12 +905,17 @@ $\sigma_{\max}$ correlates only moderately with the final-token hidden-state nor
 ($d=1.12\to0.80$). So the finding is not a re-description of norm inflation or of an ``easy'' prefix.
 
 \paragraph{A linear probe already separates the categories --- which is the point.}
-A logistic probe on the raw final hidden state separates the four categories at $99\%$ (5-fold CV;
-chance $25\%$); a probe on the three scalars $(\|h_\text{pre}\|,\|h_\text{post}\|,\text{ppl})$ reaches
-only $66\%$. Category identity is thus trivially decodable, and we do \emph{not} propose the spectral
-observables as classifiers. Their content is the \emph{correlation structure} between response
-geometry and output uncertainty --- the level-vs-sensitivity and magnitude decomposition above ---
-which a supervised category probe does not provide.
+A logistic probe on the raw final hidden state ($\ell_2$-regularized, $C=1$, standardized features;
+$n=160$, $d=896$, so $n\!\ll\!d$) separates the four categories at $99\%$ (5-fold CV; chance $25\%$).
+By contrast, a probe on our \emph{four spectral scalars}
+$(\sigma_{\max},\lambda_{\mathrm{bulk}},r_{\mathrm{stable}},\chi_F^{\max})$ reaches only
+$54\%$, and one on $(\|h_\text{pre}\|,\|h_\text{post}\|,\text{ppl})$ reaches $66\%$: the spectral
+observables carry \emph{some} categorical signal (well above the $25\%$ chance) but far less than the
+full hidden state, quantifying that they are low-dimensional summaries, not classifiers. Category
+identity is trivially decodable from $h_{L,T}$, so we do \emph{not} propose the spectral observables as
+classifiers. Their content is the \emph{correlation structure} between response geometry and output
+uncertainty --- the level-vs-sensitivity and magnitude decomposition above --- which a supervised
+category probe does not provide.
 
 \paragraph{The output-uncertainty signal is not a single-token artifact.}
 Replacing the first-token entropy with the mean entropy over the first eight \emph{generated} tokens
@@ -1448,7 +1453,8 @@ prompt categories, the per-model length-matched prompt sets, and all per-prompt 
 included. Hardware and per-run configuration (model, dtype, device, $k$, probes, iterations,
 completed/failed counts) are recorded in a \texttt{run\_manifest.json} per run. The complete artifact
 --- code, template inventory, length-matched prompt sets, and per-prompt result CSVs --- is released
-under the MIT license at \url{https://github.com/andreagaucho88/spectral-jacobian-profiler}.
+under the MIT license at \url{https://github.com/andreagaucho88/spectral-jacobian-profiler}; the
+tagged release \texttt{v1.0} corresponds to the version reported here.
 
 \bibliographystyle{unsrtnat}
 \bibliography{references}
