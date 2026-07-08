@@ -1,0 +1,34 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-0.5B-Instruct",
+    "dtype": "float32",
+    "n_prompts": 40,
+    "k_top": 6,
+    "n_probes": 32,
+    "n_iter": 15,
+    "final_indices": [
+      -2,
+      -1
+    ],
+    "with_fisher": true,
+    "seed": 0
+  },
+  "status": "done",
+  "updated": "2026-07-07T05:41:49",
+  "progress": {
+    "final_index_-2": {
+      "factual": 40,
+      "_total": 160,
+      "coding": 40,
+      "reasoning": 40,
+      "hallucination_prone": 40
+    },
+    "final_index_-1": {
+      "factual": 40,
+      "_total": 160,
+      "coding": 40,
+      "reasoning": 40,
+      "hallucination_prone": 40
+    }
+  }
+}

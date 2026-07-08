@@ -1,0 +1,44 @@
+{
+  "Qwen2.5-0.5B": {
+    "n": 160,
+    "chat_template": true,
+    "r_gradH_sigma": 0.448,
+    "r_gradH_bulk": 0.495,
+    "r_sigma_bulk": 0.797,
+    "partial_gradH_sigma_given_bulk": 0.103,
+    "partial_CI95": [
+      -0.085,
+      0.286
+    ],
+    "dcor_sigma_entropy_pooled": 0.195,
+    "dcor_within_cat_mean": 0.302
+  },
+  "SmolLM2-360M": {
+    "n": 160,
+    "chat_template": true,
+    "r_gradH_sigma": 0.392,
+    "r_gradH_bulk": 0.267,
+    "r_sigma_bulk": 0.666,
+    "partial_gradH_sigma_given_bulk": 0.299,
+    "partial_CI95": [
+      0.161,
+      0.441
+    ],
+    "dcor_sigma_entropy_pooled": 0.323,
+    "dcor_within_cat_mean": 0.416
+  },
+  "GPT-2-124M": {
+    "n": 64,
+    "chat_template": false,
+    "r_gradH_sigma": 0.472,
+    "r_gradH_bulk": 0.382,
+    "r_sigma_bulk": 0.754,
+    "partial_gradH_sigma_given_bulk": 0.304,
+    "partial_CI95": [
+      -0.27,
+      0.611
+    ],
+    "dcor_sigma_entropy_pooled": 0.544,
+    "dcor_within_cat_mean": 0.628
+  }
+}

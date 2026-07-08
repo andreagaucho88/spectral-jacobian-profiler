@@ -1,0 +1,36 @@
+{
+  "config": {
+    "model": "gpt2",
+    "dtype": "float32",
+    "device": "cpu",
+    "hardware": "macOS-26.1-arm64-arm-64bit | 12 logical cpus | torch 2.7.0",
+    "n_prompts": 16,
+    "k_top": 3,
+    "n_probes": 6,
+    "n_iter": 10,
+    "final_indices": [
+      -2,
+      -1
+    ],
+    "with_fisher": true,
+    "seed": 0
+  },
+  "status": "done",
+  "updated": "2026-07-07T22:03:09",
+  "progress": {
+    "final_index_-2": {
+      "factual": 16,
+      "_total": 64,
+      "coding": 16,
+      "reasoning": 16,
+      "hallucination_prone": 16
+    },
+    "final_index_-1": {
+      "factual": 16,
+      "_total": 64,
+      "coding": 16,
+      "reasoning": 16,
+      "hallucination_prone": 16
+    }
+  }
+}

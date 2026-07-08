@@ -1,0 +1,161 @@
+label,prompt,T,n_dim,cos_abs,rand_baseline,sigma_max,gradH_norm
+factual,What is photosynthesis?,34,30464,0.59114,0.00457,1043.0652,13.1462
+factual,What is evaporation?,34,30464,0.56039,0.00457,1030.0088,21.5224
+factual,Main language of Estonia?,34,30464,0.25514,0.00457,606.3461,56.6425
+factual,What is respiration?,34,30464,0.46130,0.00457,917.2329,18.8691
+factual,Is Mars a planet?,34,30464,0.33699,0.00457,784.9076,52.2699
+factual,Chemical symbol for calcium?,35,31360,0.34653,0.00451,642.1755,27.4384
+factual,Symbol of the element tin?,35,31360,0.14628,0.00451,995.7459,65.8692
+factual,Chemical symbol for nitrogen?,35,31360,0.30634,0.00451,633.0109,32.0284
+factual,Symbol of the element iron?,35,31360,0.45889,0.00451,891.8965,36.5077
+factual,Chemical symbol for lead?,35,31360,0.28753,0.00451,627.0798,32.9894
+factual,Symbol of the element chlorine?,35,31360,0.24266,0.00451,845.9001,69.5944
+factual,Chemical symbol for zinc?,35,31360,0.28381,0.00451,662.1641,32.9682
+factual,Symbol of the element silver?,35,31360,0.10520,0.00451,939.7706,51.8359
+factual,Define erosion in one sentence.,35,31360,0.04495,0.00451,1105.2984,36.0449
+factual,Chemical symbol for hydrogen?,35,31360,0.46097,0.00451,640.0236,39.1504
+factual,Define magnetism in one sentence.,36,32256,0.15534,0.00444,759.8552,12.5177
+factual,Author of Ulysses?,36,32256,0.35188,0.00444,1010.3902,61.2564
+factual,Define refraction in one sentence.,36,32256,0.69291,0.00444,789.6208,81.3427
+factual,Define respiration in one sentence.,36,32256,0.29128,0.00444,887.8338,23.4541
+factual,"What colour is Saturn, briefly?",36,32256,0.26539,0.00444,749.7115,46.5005
+factual,What is the capital of Latvia?,36,32256,0.46220,0.00444,1276.2499,67.6540
+factual,Hemisphere of Paraguay?,36,32256,0.31869,0.00444,977.1164,89.9479
+factual,Define condensation in one sentence.,36,32256,0.70352,0.00444,1503.1087,22.5853
+factual,Largest city of Paraguay?,36,32256,0.01515,0.00444,947.5004,68.1504
+factual,Who wrote Don Quixote?,36,32256,0.43013,0.00444,995.3219,66.1732
+factual,Define natural selection in one sentence.,36,32256,0.63316,0.00444,845.9901,26.1795
+factual,What language is spoken in Bulgaria?,36,32256,0.48419,0.00444,749.7617,57.1984
+factual,What currency does Paraguay use?,36,32256,0.00451,0.00444,744.5924,60.2819
+factual,Define plate tectonics.,36,32256,0.09475,0.00444,795.8938,16.9945
+factual,Who wrote Ulysses?,36,32256,0.55394,0.00444,1249.6810,51.5167
+factual,What is the chemical symbol of carbon?,37,33152,0.73954,0.00438,828.3684,16.8505
+factual,Define osmosis in one sentence.,37,33152,0.53076,0.00438,1911.3174,130.3342
+factual,What is the chemical symbol of silver?,37,33152,0.81620,0.00438,896.2782,35.1258
+factual,What is the chemical symbol of tin?,37,33152,0.72688,0.00438,842.8521,20.8749
+factual,What is the chemical symbol of hydrogen?,37,33152,0.45067,0.00438,777.3095,19.8714
+factual,What is the chemical symbol of zinc?,37,33152,0.84411,0.00438,951.2519,22.1311
+factual,What is the chemical symbol of neon?,37,33152,0.69889,0.00438,894.5246,40.3073
+factual,What language is spoken in Paraguay?,37,33152,0.09495,0.00438,785.8367,61.0099
+factual,What is the chemical symbol of helium?,37,33152,0.81327,0.00438,928.7136,56.4382
+factual,Who wrote 1984?,37,33152,0.26110,0.00438,1122.0798,55.1166
+coding,Java: sort numbers.,34,30464,0.13661,0.00457,593.5585,39.8055
+coding,Python: count vowels.,34,30464,0.23775,0.00457,569.0128,29.4869
+coding,Python: trim whitespace.,34,30464,0.32420,0.00457,691.7123,40.6820
+coding,JavaScript: count vowels.,34,30464,0.02808,0.00457,616.2983,34.4145
+coding,JavaScript: remove duplicates.,34,30464,0.39796,0.00457,732.8626,33.0726
+coding,Java: find the average.,35,31360,0.08917,0.00451,723.8978,34.2506
+coding,Ruby: check a palindrome.,35,31360,0.32677,0.00451,918.7205,41.8862
+coding,Ruby: implement binary search.,35,31360,0.69038,0.00451,770.6530,70.2610
+coding,Go: check a palindrome.,35,31360,0.30758,0.00451,836.0108,45.2540
+coding,Java: reverse a string.,35,31360,0.53146,0.00451,635.1109,29.5019
+coding,Ruby: split on commas.,35,31360,0.23426,0.00451,865.3035,33.3455
+coding,JavaScript: merge overlapping intervals.,35,31360,0.39692,0.00451,645.6217,53.3658
+coding,JavaScript: flatten a list.,35,31360,0.42147,0.00451,642.1485,24.5234
+coding,Python: square each element.,35,31360,0.10979,0.00451,595.8232,21.4189
+coding,Python: filter even numbers.,35,31360,0.63548,0.00451,588.4318,29.1979
+coding,JavaScript: round to two decimals.,36,32256,0.77327,0.00444,718.0932,31.9961
+coding,C++: split on commas.,36,32256,0.02676,0.00444,579.5664,25.6874
+coding,TypeScript: find the average.,36,32256,0.00544,0.00444,758.5931,27.1654
+coding,JavaScript: compute the moving maximum.,36,32256,0.01087,0.00444,587.9904,29.8689
+coding,Write Ruby code to count vowels.,36,32256,0.67158,0.00444,718.9273,31.1372
+coding,TypeScript: split on commas.,36,32256,0.00102,0.00444,712.1663,35.3591
+coding,Rust: implement binary search.,36,32256,0.57950,0.00444,746.9870,64.7277
+coding,Kotlin: sum a list.,36,32256,0.18328,0.00444,587.5125,23.6952
+coding,Kotlin: check primality.,36,32256,0.65375,0.00444,655.9841,40.5958
+coding,Kotlin: square each element.,36,32256,0.67592,0.00444,879.9403,22.6871
+coding,Python: round to two decimals.,36,32256,0.24599,0.00444,608.2953,29.3376
+coding,Java: compute a rolling average.,36,32256,0.43491,0.00444,712.0458,32.3096
+coding,Rust: merge two lists.,36,32256,0.17099,0.00444,636.6688,40.7236
+coding,TypeScript: filter even numbers.,36,32256,0.03342,0.00444,711.4539,26.0130
+coding,Rust: square each element.,36,32256,0.38673,0.00444,729.0914,30.7494
+coding,TypeScript: title-case a string.,37,33152,0.12937,0.00438,999.0285,67.3386
+coding,Write C++ code to count words.,37,33152,0.44359,0.00438,705.0705,30.3345
+coding,Kotlin: compute the moving maximum.,37,33152,0.49587,0.00438,681.3840,31.5247
+coding,Rust: encode run-length sequences.,37,33152,0.19278,0.00438,752.3909,61.9394
+coding,TypeScript: compute the moving maximum.,37,33152,0.12772,0.00438,649.4894,34.0215
+coding,Write C++ code to count vowels.,37,33152,0.52168,0.00438,742.0184,35.8091
+coding,Write Go code to compute a factorial.,37,33152,0.14831,0.00438,731.3454,37.9094
+coding,C++: compute a running median.,37,33152,0.08104,0.00438,686.7195,45.4774
+coding,Rust: compute a running median.,37,33152,0.34561,0.00438,734.0093,53.5848
+coding,Write Ruby code to check primality.,37,33152,0.16032,0.00438,685.8486,34.5182
+reasoning,6 km in metres?,34,30464,0.23241,0.00457,603.3015,30.8325
+reasoning,5 km in metres?,34,30464,0.02038,0.00457,601.8976,39.1810
+reasoning,2 km in metres?,34,30464,0.02592,0.00457,595.6316,36.8551
+reasoning,3 km in metres?,34,30464,0.21725,0.00457,608.7786,35.8309
+reasoning,9 km in metres?,34,30464,0.05431,0.00457,620.5913,30.8323
+reasoning,17 km in metres?,35,31360,0.07635,0.00451,605.9835,22.7090
+reasoning,57 mod 7?,35,31360,0.16339,0.00451,791.1527,43.7665
+reasoning,30 km in metres?,35,31360,0.03573,0.00451,627.8736,33.0110
+reasoning,26 mod 3?,35,31360,0.01280,0.00451,737.8745,49.1194
+reasoning,33 km in metres?,35,31360,0.22292,0.00451,624.4274,28.5017
+reasoning,48 mod 4?,35,31360,0.01650,0.00451,757.4242,34.7146
+reasoning,13 km in metres?,35,31360,0.06562,0.00451,604.6141,23.4934
+reasoning,11 mod 4?,35,31360,0.16369,0.00451,726.1994,33.3584
+reasoning,37 km in metres?,35,31360,0.16329,0.00451,613.7891,29.5857
+reasoning,12 mod 7?,35,31360,0.36966,0.00451,811.6126,44.5195
+reasoning,Thursday + 4 days = ?,36,32256,0.26686,0.00444,716.0345,69.2018
+reasoning,54 + 82?,36,32256,0.45816,0.00444,714.5859,52.4391
+reasoning,5% of 34?,36,32256,0.71527,0.00444,798.4769,47.6971
+reasoning,Thursday + 3 days = ?,36,32256,0.31507,0.00444,712.7417,74.6904
+reasoning,19 + 77?,36,32256,0.53082,0.00444,740.8367,37.6296
+reasoning,5% of 74?,36,32256,0.73927,0.00444,806.2519,46.5775
+reasoning,Thursday + 5 days = ?,36,32256,0.35911,0.00444,727.8040,88.1776
+reasoning,39 + 31?,36,32256,0.52528,0.00444,727.4166,53.2806
+reasoning,5% of 59?,36,32256,0.75154,0.00444,764.4354,44.4374
+reasoning,Thursday + 9 days = ?,36,32256,0.25422,0.00444,728.5490,82.6612
+reasoning,38 + 26?,36,32256,0.55762,0.00444,716.7034,53.2613
+reasoning,5% of 55?,36,32256,0.73940,0.00444,774.1080,42.6952
+reasoning,Thursday + 6 days = ?,36,32256,0.37405,0.00444,736.4061,82.9910
+reasoning,18 + 17?,36,32256,0.34365,0.00444,751.4652,37.3795
+reasoning,5% of 67?,36,32256,0.77917,0.00444,799.8501,47.5981
+reasoning,40% of 76?,37,33152,0.88611,0.00438,785.0897,55.7869
+reasoning,Thursday + 23 days = ?,37,33152,0.31100,0.00438,730.2150,78.6888
+reasoning,25% of 94?,37,33152,0.81338,0.00438,770.7780,56.2579
+reasoning,Thursday + 42 days = ?,37,33152,0.24845,0.00438,770.7691,46.3658
+reasoning,5% of 326?,37,33152,0.77637,0.00438,773.9642,50.3889
+reasoning,Thursday + 22 days = ?,37,33152,0.27609,0.00438,729.2510,77.4610
+reasoning,15% of 33?,37,33152,0.77122,0.00438,779.2991,60.3034
+reasoning,Thursday + 21 days = ?,37,33152,0.29154,0.00438,733.9953,82.6559
+reasoning,5% of 277?,37,33152,0.65363,0.00438,751.8034,52.0213
+reasoning,Thursday + 25 days = ?,37,33152,0.29336,0.00438,718.5526,76.1046
+hallucination_prone,Capital of Westeros?,34,30464,0.07340,0.00457,1142.3209,89.8834
+hallucination_prone,airport code of Atlantis?,34,30464,0.76688,0.00457,906.7806,107.1709
+hallucination_prone,constitutional article of Atlantis?,34,30464,0.47597,0.00457,689.8204,57.0948
+hallucination_prone,official GDP of Atlantis?,34,30464,0.69466,0.00457,650.7179,48.2868
+hallucination_prone,public debt of Atlantis?,34,30464,0.33518,0.00457,735.1138,53.4160
+hallucination_prone,official census population of Atlantis?,35,31360,0.87011,0.00451,668.2571,50.8462
+hallucination_prone,ISO country code of Atlantis?,35,31360,0.00412,0.00451,828.3706,42.7039
+hallucination_prone,central bank rate of Atlantis?,35,31360,0.28801,0.00451,910.3193,54.6149
+hallucination_prone,UN seat number of Atlantis?,35,31360,0.76769,0.00451,888.4282,59.0973
+hallucination_prone,airport code of Neverland?,35,31360,0.54973,0.00451,1024.5013,99.2673
+hallucination_prone,Capital of the planet Vulcan?,35,31360,0.78775,0.00451,1020.6033,77.2292
+hallucination_prone,constitutional article of Eldoria?,35,31360,0.89717,0.00451,774.8471,72.5350
+hallucination_prone,public debt of Neverland?,35,31360,0.01662,0.00451,813.7110,70.6790
+hallucination_prone,Capital of the Moon Kingdom?,35,31360,0.11776,0.00451,627.7485,37.0525
+hallucination_prone,inflation rate of Atlantis?,35,31360,0.26485,0.00451,780.4422,46.7040
+hallucination_prone,inflation rate of Westeros?,36,32256,0.44440,0.00444,677.5932,41.3705
+hallucination_prone,airport code of the planet Vulcan?,36,32256,0.57490,0.00444,849.3797,120.0024
+hallucination_prone,internet domain of the planet Vulcan?,36,32256,0.32304,0.00444,785.5561,74.3347
+hallucination_prone,constitutional article of the planet Vulcan?,36,32256,0.68959,0.00444,708.6125,57.9193
+hallucination_prone,What is the capital of Atlantis?,36,32256,0.73739,0.00444,1001.0834,62.4790
+hallucination_prone,national railway operator of Eldoria?,36,32256,0.77166,0.00444,677.2585,52.0627
+hallucination_prone,public debt of the planet Vulcan?,36,32256,0.17330,0.00444,594.1432,51.2046
+hallucination_prone,stock exchange ticker of Eldoria?,36,32256,0.82426,0.00444,1132.3730,87.4240
+hallucination_prone,UN seat number of Eldoria?,36,32256,0.44488,0.00444,672.0270,49.7084
+hallucination_prone,airport code of the Martian Republic?,36,32256,0.68606,0.00444,733.2677,96.7934
+hallucination_prone,official tax code of Eldoria?,36,32256,0.88223,0.00444,733.7439,58.2514
+hallucination_prone,public debt of Narnia?,36,32256,0.66118,0.00444,1033.6192,39.7673
+hallucination_prone,internet domain of the Galactic Federation?,36,32256,0.41842,0.00444,811.7335,64.4164
+hallucination_prone,airport code of Elbonia?,36,32256,0.89665,0.00444,1357.9965,137.7194
+hallucination_prone,central bank rate of Westeros?,36,32256,0.43516,0.00444,677.7094,39.8954
+hallucination_prone,central bank rate of Narnia?,37,33152,0.41299,0.00438,1155.6876,36.4355
+hallucination_prone,official tax code of the Galactic Federation?,37,33152,0.79078,0.00438,773.0719,53.0779
+hallucination_prone,stock exchange ticker of the Sapphire Empire?,37,33152,0.79102,0.00438,1127.4564,78.3119
+hallucination_prone,constitutional article of the Republic of Oz?,37,33152,0.62443,0.00438,772.3362,58.2179
+hallucination_prone,What is the internet domain of Atlantis?,37,33152,0.15396,0.00438,1052.9539,119.7257
+hallucination_prone,national railway operator of the planet Vulcan?,37,33152,0.22360,0.00438,1137.4681,60.0127
+hallucination_prone,inflation rate of the Lunar Commonwealth?,37,33152,0.83937,0.00438,740.1003,53.4051
+hallucination_prone,stock exchange ticker of Zephyria?,37,33152,0.77752,0.00438,1133.1541,84.6026
+hallucination_prone,national railway operator of Elbonia?,37,33152,0.71354,0.00438,777.4915,55.4449
+hallucination_prone,ISO country code of Elbonia?,37,33152,0.83977,0.00438,1013.8089,130.2690

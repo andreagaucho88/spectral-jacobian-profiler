@@ -1,0 +1,7 @@
+,sigma_max,sigma_max,lambda_max,lambda_max,lambda_bulk_pred,lambda_bulk_pred,stable_rank,stable_rank,spectral_gap,spectral_gap,participation_ratio_topk,participation_ratio_topk,leading_over_rms,leading_over_rms,conv_residual,conv_residual,entropy,entropy,top1_prob,top1_prob,chi_fisher_max,chi_fisher_max,chi_fisher_along_hidden_lead,chi_fisher_along_hidden_lead,lead_alignment,lead_alignment
+,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std,mean,std
+label,,,,,,,,,,,,,,,,,,,,,,,,,,
+coding,171.63697,63.4471,0.42327,0.0317,0.07367,0.03428,1.03718,0.47899,0.20866,0.08806,1.14908,0.11907,67.73502,14.08075,0.00134,0.00246,5.68281,0.36537,0.25361,0.04811,11.40366,9.12775,8.61673,9.35903,0.67634,0.28682
+factual,150.87355,81.07071,0.40919,0.03738,0.07728,0.04219,1.57969,0.70684,0.35283,0.12692,1.33658,0.19273,54.80832,11.80397,0.00235,0.00704,5.19713,0.86126,0.27346,0.10976,4.35045,3.1633,2.30762,3.47793,0.30622,0.27237
+hallucination_prone,103.14094,25.88142,0.38381,0.02137,0.0353,0.03409,1.15847,0.74222,0.29427,0.10163,1.26056,0.16652,68.44325,21.0069,0.00082,0.00168,4.93764,0.14151,0.29576,0.04248,2.35191,0.53364,0.53959,0.29743,0.13115,0.09339
+reasoning,123.98089,84.044,0.38997,0.04109,0.04199,0.03316,1.17002,0.71536,0.31334,0.11121,1.30054,0.1701,68.44448,22.05107,0.00018,0.00071,5.03441,0.76145,0.28713,0.05162,5.11832,7.75985,2.98736,6.43425,0.43977,0.30087

@@ -1,0 +1,16 @@
+# Core pipeline (numerics + model adapter)
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+torch>=2.0
+transformers>=4.40
+
+# Figures (scripts/make_figures*.py)
+matplotlib>=3.7
+
+# Controls / analysis
+scikit-learn>=1.3   # linear-probe baseline (scripts/make_confound_tests.py)
+statsmodels>=0.14   # cluster-robust OLS length adjustment (analysis.py)
+
+# Note: `python3 spectral.py` (the numerical self-test) and `python3 prompts.py`
+# in whitespace-proxy mode need only numpy/pandas/scipy — no torch, no model download.

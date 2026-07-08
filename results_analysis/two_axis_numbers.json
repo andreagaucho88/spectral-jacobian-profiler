@@ -1,0 +1,180 @@
+{
+  "A_confound": {
+    "chi_fisher_max": {
+      "pearson_entropy": 0.492,
+      "spearman_entropy": 0.564,
+      "pearson_top1": -0.4,
+      "r2_entropy": 0.242
+    },
+    "sigma_max": {
+      "pearson_entropy": -0.015,
+      "spearman_entropy": 0.029,
+      "pearson_top1": 0.154,
+      "r2_entropy": 0.0
+    },
+    "chi_fisher_along_hidden_lead": {
+      "pearson_entropy": 0.417,
+      "spearman_entropy": 0.587,
+      "pearson_top1": -0.325,
+      "r2_entropy": 0.174
+    },
+    "chiF_residual": {
+      "category_mean_resid": {
+        "factual": -117.1,
+        "coding": -631.7,
+        "reasoning": 560.3,
+        "hallucination_prone": 188.5
+      },
+      "fac_vs_hal_d_raw": -0.98,
+      "fac_vs_hal_d_resid": -0.19,
+      "fac_vs_hal_resid_perm_p": 0.4578
+    }
+  },
+  "B_cluster": {
+    "templates_per_category": {
+      "factual": 39,
+      "coding": 40,
+      "reasoning": 5,
+      "hallucination_prone": 28
+    },
+    "sigma_max__factual_vs_coding": {
+      "cohen_d": 1.12,
+      "cluster_boot95_diff": [
+        133.3,
+        296.5
+      ],
+      "cluster_boot_excludes_0": true,
+      "cluster_perm_p": 0.0
+    },
+    "sigma_max__factual_vs_reasoning": {
+      "cohen_d": 1.08,
+      "cluster_boot95_diff": [
+        103.1,
+        300.6
+      ],
+      "cluster_boot_excludes_0": true,
+      "cluster_perm_p": 0.1089
+    },
+    "sigma_max__factual_vs_hallucination_prone": {
+      "cohen_d": 0.22,
+      "cluster_boot95_diff": [
+        -44.0,
+        153.9
+      ],
+      "cluster_boot_excludes_0": false,
+      "cluster_perm_p": 0.348
+    },
+    "sigma_max__coding_vs_reasoning": {
+      "cohen_d": -0.16,
+      "cluster_boot95_diff": [
+        -75.5,
+        58.3
+      ],
+      "cluster_boot_excludes_0": false,
+      "cluster_perm_p": 0.7905
+    },
+    "chi_fisher_max__factual_vs_hallucination_prone_cluster_perm_p": 0.0,
+    "chi_fisher_max__factual_vs_reasoning_cluster_perm_p": 0.1286,
+    "r_sigma_entropy": {
+      "point": -0.015,
+      "cluster_boot95": [
+        -0.207,
+        0.17
+      ]
+    }
+  },
+  "C_tost": {
+    "sigma_max__factual_vs_hallucination_prone__bound0.5": {
+      "cohen_d": 0.22,
+      "bound_d": 0.5,
+      "p_tost": 0.1105,
+      "equivalent_at_bound": false,
+      "diff_90ci": [
+        -32.6,
+        131.2
+      ],
+      "bound_raw": 110.0
+    },
+    "sigma_max__factual_vs_hallucination_prone__bound0.35": {
+      "cohen_d": 0.22,
+      "bound_d": 0.35,
+      "p_tost": 0.2876,
+      "equivalent_at_bound": false,
+      "diff_90ci": [
+        -32.6,
+        131.2
+      ],
+      "bound_raw": 77.0
+    },
+    "sigma_max__coding_vs_reasoning__bound0.5": {
+      "cohen_d": -0.16,
+      "bound_d": 0.5,
+      "p_tost": 0.0648,
+      "equivalent_at_bound": false,
+      "diff_90ci": [
+        -43.9,
+        17.8
+      ],
+      "bound_raw": 41.5
+    },
+    "sigma_max__coding_vs_reasoning__bound0.35": {
+      "cohen_d": -0.16,
+      "bound_d": 0.35,
+      "p_tost": 0.1959,
+      "equivalent_at_bound": false,
+      "diff_90ci": [
+        -43.9,
+        17.8
+      ],
+      "bound_raw": 29.0
+    }
+  },
+  "D_bulk": {
+    "pearson_r": 0.7945,
+    "pearson_r_2dp": 0.79,
+    "median_rel_err_pct": 3.27,
+    "n": 160
+  },
+  "E_output_uncertainty": {
+    "Qwen__Qwen2.5-0.5B-Instruct": {
+      "entropy_means": {
+        "factual": 0.83,
+        "coding": 1.56,
+        "reasoning": 1.35,
+        "hallucination_prone": 1.95
+      },
+      "top1_means": {
+        "factual": 0.8,
+        "coding": 0.5,
+        "reasoning": 0.63,
+        "hallucination_prone": 0.43
+      },
+      "halluc_vs_others_entropy_absd": [
+        2.17,
+        1.14,
+        1.05
+      ],
+      "n_per_cat": 200
+    },
+    "HuggingFaceTB__SmolLM2-360M-Instruct": {
+      "entropy_means": {
+        "factual": 2.31,
+        "coding": 2.48,
+        "reasoning": 3.73,
+        "hallucination_prone": 3.55
+      },
+      "top1_means": {
+        "factual": 0.49,
+        "coding": 0.41,
+        "reasoning": 0.18,
+        "hallucination_prone": 0.21
+      },
+      "halluc_vs_others_entropy_absd": [
+        1.83,
+        1.64,
+        0.44
+      ],
+      "n_per_cat": 200
+    }
+  }
+}

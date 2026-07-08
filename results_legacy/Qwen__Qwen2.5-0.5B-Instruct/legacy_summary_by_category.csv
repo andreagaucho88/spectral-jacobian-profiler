@@ -1,0 +1,7 @@
+,ftle_final,ftle_final,expansive_frac,expansive_frac,entropy,entropy,top1_prob,top1_prob
+,mean,std,mean,std,mean,std,mean,std
+label,,,,,,,,
+coding,0.08515,0.00541,0.7997,0.01936,1.56464,0.35331,0.50212,0.13234
+factual,0.09325,0.00666,0.80698,0.0195,0.83434,0.65442,0.79897,0.18823
+hallucination_prone,0.09244,0.006,0.81408,0.01926,1.95144,0.32247,0.43181,0.11236
+reasoning,0.08654,0.0059,0.80109,0.0244,1.3544,0.73324,0.62955,0.18983

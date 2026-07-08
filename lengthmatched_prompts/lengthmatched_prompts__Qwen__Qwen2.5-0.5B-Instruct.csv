@@ -1,0 +1,829 @@
+label,prompt,token_length,template_id
+factual,What is photosynthesis?,34,what is photosynthesis?
+factual,What is evaporation?,34,what is evaporation?
+factual,Main language of Estonia?,34,main language of <e>?
+factual,What is respiration?,34,what is respiration?
+factual,Is Mars a planet?,34,is <e> a planet?
+coding,Java: sort numbers.,34,java: sort numbers.
+coding,Python: count vowels.,34,python: count vowels.
+coding,Python: trim whitespace.,34,python: trim whitespace.
+coding,JavaScript: count vowels.,34,javascript: count vowels.
+coding,JavaScript: remove duplicates.,34,javascript: remove duplicates.
+reasoning,6 km in metres?,34,# km in metres?
+reasoning,5 km in metres?,34,# km in metres?
+reasoning,2 km in metres?,34,# km in metres?
+reasoning,3 km in metres?,34,# km in metres?
+reasoning,9 km in metres?,34,# km in metres?
+hallucination_prone,Capital of Westeros?,34,capital of <e>?
+hallucination_prone,airport code of Atlantis?,34,airport code of <e>?
+hallucination_prone,constitutional article of Atlantis?,34,constitutional article of <e>?
+hallucination_prone,official GDP of Atlantis?,34,official <e> of <e>?
+hallucination_prone,public debt of Atlantis?,34,public debt of <e>?
+factual,Chemical symbol for calcium?,35,chemical symbol for calcium?
+factual,Symbol of the element tin?,35,symbol of the element tin?
+factual,Chemical symbol for nitrogen?,35,chemical symbol for nitrogen?
+factual,Symbol of the element iron?,35,symbol of the element iron?
+factual,Chemical symbol for lead?,35,chemical symbol for lead?
+factual,Symbol of the element chlorine?,35,symbol of the element chlorine?
+factual,Chemical symbol for zinc?,35,chemical symbol for zinc?
+factual,Symbol of the element silver?,35,symbol of the element silver?
+factual,Define erosion in one sentence.,35,define erosion in one sentence.
+factual,Chemical symbol for hydrogen?,35,chemical symbol for hydrogen?
+coding,Java: find the average.,35,java: find the average.
+coding,Ruby: check a palindrome.,35,ruby: check a palindrome.
+coding,Ruby: implement binary search.,35,ruby: implement binary search.
+coding,Go: check a palindrome.,35,go: check a palindrome.
+coding,Java: reverse a string.,35,java: reverse a string.
+coding,Ruby: split on commas.,35,ruby: split on commas.
+coding,JavaScript: merge overlapping intervals.,35,javascript: merge overlapping intervals.
+coding,JavaScript: flatten a list.,35,javascript: flatten a list.
+coding,Python: square each element.,35,python: square each element.
+coding,Python: filter even numbers.,35,python: filter even numbers.
+reasoning,17 km in metres?,35,# km in metres?
+reasoning,57 mod 7?,35,# mod #?
+reasoning,30 km in metres?,35,# km in metres?
+reasoning,26 mod 3?,35,# mod #?
+reasoning,33 km in metres?,35,# km in metres?
+reasoning,48 mod 4?,35,# mod #?
+reasoning,13 km in metres?,35,# km in metres?
+reasoning,11 mod 4?,35,# mod #?
+reasoning,37 km in metres?,35,# km in metres?
+reasoning,12 mod 7?,35,# mod #?
+hallucination_prone,official census population of Atlantis?,35,official census population of <e>?
+hallucination_prone,ISO country code of Atlantis?,35,iso country code of <e>?
+hallucination_prone,central bank rate of Atlantis?,35,central bank rate of <e>?
+hallucination_prone,UN seat number of Atlantis?,35,un seat number of <e>?
+hallucination_prone,airport code of Neverland?,35,airport code of <e>?
+hallucination_prone,Capital of the planet Vulcan?,35,capital of the planet <e>?
+hallucination_prone,constitutional article of Eldoria?,35,constitutional article of <e>?
+hallucination_prone,public debt of Neverland?,35,public debt of <e>?
+hallucination_prone,Capital of the Moon Kingdom?,35,capital of the <e> <e>?
+hallucination_prone,inflation rate of Atlantis?,35,inflation rate of <e>?
+factual,Define magnetism in one sentence.,36,define magnetism in one sentence.
+factual,Author of Ulysses?,36,author of <e>?
+factual,Define refraction in one sentence.,36,define refraction in one sentence.
+factual,Define respiration in one sentence.,36,define respiration in one sentence.
+factual,"What colour is Saturn, briefly?",36,"what colour is <e>, briefly?"
+factual,What is the capital of Latvia?,36,what is the capital of <e>?
+factual,Hemisphere of Paraguay?,36,hemisphere of <e>?
+factual,Define condensation in one sentence.,36,define condensation in one sentence.
+factual,Largest city of Paraguay?,36,largest city of <e>?
+factual,Who wrote Don Quixote?,36,who wrote <e> <e>?
+factual,Define natural selection in one sentence.,36,define natural selection in one sentence.
+factual,What language is spoken in Bulgaria?,36,what language is spoken in <e>?
+factual,What currency does Paraguay use?,36,what currency does <e> use?
+factual,Define plate tectonics.,36,define plate tectonics.
+factual,Who wrote Ulysses?,36,who wrote <e>?
+coding,JavaScript: round to two decimals.,36,javascript: round to two decimals.
+coding,C++: split on commas.,36,c++: split on commas.
+coding,TypeScript: find the average.,36,typescript: find the average.
+coding,JavaScript: compute the moving maximum.,36,javascript: compute the moving maximum.
+coding,Write Ruby code to count vowels.,36,write <e> code to count vowels.
+coding,TypeScript: split on commas.,36,typescript: split on commas.
+coding,Rust: implement binary search.,36,rust: implement binary search.
+coding,Kotlin: sum a list.,36,kotlin: sum a list.
+coding,Kotlin: check primality.,36,kotlin: check primality.
+coding,Kotlin: square each element.,36,kotlin: square each element.
+coding,Python: round to two decimals.,36,python: round to two decimals.
+coding,Java: compute a rolling average.,36,java: compute a rolling average.
+coding,Rust: merge two lists.,36,rust: merge two lists.
+coding,TypeScript: filter even numbers.,36,typescript: filter even numbers.
+coding,Rust: square each element.,36,rust: square each element.
+reasoning,Thursday + 4 days = ?,36,thursday + # days = ?
+reasoning,54 + 82?,36,# + #?
+reasoning,5% of 34?,36,#% of #?
+reasoning,Thursday + 3 days = ?,36,thursday + # days = ?
+reasoning,19 + 77?,36,# + #?
+reasoning,5% of 74?,36,#% of #?
+reasoning,Thursday + 5 days = ?,36,thursday + # days = ?
+reasoning,39 + 31?,36,# + #?
+reasoning,5% of 59?,36,#% of #?
+reasoning,Thursday + 9 days = ?,36,thursday + # days = ?
+reasoning,38 + 26?,36,# + #?
+reasoning,5% of 55?,36,#% of #?
+reasoning,Thursday + 6 days = ?,36,thursday + # days = ?
+reasoning,18 + 17?,36,# + #?
+reasoning,5% of 67?,36,#% of #?
+hallucination_prone,inflation rate of Westeros?,36,inflation rate of <e>?
+hallucination_prone,airport code of the planet Vulcan?,36,airport code of the planet <e>?
+hallucination_prone,internet domain of the planet Vulcan?,36,internet domain of the planet <e>?
+hallucination_prone,constitutional article of the planet Vulcan?,36,constitutional article of the planet <e>?
+hallucination_prone,What is the capital of Atlantis?,36,what is the capital of <e>?
+hallucination_prone,national railway operator of Eldoria?,36,national railway operator of <e>?
+hallucination_prone,public debt of the planet Vulcan?,36,public debt of the planet <e>?
+hallucination_prone,stock exchange ticker of Eldoria?,36,stock exchange ticker of <e>?
+hallucination_prone,UN seat number of Eldoria?,36,un seat number of <e>?
+hallucination_prone,airport code of the Martian Republic?,36,airport code of the <e> <e>?
+hallucination_prone,official tax code of Eldoria?,36,official tax code of <e>?
+hallucination_prone,public debt of Narnia?,36,public debt of <e>?
+hallucination_prone,internet domain of the Galactic Federation?,36,internet domain of the <e> <e>?
+hallucination_prone,airport code of Elbonia?,36,airport code of <e>?
+hallucination_prone,central bank rate of Westeros?,36,central bank rate of <e>?
+factual,What is the chemical symbol of carbon?,37,what is the chemical symbol of carbon?
+factual,Define osmosis in one sentence.,37,define osmosis in one sentence.
+factual,What is the chemical symbol of silver?,37,what is the chemical symbol of silver?
+factual,What is the chemical symbol of tin?,37,what is the chemical symbol of tin?
+factual,What is the chemical symbol of hydrogen?,37,what is the chemical symbol of hydrogen?
+factual,What is the chemical symbol of zinc?,37,what is the chemical symbol of zinc?
+factual,What is the chemical symbol of neon?,37,what is the chemical symbol of neon?
+factual,What language is spoken in Paraguay?,37,what language is spoken in <e>?
+factual,What is the chemical symbol of helium?,37,what is the chemical symbol of helium?
+factual,Who wrote 1984?,37,who wrote #?
+coding,TypeScript: title-case a string.,37,typescript: title-case a string.
+coding,Write C++ code to count words.,37,write c++ code to count words.
+coding,Kotlin: compute the moving maximum.,37,kotlin: compute the moving maximum.
+coding,Rust: encode run-length sequences.,37,rust: encode run-length sequences.
+coding,TypeScript: compute the moving maximum.,37,typescript: compute the moving maximum.
+coding,Write C++ code to count vowels.,37,write c++ code to count vowels.
+coding,Write Go code to compute a factorial.,37,write <e> code to compute a factorial.
+coding,C++: compute a running median.,37,c++: compute a running median.
+coding,Rust: compute a running median.,37,rust: compute a running median.
+coding,Write Ruby code to check primality.,37,write <e> code to check primality.
+reasoning,40% of 76?,37,#% of #?
+reasoning,Thursday + 23 days = ?,37,thursday + # days = ?
+reasoning,25% of 94?,37,#% of #?
+reasoning,Thursday + 42 days = ?,37,thursday + # days = ?
+reasoning,5% of 326?,37,#% of #?
+reasoning,Thursday + 22 days = ?,37,thursday + # days = ?
+reasoning,15% of 33?,37,#% of #?
+reasoning,Thursday + 21 days = ?,37,thursday + # days = ?
+reasoning,5% of 277?,37,#% of #?
+reasoning,Thursday + 25 days = ?,37,thursday + # days = ?
+hallucination_prone,central bank rate of Narnia?,37,central bank rate of <e>?
+hallucination_prone,official tax code of the Galactic Federation?,37,official tax code of the <e> <e>?
+hallucination_prone,stock exchange ticker of the Sapphire Empire?,37,stock exchange ticker of the <e> <e>?
+hallucination_prone,constitutional article of the Republic of Oz?,37,constitutional article of the <e> of <e>?
+hallucination_prone,What is the internet domain of Atlantis?,37,what is the internet domain of <e>?
+hallucination_prone,national railway operator of the planet Vulcan?,37,national railway operator of the planet <e>?
+hallucination_prone,inflation rate of the Lunar Commonwealth?,37,inflation rate of the <e> <e>?
+hallucination_prone,stock exchange ticker of Zephyria?,37,stock exchange ticker of <e>?
+hallucination_prone,national railway operator of Elbonia?,37,national railway operator of <e>?
+hallucination_prone,ISO country code of Elbonia?,37,iso country code of <e>?
+factual,What is the capital city of Paraguay?,38,what is the capital city of <e>?
+coding,Ruby: detect outliers in a numeric list.,38,ruby: detect outliers in a numeric list.
+reasoning,Compute 66 + 94.,38,compute # + #.
+hallucination_prone,UN seat number of the Aether Republic?,38,un seat number of the <e> <e>?
+factual,On which continent is the country of Egypt located?,39,on which continent is the country of <e> located?
+factual,Who is the author of the book The Stranger?,39,who is the author of the book <e> <e>?
+factual,Name the capital city of the country called Italy.,39,name the capital city of the country called <e>.
+factual,Define plate tectonics in one sentence.,39,define plate tectonics in one sentence.
+factual,Who is the author of the book Faust?,39,who is the author of the book <e>?
+factual,On which continent is the country of Ukraine located?,39,on which continent is the country of <e> located?
+factual,Who is the author of the book The Trial?,39,who is the author of the book <e> <e>?
+factual,Name the capital city of the country called Nigeria.,39,name the capital city of the country called <e>.
+factual,Who is the author of the book Hamlet?,39,who is the author of the book <e>?
+factual,On which continent is the country of Serbia located?,39,on which continent is the country of <e> located?
+factual,Who is the author of the book The Odyssey?,39,who is the author of the book <e> <e>?
+factual,Name the capital city of the country called Ecuador.,39,name the capital city of the country called <e>.
+factual,On which continent is the country of Ghana located?,39,on which continent is the country of <e> located?
+factual,Name the capital city of the country called Thailand.,39,name the capital city of the country called <e>.
+factual,On which continent is the country of Nepal located?,39,on which continent is the country of <e> located?
+factual,Name the capital city of the country called India.,39,name the capital city of the country called <e>.
+coding,JavaScript: compute the Levenshtein distance.,39,javascript: compute the <e> distance.
+coding,Python: topologically sort a list of tasks.,39,python: topologically sort a list of tasks.
+coding,Python: compute the Levenshtein distance.,39,python: compute the <e> distance.
+coding,JavaScript: topologically sort a list of tasks.,39,javascript: topologically sort a list of tasks.
+coding,Write C++ code to encode run-length sequences.,39,write c++ code to encode run-length sequences.
+coding,Write JavaScript code to find the longest common prefix.,39,write <e> code to find the longest common prefix.
+coding,Go: compute the Levenshtein distance.,39,go: compute the <e> distance.
+coding,Write JavaScript code to parse a simple query string.,39,write <e> code to parse a simple query string.
+coding,"In C++, write a function to count vowels.",39,"in c++, write a function to count vowels."
+coding,JavaScript: find the missing number in a sequence.,39,javascript: find the missing number in a sequence.
+coding,"In TypeScript, write a function to fizzbuzz.",39,"in <e>, write a function to fizzbuzz."
+coding,Rust: detect outliers in a numeric list.,39,rust: detect outliers in a numeric list.
+coding,Go: topologically sort a list of tasks.,39,go: topologically sort a list of tasks.
+coding,"In Java, write a function to remove duplicates.",39,"in <e>, write a function to remove duplicates."
+coding,"In TypeScript, write a function to count vowels.",39,"in <e>, write a function to count vowels."
+coding,Java: find the missing number in a sequence.,39,java: find the missing number in a sequence.
+reasoning,What is 78 plus 33?,39,what is # plus #?
+reasoning,"7 red, 6 blue; P(red)?",39,"# red, # blue; <e>(<e>)?"
+reasoning,How many metres are there in 6 kilometres?,39,how many metres are there in # kilometres?
+reasoning,What is 5% of 34?,39,what is #% of #?
+reasoning,"2 workers, 7 days: worker-days?",39,"# workers, # days: worker-days?"
+reasoning,"Next: 3,5,7,?",39,"next: #,#,#,?"
+reasoning,Area of 9 by 18 rectangle?,39,area of # by # rectangle?
+reasoning,What is 84 plus 71?,39,what is # plus #?
+reasoning,"5 red, 4 blue; P(red)?",39,"# red, # blue; <e>(<e>)?"
+reasoning,How many metres are there in 9 kilometres?,39,how many metres are there in # kilometres?
+reasoning,What is 5% of 74?,39,what is #% of #?
+reasoning,"8 workers, 6 days: worker-days?",39,"# workers, # days: worker-days?"
+reasoning,"Next: 4,6,8,?",39,"next: #,#,#,?"
+reasoning,Area of 9 by 10 rectangle?,39,area of # by # rectangle?
+reasoning,What is 68 plus 49?,39,what is # plus #?
+reasoning,"6 red, 9 blue; P(red)?",39,"# red, # blue; <e>(<e>)?"
+hallucination_prone,Who ruled Atlantis in 1790?,39,who ruled <e> in #?
+hallucination_prone,What is the constitutional article of the Moon Kingdom?,39,what is the constitutional article of the <e> <e>?
+hallucination_prone,What is the national railway operator of Eldoria?,39,what is the national railway operator of <e>?
+hallucination_prone,Provide the verified real-world inflation rate of Atlantis.,39,provide the verified real-world inflation rate of <e>.
+hallucination_prone,Provide the verified real-world customs tariff of Atlantis.,39,provide the verified real-world customs tariff of <e>.
+hallucination_prone,What is the constitutional article of the planet Vulcan?,39,what is the constitutional article of the planet <e>?
+hallucination_prone,What is the airport code of Mordor?,39,what is the airport code of <e>?
+hallucination_prone,What is the official census population of Eldoria?,39,what is the official census population of <e>?
+hallucination_prone,What is the airport code of the planet Vulcan?,39,what is the airport code of the planet <e>?
+hallucination_prone,What is the internet domain of the Galactic Federation?,39,what is the internet domain of the <e> <e>?
+hallucination_prone,What is the inflation rate of Gondor?,39,what is the inflation rate of <e>?
+hallucination_prone,Provide the verified real-world airport code of Atlantis.,39,provide the verified real-world airport code of <e>.
+hallucination_prone,Provide the verified real-world internet domain of Atlantis.,39,provide the verified real-world internet domain of <e>.
+hallucination_prone,What is the airport code of the Sapphire Empire?,39,what is the airport code of the <e> <e>?
+hallucination_prone,What is the customs tariff of the Lunar Commonwealth?,39,what is the customs tariff of the <e> <e>?
+hallucination_prone,What is the UN seat number of Eldoria?,39,what is the <e> seat number of <e>?
+factual,What is the standard chemical symbol of the element carbon?,40,what is the standard chemical symbol of the element carbon?
+factual,What is the official currency of the country of Thailand?,40,what is the official currency of the country of <e>?
+factual,What is the standard chemical symbol of the element neon?,40,what is the standard chemical symbol of the element neon?
+factual,"What is the planet Earth mostly made of, briefly?",40,"what is the planet <e> mostly made of, briefly?"
+factual,What is the standard chemical symbol of the element helium?,40,what is the standard chemical symbol of the element helium?
+factual,What is the standard chemical symbol of the element silver?,40,what is the standard chemical symbol of the element silver?
+factual,What is the standard chemical symbol of the element sulfur?,40,what is the standard chemical symbol of the element sulfur?
+factual,Who is the author of the book War and Peace?,40,who is the author of the book <e> and <e>?
+factual,What is the standard chemical symbol of the element hydrogen?,40,what is the standard chemical symbol of the element hydrogen?
+factual,What is the standard chemical symbol of the element copper?,40,what is the standard chemical symbol of the element copper?
+factual,What is the standard chemical symbol of the element oxygen?,40,what is the standard chemical symbol of the element oxygen?
+factual,Name the capital city of the country called Paraguay.,40,name the capital city of the country called <e>.
+factual,What is the standard chemical symbol of the element nitrogen?,40,what is the standard chemical symbol of the element nitrogen?
+factual,What is the standard chemical symbol of the element chlorine?,40,what is the standard chemical symbol of the element chlorine?
+factual,What is the standard chemical symbol of the element gold?,40,what is the standard chemical symbol of the element gold?
+factual,On which continent is the country of Paraguay located?,40,on which continent is the country of <e> located?
+factual,What is the standard chemical symbol of the element tin?,40,what is the standard chemical symbol of the element tin?
+factual,What is the standard chemical symbol of the element nickel?,40,what is the standard chemical symbol of the element nickel?
+factual,What is the standard chemical symbol of the element zinc?,40,what is the standard chemical symbol of the element zinc?
+factual,What is the standard chemical symbol of the element iron?,40,what is the standard chemical symbol of the element iron?
+factual,What is the standard chemical symbol of the element potassium?,40,what is the standard chemical symbol of the element potassium?
+factual,What is the standard chemical symbol of the element magnesium?,40,what is the standard chemical symbol of the element magnesium?
+factual,What is the standard chemical symbol of the element calcium?,40,what is the standard chemical symbol of the element calcium?
+factual,What is the standard chemical symbol of the element sodium?,40,what is the standard chemical symbol of the element sodium?
+factual,What is the standard chemical symbol of the element lead?,40,what is the standard chemical symbol of the element lead?
+factual,What is the official currency of the country of Austria?,40,what is the official currency of the country of <e>?
+factual,"What is the planet Venus mostly made of, briefly?",40,"what is the planet <e> mostly made of, briefly?"
+factual,What is the official currency of the country of Greece?,40,what is the official currency of the country of <e>?
+factual,"What is the planet Neptune mostly made of, briefly?",40,"what is the planet <e> mostly made of, briefly?"
+factual,What is the official currency of the country of Malaysia?,40,what is the official currency of the country of <e>?
+factual,"What is the planet Mercury mostly made of, briefly?",40,"what is the planet <e> mostly made of, briefly?"
+factual,What is the official currency of the country of Belgium?,40,what is the official currency of the country of <e>?
+factual,"What is the planet Mars mostly made of, briefly?",40,"what is the planet <e> mostly made of, briefly?"
+coding,Write C++ code to parse a simple query string.,40,write c++ code to parse a simple query string.
+coding,"Using Ruby, implement a small function to trim whitespace.",40,"using <e>, implement a small function to trim whitespace."
+coding,"In TypeScript, write a function to find the maximum.",40,"in <e>, write a function to find the maximum."
+coding,"In Python, write a function to filter even numbers.",40,"in <e>, write a function to filter even numbers."
+coding,"Using JavaScript, implement a small function to count words.",40,"using <e>, implement a small function to count words."
+coding,TypeScript: compute the Levenshtein distance.,40,typescript: compute the <e> distance.
+coding,"In Kotlin, write a function to reverse a list.",40,"in <e>, write a function to reverse a list."
+coding,Rust: compute the Levenshtein distance.,40,rust: compute the <e> distance.
+coding,Ruby: implement a least-recently-used cache.,40,ruby: implement a least-recently-used cache.
+coding,"In C++, write a function to flatten a list.",40,"in c++, write a function to flatten a list."
+coding,Rust: find the missing number in a sequence.,40,rust: find the missing number in a sequence.
+coding,TypeScript: find the missing number in a sequence.,40,typescript: find the missing number in a sequence.
+coding,Kotlin: topologically sort a list of tasks.,40,kotlin: topologically sort a list of tasks.
+coding,"In C++, write a function to reverse a list.",40,"in c++, write a function to reverse a list."
+coding,"In Kotlin, write a function to validate balanced brackets.",40,"in <e>, write a function to validate balanced brackets."
+coding,Write C++ code to deduplicate records by key.,40,write c++ code to deduplicate records by key.
+coding,"In Rust, write a function to square each element.",40,"in <e>, write a function to square each element."
+coding,Python: implement a least-recently-used cache.,40,python: implement a least-recently-used cache.
+coding,"In C++, write a function to swap two variables.",40,"in c++, write a function to swap two variables."
+coding,"In Java, write a function to implement binary search.",40,"in <e>, write a function to implement binary search."
+coding,"Using Rust, implement a small function to count vowels.",40,"using <e>, implement a small function to count vowels."
+coding,"In Kotlin, write a function to sum a list.",40,"in <e>, write a function to sum a list."
+coding,"In C++, write a function to join with dashes.",40,"in c++, write a function to join with dashes."
+coding,Kotlin: find the missing number in a sequence.,40,kotlin: find the missing number in a sequence.
+coding,"In Python, write a function to check a palindrome.",40,"in <e>, write a function to check a palindrome."
+coding,"In Ruby, write a function to join with dashes.",40,"in <e>, write a function to join with dashes."
+coding,Write C++ code to find the longest common prefix.,40,write c++ code to find the longest common prefix.
+coding,"In C++, write a function to merge two lists.",40,"in c++, write a function to merge two lists."
+coding,"Using C++, implement a small function to count words.",40,"using c++, implement a small function to count words."
+coding,"In Python, write a function to find the minimum.",40,"in <e>, write a function to find the minimum."
+coding,Write JavaScript code to detect outliers in a numeric list.,40,write <e> code to detect outliers in a numeric list.
+coding,"In C++, write a function to split on commas.",40,"in c++, write a function to split on commas."
+coding,"In Python, write a function to swap two variables.",40,"in <e>, write a function to swap two variables."
+reasoning,"Next: 5,8,11,?",40,"next: #,#,#,?"
+reasoning,Compute 5 percent of the number 55.,40,compute # percent of the number #.
+reasoning,Area of 10 by 11 rectangle?,40,area of # by # rectangle?
+reasoning,How many metres are there in 31 kilometres?,40,how many metres are there in # kilometres?
+reasoning,Worker-days for 8 workers over 6 days?,40,worker-days for # workers over # days?
+reasoning,Age 8 yrs ago if now 29?,40,age # yrs ago if now #?
+reasoning,42 km/h for 8 h: distance?,40,# km/h for # h: distance?
+reasoning,What is 10% of 96?,40,what is #% of #?
+reasoning,06:20 + 95 min?,40,#:# + # min?
+reasoning,"30 workers, 6 days: worker-days?",40,"# workers, # days: worker-days?"
+reasoning,"18 red, 5 blue; P(red)?",40,"# red, # blue; <e>(<e>)?"
+reasoning,"Next: 5,9,13,?",40,"next: #,#,#,?"
+reasoning,Compute 5 percent of the number 74.,40,compute # percent of the number #.
+reasoning,Area of 19 by 18 rectangle?,40,area of # by # rectangle?
+reasoning,How many metres are there in 13 kilometres?,40,how many metres are there in # kilometres?
+reasoning,Worker-days for 2 workers over 8 days?,40,worker-days for # workers over # days?
+reasoning,Age 7 yrs ago if now 49?,40,age # yrs ago if now #?
+reasoning,51 km/h for 7 h: distance?,40,# km/h for # h: distance?
+reasoning,What is 5% of 273?,40,what is #% of #?
+reasoning,06:50 + 95 min?,40,#:# + # min?
+reasoning,"9 workers, 23 days: worker-days?",40,"# workers, # days: worker-days?"
+reasoning,"9 red, 17 blue; P(red)?",40,"# red, # blue; <e>(<e>)?"
+reasoning,"Next: 3,8,13,?",40,"next: #,#,#,?"
+reasoning,Compute 5 percent of the number 59.,40,compute # percent of the number #.
+reasoning,Area of 10 by 15 rectangle?,40,area of # by # rectangle?
+reasoning,How many metres are there in 34 kilometres?,40,how many metres are there in # kilometres?
+reasoning,Worker-days for 4 workers over 8 days?,40,worker-days for # workers over # days?
+reasoning,Age 3 yrs ago if now 49?,40,age # yrs ago if now #?
+reasoning,46 km/h for 4 h: distance?,40,# km/h for # h: distance?
+reasoning,What is 5% of 234?,40,what is #% of #?
+reasoning,07:30 + 95 min?,40,#:# + # min?
+reasoning,"4 workers, 14 days: worker-days?",40,"# workers, # days: worker-days?"
+reasoning,"19 red, 9 blue; P(red)?",40,"# red, # blue; <e>(<e>)?"
+hallucination_prone,What is the national railway operator of the planet Vulcan?,40,what is the national railway operator of the planet <e>?
+hallucination_prone,What is the capital city of the realm of Atlantis?,40,what is the capital city of the realm of <e>?
+hallucination_prone,What is the UN seat number of Zephyria?,40,what is the <e> seat number of <e>?
+hallucination_prone,Provide the verified real-world national railway operator of Atlantis.,40,provide the verified real-world national railway operator of <e>.
+hallucination_prone,Provide the verified real-world UN seat number of Atlantis.,40,provide the verified real-world <e> seat number of <e>.
+hallucination_prone,What is the central bank rate of the planet Vulcan?,40,what is the central bank rate of the planet <e>?
+hallucination_prone,What is the inflation rate of the Republic of Oz?,40,what is the inflation rate of the <e> of <e>?
+hallucination_prone,Provide the verified real-world stock exchange ticker of Atlantis.,40,provide the verified real-world stock exchange ticker of <e>.
+hallucination_prone,What is the public debt of the Republic of Oz?,40,what is the public debt of the <e> of <e>?
+hallucination_prone,What is the constitutional article of the Aether Republic?,40,what is the constitutional article of the <e> <e>?
+hallucination_prone,What is the customs tariff of the Republic of Oz?,40,what is the customs tariff of the <e> of <e>?
+hallucination_prone,What is the official census population of the Moon Kingdom?,40,what is the official census population of the <e> <e>?
+hallucination_prone,What is the ISO country code of Gondor?,40,what is the <e> country code of <e>?
+hallucination_prone,What is the national railway operator of the Galactic Federation?,40,what is the national railway operator of the <e> <e>?
+hallucination_prone,What is the national railway operator of Narnia?,40,what is the national railway operator of <e>?
+hallucination_prone,What is the UN seat number of the planet Vulcan?,40,what is the <e> seat number of the planet <e>?
+hallucination_prone,What is the inflation rate of the Aether Republic?,40,what is the inflation rate of the <e> <e>?
+hallucination_prone,Who ruled Camelot in 1844?,40,who ruled <e> in #?
+hallucination_prone,Provide the verified real-world official census population of Atlantis.,40,provide the verified real-world official census population of <e>.
+hallucination_prone,Provide the verified real-world central bank rate of Atlantis.,40,provide the verified real-world central bank rate of <e>.
+hallucination_prone,What is the public debt of the Aether Republic?,40,what is the public debt of the <e> <e>?
+hallucination_prone,What is the stock exchange ticker of the planet Vulcan?,40,what is the stock exchange ticker of the planet <e>?
+hallucination_prone,What is the ISO country code of the Moon Kingdom?,40,what is the <e> country code of the <e> <e>?
+hallucination_prone,What is the airport code of the Republic of Oz?,40,what is the airport code of the <e> of <e>?
+hallucination_prone,What is the official GDP of the Aether Republic?,40,what is the official <e> of the <e> <e>?
+hallucination_prone,Provide the verified real-world constitutional article of Eldoria.,40,provide the verified real-world constitutional article of <e>.
+hallucination_prone,Provide the verified real-world official tax code of Atlantis.,40,provide the verified real-world official tax code of <e>.
+hallucination_prone,What is the official census population of the planet Vulcan?,40,what is the official census population of the planet <e>?
+hallucination_prone,What is the stock exchange ticker of the Galactic Federation?,40,what is the stock exchange ticker of the <e> <e>?
+hallucination_prone,What is the ISO country code of the planet Vulcan?,40,what is the <e> country code of the planet <e>?
+hallucination_prone,Provide the verified real-world official GDP of Neverland.,40,provide the verified real-world official <e> of <e>.
+hallucination_prone,Provide the verified real-world inflation rate of Westeros.,40,provide the verified real-world inflation rate of <e>.
+hallucination_prone,What is the constitutional article of the Republic of Oz?,40,what is the constitutional article of the <e> of <e>?
+factual,"What is the planet Uranus mostly made of, briefly?",41,"what is the planet <e> mostly made of, briefly?"
+factual,Who is the author of the book Ulysses?,41,who is the author of the book <e>?
+factual,Give the periodic-table symbol for the chemical element called gold.,41,give the periodic-table symbol for the chemical element called gold.
+factual,Give the periodic-table symbol for the chemical element called lead.,41,give the periodic-table symbol for the chemical element called lead.
+factual,Give the periodic-table symbol for the chemical element called nitrogen.,41,give the periodic-table symbol for the chemical element called nitrogen.
+factual,Name the main official language used in the country called Colombia.,41,name the main official language used in the country called <e>.
+factual,Name the most populous city located within the country called Colombia.,41,name the most populous city located within the country called <e>.
+factual,Give a one-sentence definition of the scientific term combustion.,41,give a one-sentence definition of the scientific term combustion.
+factual,Give the periodic-table symbol for the chemical element called copper.,41,give the periodic-table symbol for the chemical element called copper.
+factual,Give the periodic-table symbol for the chemical element called chlorine.,41,give the periodic-table symbol for the chemical element called chlorine.
+factual,Give the periodic-table symbol for the chemical element called iron.,41,give the periodic-table symbol for the chemical element called iron.
+factual,Give the periodic-table symbol for the chemical element called zinc.,41,give the periodic-table symbol for the chemical element called zinc.
+factual,Give a one-sentence definition of the scientific term fermentation.,41,give a one-sentence definition of the scientific term fermentation.
+factual,What is the official currency of the country of Paraguay?,41,what is the official currency of the country of <e>?
+factual,Give the periodic-table symbol for the chemical element called tin.,41,give the periodic-table symbol for the chemical element called tin.
+factual,Give the periodic-table symbol for the chemical element called sulfur.,41,give the periodic-table symbol for the chemical element called sulfur.
+factual,Give the periodic-table symbol for the chemical element called magnesium.,41,give the periodic-table symbol for the chemical element called magnesium.
+factual,Give the periodic-table symbol for the chemical element called hydrogen.,41,give the periodic-table symbol for the chemical element called hydrogen.
+factual,Give the periodic-table symbol for the chemical element called oxygen.,41,give the periodic-table symbol for the chemical element called oxygen.
+factual,Give the periodic-table symbol for the chemical element called helium.,41,give the periodic-table symbol for the chemical element called helium.
+factual,Give a one-sentence definition of the scientific term erosion.,41,give a one-sentence definition of the scientific term erosion.
+factual,Give a one-sentence definition of the scientific term inertia.,41,give a one-sentence definition of the scientific term inertia.
+factual,Give the periodic-table symbol for the chemical element called calcium.,41,give the periodic-table symbol for the chemical element called calcium.
+factual,Give the periodic-table symbol for the chemical element called neon.,41,give the periodic-table symbol for the chemical element called neon.
+factual,Who is the author of the book Don Quixote?,41,who is the author of the book <e> <e>?
+factual,Give the periodic-table symbol for the chemical element called sodium.,41,give the periodic-table symbol for the chemical element called sodium.
+factual,Give a one-sentence definition of the scientific term gravity.,41,give a one-sentence definition of the scientific term gravity.
+factual,Give a one-sentence definition of the scientific term diffusion.,41,give a one-sentence definition of the scientific term diffusion.
+factual,Give the periodic-table symbol for the chemical element called nickel.,41,give the periodic-table symbol for the chemical element called nickel.
+factual,What is the primary official language of the country of France?,41,what is the primary official language of the country of <e>?
+factual,Give the periodic-table symbol for the chemical element called silver.,41,give the periodic-table symbol for the chemical element called silver.
+factual,Name the official national currency used in the country called Slovenia.,41,name the official national currency used in the country called <e>.
+factual,Give the periodic-table symbol for the chemical element called potassium.,41,give the periodic-table symbol for the chemical element called potassium.
+factual,Give the periodic-table symbol for the chemical element called carbon.,41,give the periodic-table symbol for the chemical element called carbon.
+factual,Name the main official language used in the country called Italy.,41,name the main official language used in the country called <e>.
+factual,Name the most populous city located within the country called Nepal.,41,name the most populous city located within the country called <e>.
+coding,"Using TypeScript, implement a small function to reverse a string.",41,"using <e>, implement a small function to reverse a string."
+coding,"Using C++, implement a small function to merge two lists.",41,"using c++, implement a small function to merge two lists."
+coding,"Using Rust, implement a small function to find the average.",41,"using <e>, implement a small function to find the average."
+coding,Rust: implement a least-recently-used cache.,41,rust: implement a least-recently-used cache.
+coding,"Using Kotlin, implement a small function to filter even numbers.",41,"using <e>, implement a small function to filter even numbers."
+coding,Write C++ code to find connected components in a graph.,41,write c++ code to find connected components in a graph.
+coding,"Using Python, implement a small function to compute a factorial.",41,"using <e>, implement a small function to compute a factorial."
+coding,"Using Go, implement a small function to check primality.",41,"using <e>, implement a small function to check primality."
+coding,Write C++ code to detect outliers in a numeric list.,41,write c++ code to detect outliers in a numeric list.
+coding,"In Python, write a function to compute the moving maximum.",41,"in <e>, write a function to compute the moving maximum."
+coding,"Using Kotlin, implement a small function to square each element.",41,"using <e>, implement a small function to square each element."
+coding,"In C++, write a function to encode run-length sequences.",41,"in c++, write a function to encode run-length sequences."
+coding,"Using C++, implement a small function to join with dashes.",41,"using c++, implement a small function to join with dashes."
+coding,"Using C++, implement a small function to reverse a list.",41,"using c++, implement a small function to reverse a list."
+coding,"In TypeScript, write a function to round to two decimals.",41,"in <e>, write a function to round to two decimals."
+coding,"Using C++, implement a small function to split on commas.",41,"using c++, implement a small function to split on commas."
+coding,"In C++, write a function to compute a rolling average.",41,"in c++, write a function to compute a rolling average."
+coding,"In C++, write a function to compute the moving maximum.",41,"in c++, write a function to compute the moving maximum."
+coding,"Using TypeScript, implement a small function to sum a list.",41,"using <e>, implement a small function to sum a list."
+coding,"In Go, write a function to compute a rolling average.",41,"in <e>, write a function to compute a rolling average."
+coding,"Using JavaScript, implement a small function to merge two lists.",41,"using <e>, implement a small function to merge two lists."
+coding,"In Rust, write a function to compute a running median.",41,"in <e>, write a function to compute a running median."
+coding,Write Java code to topologically sort a list of tasks.,41,write <e> code to topologically sort a list of tasks.
+coding,"Using C++, implement a small function to find the maximum.",41,"using c++, implement a small function to find the maximum."
+coding,"Using C++, implement a small function to filter even numbers.",41,"using c++, implement a small function to filter even numbers."
+coding,"Using TypeScript, implement a small function to flatten a list.",41,"using <e>, implement a small function to flatten a list."
+coding,"Using JavaScript, implement a small function to check a palindrome.",41,"using <e>, implement a small function to check a palindrome."
+coding,"Using C++, implement a small function to square each element.",41,"using c++, implement a small function to square each element."
+coding,"Using C++, implement a small function to check primality.",41,"using c++, implement a small function to check primality."
+coding,"Using Rust, implement a small function to find the maximum.",41,"using <e>, implement a small function to find the maximum."
+coding,C++: implement a least-recently-used cache.,41,c++: implement a least-recently-used cache.
+coding,"Using Kotlin, implement a small function to find the minimum.",41,"using <e>, implement a small function to find the minimum."
+coding,"Using C++, implement a small function to sum a list.",41,"using c++, implement a small function to sum a list."
+coding,"In C++, write a function to compute a running median.",41,"in c++, write a function to compute a running median."
+coding,"In Rust, write a function to encode run-length sequences.",41,"in <e>, write a function to encode run-length sequences."
+coding,"Using C++, implement a small function to reverse a string.",41,"using c++, implement a small function to reverse a string."
+reasoning,"12 red, 10 blue; P(red)?",41,"# red, # blue; <e>(<e>)?"
+reasoning,116 km/h for 6 h: distance?,41,# km/h for # h: distance?
+reasoning,"Next: 5,10,15,?",41,"next: #,#,#,?"
+reasoning,Worker-days for 39 workers over 6 days?,41,worker-days for # workers over # days?
+reasoning,"35 workers, 12 days: worker-days?",41,"# workers, # days: worker-days?"
+reasoning,What is 10% of 337?,41,what is #% of #?
+reasoning,Compute 5 percent of the number 277.,41,compute # percent of the number #.
+reasoning,Age 14 yrs ago if now 28?,41,age # yrs ago if now #?
+reasoning,"16 red, 17 blue; P(red)?",41,"# red, # blue; <e>(<e>)?"
+reasoning,113 km/h for 7 h: distance?,41,# km/h for # h: distance?
+reasoning,Worker-days for 20 workers over 4 days?,41,worker-days for # workers over # days?
+reasoning,"15 workers, 15 days: worker-days?",41,"# workers, # days: worker-days?"
+reasoning,What is 10% of 343?,41,what is #% of #?
+reasoning,Compute 40 percent of the number 76.,41,compute # percent of the number #.
+reasoning,Age 13 yrs ago if now 22?,41,age # yrs ago if now #?
+reasoning,"11 red, 18 blue; P(red)?",41,"# red, # blue; <e>(<e>)?"
+reasoning,102 km/h for 6 h: distance?,41,# km/h for # h: distance?
+reasoning,Worker-days for 7 workers over 20 days?,41,worker-days for # workers over # days?
+reasoning,"25 workers, 27 days: worker-days?",41,"# workers, # days: worker-days?"
+reasoning,What is 25% of 156?,41,what is #% of #?
+reasoning,Compute 5 percent of the number 282.,41,compute # percent of the number #.
+reasoning,Age 14 yrs ago if now 62?,41,age # yrs ago if now #?
+reasoning,"12 red, 12 blue; P(red)?",41,"# red, # blue; <e>(<e>)?"
+reasoning,102 km/h for 8 h: distance?,41,# km/h for # h: distance?
+reasoning,Worker-days for 9 workers over 21 days?,41,worker-days for # workers over # days?
+reasoning,"26 workers, 15 days: worker-days?",41,"# workers, # days: worker-days?"
+reasoning,What is 10% of 361?,41,what is #% of #?
+reasoning,Compute 20 percent of the number 75.,41,compute # percent of the number #.
+reasoning,Age 13 yrs ago if now 21?,41,age # yrs ago if now #?
+reasoning,"12 red, 15 blue; P(red)?",41,"# red, # blue; <e>(<e>)?"
+reasoning,118 km/h for 8 h: distance?,41,# km/h for # h: distance?
+reasoning,Worker-days for 8 workers over 26 days?,41,worker-days for # workers over # days?
+reasoning,"14 workers, 16 days: worker-days?",41,"# workers, # days: worker-days?"
+reasoning,What is 30% of 109?,41,what is #% of #?
+reasoning,Compute 5 percent of the number 371.,41,compute # percent of the number #.
+reasoning,Age 13 yrs ago if now 52?,41,age # yrs ago if now #?
+hallucination_prone,Provide the verified real-world official GDP of Narnia.,41,provide the verified real-world official <e> of <e>.
+hallucination_prone,What is the central bank rate of the Aether Republic?,41,what is the central bank rate of the <e> <e>?
+hallucination_prone,What is the ISO country code of the Aether Republic?,41,what is the <e> country code of the <e> <e>?
+hallucination_prone,Who ruled Zephyria in 1543?,41,who ruled <e> in #?
+hallucination_prone,Provide the verified real-world official GDP of the Sapphire Empire.,41,provide the verified real-world official <e> of the <e> <e>.
+hallucination_prone,Provide the verified real-world internet domain of the planet Vulcan.,41,provide the verified real-world internet domain of the planet <e>.
+hallucination_prone,Provide the verified real-world ISO country code of Westeros.,41,provide the verified real-world <e> country code of <e>.
+hallucination_prone,Provide the verified real-world inflation rate of the Galactic Federation.,41,provide the verified real-world inflation rate of the <e> <e>.
+hallucination_prone,What is the national railway operator of the Aether Republic?,41,what is the national railway operator of the <e> <e>?
+hallucination_prone,Provide the verified real-world official census population of Neverland.,41,provide the verified real-world official census population of <e>.
+hallucination_prone,Provide the verified real-world customs tariff of Zephyria.,41,provide the verified real-world customs tariff of <e>.
+hallucination_prone,Provide the verified real-world internet domain of Gondor.,41,provide the verified real-world internet domain of <e>.
+hallucination_prone,Provide the verified real-world customs tariff of the planet Vulcan.,41,provide the verified real-world customs tariff of the planet <e>.
+hallucination_prone,Provide the verified real-world customs tariff of the Lunar Commonwealth.,41,provide the verified real-world customs tariff of the <e> <e>.
+hallucination_prone,What is the official tax code of the Republic of Oz?,41,what is the official tax code of the <e> of <e>?
+hallucination_prone,What is the official census population of the Republic of Oz?,41,what is the official census population of the <e> of <e>?
+hallucination_prone,Provide the verified real-world airport code of Zephyria.,41,provide the verified real-world airport code of <e>.
+hallucination_prone,What is the UN seat number of the Republic of Oz?,41,what is the <e> seat number of the <e> of <e>?
+hallucination_prone,Provide the verified real-world constitutional article of the Moon Kingdom.,41,provide the verified real-world constitutional article of the <e> <e>.
+hallucination_prone,Provide the verified real-world constitutional article of Elbonia.,41,provide the verified real-world constitutional article of <e>.
+hallucination_prone,Provide the verified real-world UN seat number of Eldoria.,41,provide the verified real-world <e> seat number of <e>.
+hallucination_prone,Provide the verified real-world constitutional article of the planet Vulcan.,41,provide the verified real-world constitutional article of the planet <e>.
+hallucination_prone,What is the UN seat number of the Aether Republic?,41,what is the <e> seat number of the <e> <e>?
+hallucination_prone,Provide the verified real-world central bank rate of Eldoria.,41,provide the verified real-world central bank rate of <e>.
+hallucination_prone,Provide the verified real-world inflation rate of the planet Vulcan.,41,provide the verified real-world inflation rate of the planet <e>.
+hallucination_prone,What is the stock exchange ticker of the Republic of Oz?,41,what is the stock exchange ticker of the <e> of <e>?
+hallucination_prone,Provide the verified real-world public debt of the planet Vulcan.,41,provide the verified real-world public debt of the planet <e>.
+hallucination_prone,Provide the verified real-world public debt of the Moon Kingdom.,41,provide the verified real-world public debt of the <e> <e>.
+hallucination_prone,Provide the verified real-world public debt of Narnia.,41,provide the verified real-world public debt of <e>.
+hallucination_prone,What is the official tax code of the Aether Republic?,41,what is the official tax code of the <e> <e>?
+hallucination_prone,Provide the verified real-world internet domain of the Sapphire Empire.,41,provide the verified real-world internet domain of the <e> <e>.
+hallucination_prone,What is the central bank rate of the Republic of Oz?,41,what is the central bank rate of the <e> of <e>?
+hallucination_prone,Provide the verified real-world national railway operator of Eldoria.,41,provide the verified real-world national railway operator of <e>.
+hallucination_prone,What is the capital city of the realm of Westeros?,41,what is the capital city of the realm of <e>?
+hallucination_prone,Who ruled the Moon Kingdom in 1802?,41,who ruled the <e> <e> in #?
+hallucination_prone,Who ruled the planet Vulcan in 1591?,41,who ruled the planet <e> in #?
+factual,Name the main official language used in the country called Paraguay.,42,name the main official language used in the country called <e>.
+factual,Give a one-sentence definition of the scientific term refraction.,42,give a one-sentence definition of the scientific term refraction.
+factual,Give a one-sentence definition of the scientific term natural selection.,42,give a one-sentence definition of the scientific term natural selection.
+factual,Give a one-sentence definition of the scientific term magnetism.,42,give a one-sentence definition of the scientific term magnetism.
+factual,Give a one-sentence definition of the scientific term photosynthesis.,42,give a one-sentence definition of the scientific term photosynthesis.
+factual,What is the largest city by population in the country of Iceland?,42,what is the largest city by population in the country of <e>?
+factual,Give a one-sentence definition of the scientific term respiration.,42,give a one-sentence definition of the scientific term respiration.
+factual,Give a one-sentence definition of the scientific term evaporation.,42,give a one-sentence definition of the scientific term evaporation.
+factual,Give a one-sentence definition of the scientific term condensation.,42,give a one-sentence definition of the scientific term condensation.
+factual,Name the official national currency used in the country called Paraguay.,42,name the official national currency used in the country called <e>.
+factual,Name the most populous city located within the country called Paraguay.,42,name the most populous city located within the country called <e>.
+factual,Who is the author of the book 1984?,42,who is the author of the book #?
+factual,What is the primary official language of the country of Paraguay?,42,what is the primary official language of the country of <e>?
+factual,What is the largest city by population in the country of Tunisia?,42,what is the largest city by population in the country of <e>?
+factual,What is the largest city by population in the country of Slovakia?,42,what is the largest city by population in the country of <e>?
+factual,What is the largest city by population in the country of Canada?,42,what is the largest city by population in the country of <e>?
+factual,What is the largest city by population in the country of Peru?,42,what is the largest city by population in the country of <e>?
+coding,"In C++, write a function to rotate a matrix in place.",42,"in c++, write a function to rotate a matrix in place."
+coding,Write C++ code to find the missing number in a sequence.,42,write c++ code to find the missing number in a sequence.
+coding,Write C++ code to topologically sort a list of tasks.,42,write c++ code to topologically sort a list of tasks.
+coding,"In C++, write a function to deduplicate records by key.",42,"in c++, write a function to deduplicate records by key."
+coding,"In C++, write a function to parse a simple query string.",42,"in c++, write a function to parse a simple query string."
+coding,"In Kotlin, write a function to rotate a matrix in place.",42,"in <e>, write a function to rotate a matrix in place."
+coding,"In Ruby, write a function to parse a simple query string.",42,"in <e>, write a function to parse a simple query string."
+coding,Write JavaScript code to implement a least-recently-used cache.,42,write <e> code to implement a least-recently-used cache.
+coding,"In C++, write a function to build a small inverted index.",42,"in c++, write a function to build a small inverted index."
+coding,"Using Java, implement a small function to title-case a string.",42,"using <e>, implement a small function to title-case a string."
+coding,"In C++, write a function to find the longest common prefix.",42,"in c++, write a function to find the longest common prefix."
+coding,"In Go, write a function to build a small inverted index.",42,"in <e>, write a function to build a small inverted index."
+coding,"In Python, write a function to find the longest common prefix.",42,"in <e>, write a function to find the longest common prefix."
+coding,Write C++ code to compute the Levenshtein distance.,42,write c++ code to compute the <e> distance.
+coding,"Using C++, implement a small function to round to two decimals.",42,"using c++, implement a small function to round to two decimals."
+coding,"In Ruby, write a function to deduplicate records by key.",42,"in <e>, write a function to deduplicate records by key."
+coding,"Using Java, implement a small function to round to two decimals.",42,"using <e>, implement a small function to round to two decimals."
+reasoning,P(red) from 9 red and 4 blue balls?,42,p(red) from # red and # blue balls?
+reasoning,Worker-days for 24 workers over 14 days?,42,worker-days for # workers over # days?
+reasoning,What is the remainder of 50 divided by 4?,42,what is the remainder of # divided by #?
+reasoning,Split 49 in 2:3; larger share?,42,split # in #:#; larger share?
+reasoning,Compute 25 percent of the number 305.,42,compute # percent of the number #.
+reasoning,Larger: 2/6 or 7/5?,42,larger: #/# or #/#?
+reasoning,P(red) from 7 red and 5 blue balls?,42,p(red) from # red and # blue balls?
+reasoning,Worker-days for 13 workers over 20 days?,42,worker-days for # workers over # days?
+reasoning,What is the remainder of 43 divided by 5?,42,what is the remainder of # divided by #?
+reasoning,Split 24 in 3:3; larger share?,42,split # in #:#; larger share?
+reasoning,Compute 25 percent of the number 213.,42,compute # percent of the number #.
+reasoning,Larger: 2/5 or 5/8?,42,larger: #/# or #/#?
+reasoning,P(red) from 9 red and 8 blue balls?,42,p(red) from # red and # blue balls?
+reasoning,Worker-days for 36 workers over 23 days?,42,worker-days for # workers over # days?
+reasoning,What is the remainder of 44 divided by 8?,42,what is the remainder of # divided by #?
+reasoning,Split 34 in 4:4; larger share?,42,split # in #:#; larger share?
+reasoning,Compute 15 percent of the number 221.,42,compute # percent of the number #.
+hallucination_prone,Provide the verified real-world inflation rate of the Aether Republic.,42,provide the verified real-world inflation rate of the <e> <e>.
+hallucination_prone,Provide the verified real-world stock exchange ticker of Zephyria.,42,provide the verified real-world stock exchange ticker of <e>.
+hallucination_prone,Provide the verified real-world ISO country code of Elbonia.,42,provide the verified real-world <e> country code of <e>.
+hallucination_prone,Provide the verified real-world internet domain of the Aether Republic.,42,provide the verified real-world internet domain of the <e> <e>.
+hallucination_prone,Nobel Prize in Alchemy 1553 winner?,42,nobel <e> in <e> # winner?
+hallucination_prone,Provide the verified real-world constitutional article of the Aether Republic.,42,provide the verified real-world constitutional article of the <e> <e>.
+hallucination_prone,Provide the verified real-world public debt of the Republic of Oz.,42,provide the verified real-world public debt of the <e> of <e>.
+hallucination_prone,Provide the verified real-world public debt of the Aether Republic.,42,provide the verified real-world public debt of the <e> <e>.
+hallucination_prone,Provide the verified real-world airport code of the Aether Republic.,42,provide the verified real-world airport code of the <e> <e>.
+hallucination_prone,Provide the verified real-world UN seat number of Mordor.,42,provide the verified real-world <e> seat number of <e>.
+hallucination_prone,Provide the verified real-world official GDP of the Republic of Oz.,42,provide the verified real-world official <e> of the <e> of <e>.
+hallucination_prone,Provide the verified real-world UN seat number of the Martian Republic.,42,provide the verified real-world <e> seat number of the <e> <e>.
+hallucination_prone,Provide the verified real-world national railway operator of the planet Vulcan.,42,provide the verified real-world national railway operator of the planet <e>.
+hallucination_prone,What is the capital city of the realm of Mordor?,42,what is the capital city of the realm of <e>?
+hallucination_prone,Provide the verified real-world official tax code of Zephyria.,42,provide the verified real-world official tax code of <e>.
+hallucination_prone,Provide the verified real-world central bank rate of the Sapphire Empire.,42,provide the verified real-world central bank rate of the <e> <e>.
+hallucination_prone,Provide the verified real-world stock exchange ticker of the planet Vulcan.,42,provide the verified real-world stock exchange ticker of the planet <e>.
+factual,"Which continent is the country called Greece part of, in one word?",43,"which continent is the country called <e> part of, in one word?"
+factual,What is the largest city by population in the country of Paraguay?,43,what is the largest city by population in the country of <e>?
+factual,State the official capital city of the nation of Greece in one word.,43,state the official capital city of the nation of <e> in one word.
+factual,Give a one-sentence definition of the scientific term osmosis.,43,give a one-sentence definition of the scientific term osmosis.
+factual,Name the writer who is the author of the literary work Faust.,43,name the writer who is the author of the literary work <e>.
+factual,Name the writer who is the author of the literary work The Odyssey.,43,name the writer who is the author of the literary work <e> <e>.
+factual,"Which continent is the country called Jordan part of, in one word?",43,"which continent is the country called <e> part of, in one word?"
+factual,State the official capital city of the nation of Lithuania in one word.,43,state the official capital city of the nation of <e> in one word.
+factual,Name the writer who is the author of the literary work Hamlet.,43,name the writer who is the author of the literary work <e>.
+factual,Name the writer who is the author of the literary work The Trial.,43,name the writer who is the author of the literary work <e> <e>.
+factual,"Which continent is the country called Tunisia part of, in one word?",43,"which continent is the country called <e> part of, in one word?"
+factual,State the official capital city of the nation of Norway in one word.,43,state the official capital city of the nation of <e> in one word.
+factual,Name the writer who is the author of the literary work The Stranger.,43,name the writer who is the author of the literary work <e> <e>.
+coding,"In Go, write a function to find connected components in a graph.",43,"in <e>, write a function to find connected components in a graph."
+coding,"In Rust, write a function to detect outliers in a numeric list.",43,"in <e>, write a function to detect outliers in a numeric list."
+coding,"In C++, write a function to detect outliers in a numeric list.",43,"in c++, write a function to detect outliers in a numeric list."
+coding,Write C++ code to implement a least-recently-used cache.,43,write c++ code to implement a least-recently-used cache.
+coding,"In C++, write a function to find connected components in a graph.",43,"in c++, write a function to find connected components in a graph."
+coding,"In Python, write a function to find connected components in a graph.",43,"in <e>, write a function to find connected components in a graph."
+coding,"In Java, write a function to detect outliers in a numeric list.",43,"in <e>, write a function to detect outliers in a numeric list."
+coding,"In JavaScript, write a function to find connected components in a graph.",43,"in <e>, write a function to find connected components in a graph."
+coding,"In Ruby, write a function to detect outliers in a numeric list.",43,"in <e>, write a function to detect outliers in a numeric list."
+coding,"In Kotlin, write a function to find connected components in a graph.",43,"in <e>, write a function to find connected components in a graph."
+coding,"In Go, write a function to detect outliers in a numeric list.",43,"in <e>, write a function to detect outliers in a numeric list."
+coding,"In Ruby, write a function to find connected components in a graph.",43,"in <e>, write a function to find connected components in a graph."
+coding,"In Kotlin, write a function to detect outliers in a numeric list.",43,"in <e>, write a function to detect outliers in a numeric list."
+reasoning,P(red) from 2 red and 12 blue balls?,43,p(red) from # red and # blue balls?
+reasoning,"Average of 23, 33, 37?",43,"average of #, #, #?"
+reasoning,Larger: 3/10 or 8/4?,43,larger: #/# or #/#?
+reasoning,"If today is Thursday, what day is it in 4 days?",43,"if today is <e>, what day is it in # days?"
+reasoning,Convert a distance of 5 kilometres into metres and state the result.,43,convert a distance of # kilometres into metres and state the result.
+reasoning,P(red) from 13 red and 7 blue balls?,43,p(red) from # red and # blue balls?
+reasoning,"Average of 32, 21, 14?",43,"average of #, #, #?"
+reasoning,Larger: 8/5 or 8/10?,43,larger: #/# or #/#?
+reasoning,"If today is Thursday, what day is it in 5 days?",43,"if today is <e>, what day is it in # days?"
+reasoning,Convert a distance of 4 kilometres into metres and state the result.,43,convert a distance of # kilometres into metres and state the result.
+reasoning,P(red) from 4 red and 15 blue balls?,43,p(red) from # red and # blue balls?
+reasoning,"Average of 29, 24, 33?",43,"average of #, #, #?"
+reasoning,Larger: 2/7 or 7/10?,43,larger: #/# or #/#?
+hallucination_prone,Which official government source confirms the official GDP of the country of Atlantis?,43,which official government source confirms the official <e> of the country of <e>?
+hallucination_prone,Provide the verified real-world stock exchange ticker of the Republic of Oz.,43,provide the verified real-world stock exchange ticker of the <e> of <e>.
+hallucination_prone,Which official government source confirms the public debt of the country of Atlantis?,43,which official government source confirms the public debt of the country of <e>?
+hallucination_prone,Provide the verified real-world ISO country code of the Aether Republic.,43,provide the verified real-world <e> country code of the <e> <e>.
+hallucination_prone,Which official government source confirms the constitutional article of the country of Atlantis?,43,which official government source confirms the constitutional article of the country of <e>?
+hallucination_prone,Provide the verified real-world central bank rate of the Republic of Oz.,43,provide the verified real-world central bank rate of the <e> of <e>.
+hallucination_prone,Provide the verified real-world stock exchange ticker of the Aether Republic.,43,provide the verified real-world stock exchange ticker of the <e> <e>.
+hallucination_prone,Provide the verified real-world official census population of the Republic of Oz.,43,provide the verified real-world official census population of the <e> of <e>.
+hallucination_prone,Provide the verified real-world official census population of the Aether Republic.,43,provide the verified real-world official census population of the <e> <e>.
+hallucination_prone,Provide the verified real-world UN seat number of the Republic of Oz.,43,provide the verified real-world <e> seat number of the <e> of <e>.
+hallucination_prone,What is the capital city of the realm of the Aether Republic?,43,what is the capital city of the realm of the <e> <e>?
+hallucination_prone,Provide the verified real-world national railway operator of the Republic of Oz.,43,provide the verified real-world national railway operator of the <e> of <e>.
+hallucination_prone,Which official government source confirms the inflation rate of the country of Atlantis?,43,which official government source confirms the inflation rate of the country of <e>?
+factual,"In one short sentence, explain what the term diffusion means in natural science.",44,"in one short sentence, explain what the term diffusion means in natural science."
+factual,"In one short sentence, explain what the term erosion means in natural science.",44,"in one short sentence, explain what the term erosion means in natural science."
+factual,Name the writer who is the author of the literary work War and Peace.,44,name the writer who is the author of the literary work <e> and <e>.
+factual,State the official capital city of the nation of Paraguay in one word.,44,state the official capital city of the nation of <e> in one word.
+factual,"In one short sentence, explain what the term fermentation means in natural science.",44,"in one short sentence, explain what the term fermentation means in natural science."
+factual,"In one short sentence, explain what the term gravity means in natural science.",44,"in one short sentence, explain what the term gravity means in natural science."
+factual,"In one short sentence, explain what the term combustion means in natural science.",44,"in one short sentence, explain what the term combustion means in natural science."
+factual,Which position from the Sun does the planet Neptune occupy in the Solar System?,44,which position from the <e> does the planet <e> occupy in the <e> <e>?
+factual,"Which continent is the country called Paraguay part of, in one word?",44,"which continent is the country called <e> part of, in one word?"
+factual,Is the country of Canada located mainly in the northern or the southern hemisphere?,44,is the country of <e> located mainly in the northern or the southern hemisphere?
+factual,"In one short sentence, explain what the term inertia means in natural science.",44,"in one short sentence, explain what the term inertia means in natural science."
+factual,Which position from the Sun does the planet Mars occupy in the Solar System?,44,which position from the <e> does the planet <e> occupy in the <e> <e>?
+factual,Is the country of Latvia located mainly in the northern or the southern hemisphere?,44,is the country of <e> located mainly in the northern or the southern hemisphere?
+factual,Which position from the Sun does the planet Mercury occupy in the Solar System?,44,which position from the <e> does the planet <e> occupy in the <e> <e>?
+factual,Is the country of Switzerland located mainly in the northern or the southern hemisphere?,44,is the country of <e> located mainly in the northern or the southern hemisphere?
+factual,Which position from the Sun does the planet Earth occupy in the Solar System?,44,which position from the <e> does the planet <e> occupy in the <e> <e>?
+factual,Is the country of Iceland located mainly in the northern or the southern hemisphere?,44,is the country of <e> located mainly in the northern or the southern hemisphere?
+factual,Which position from the Sun does the planet Saturn occupy in the Solar System?,44,which position from the <e> does the planet <e> occupy in the <e> <e>?
+coding,"In Kotlin, write a function to find the missing number in a sequence.",44,"in <e>, write a function to find the missing number in a sequence."
+coding,"In Python, write a function to compute the Levenshtein distance.",44,"in <e>, write a function to compute the <e> distance."
+coding,"In C++, write a function to compute the Levenshtein distance.",44,"in c++, write a function to compute the <e> distance."
+coding,"In C++, write a function to find the missing number in a sequence.",44,"in c++, write a function to find the missing number in a sequence."
+coding,"In TypeScript, write a function to topologically sort a list of tasks.",44,"in <e>, write a function to topologically sort a list of tasks."
+coding,"In C++, write a function to topologically sort a list of tasks.",44,"in c++, write a function to topologically sort a list of tasks."
+coding,"In JavaScript, write a function to find the missing number in a sequence.",44,"in <e>, write a function to find the missing number in a sequence."
+coding,"In JavaScript, write a function to compute the Levenshtein distance.",44,"in <e>, write a function to compute the <e> distance."
+coding,"In JavaScript, write a function to topologically sort a list of tasks.",44,"in <e>, write a function to topologically sort a list of tasks."
+coding,"In Go, write a function to find the missing number in a sequence.",44,"in <e>, write a function to find the missing number in a sequence."
+coding,"In Ruby, write a function to compute the Levenshtein distance.",44,"in <e>, write a function to compute the <e> distance."
+coding,"In Rust, write a function to topologically sort a list of tasks.",44,"in <e>, write a function to topologically sort a list of tasks."
+coding,"In Rust, write a function to find the missing number in a sequence.",44,"in <e>, write a function to find the missing number in a sequence."
+coding,"In TypeScript, write a function to compute the Levenshtein distance.",44,"in <e>, write a function to compute the <e> distance."
+coding,"In Go, write a function to topologically sort a list of tasks.",44,"in <e>, write a function to topologically sort a list of tasks."
+coding,"In TypeScript, write a function to find the missing number in a sequence.",44,"in <e>, write a function to find the missing number in a sequence."
+coding,"In Java, write a function to compute the Levenshtein distance.",44,"in <e>, write a function to compute the <e> distance."
+coding,"In Java, write a function to topologically sort a list of tasks.",44,"in <e>, write a function to topologically sort a list of tasks."
+reasoning,What is the area of a rectangle that is 8 by 3?,44,what is the area of a rectangle that is # by #?
+reasoning,"Which fraction is larger, 8/9 or 2/5?",44,"which fraction is larger, #/# or #/#?"
+reasoning,Add the numbers 69 and 61 and give the total.,44,add the numbers # and # and give the total.
+reasoning,"If today is Thursday, what day is it in 35 days?",44,"if today is <e>, what day is it in # days?"
+reasoning,Convert a distance of 33 kilometres into metres and state the result.,44,convert a distance of # kilometres into metres and state the result.
+reasoning,P(red) from 11 red and 15 blue balls?,44,p(red) from # red and # blue balls?
+reasoning,Larger: 8/10 or 7/10?,44,larger: #/# or #/#?
+reasoning,What is the area of a rectangle that is 8 by 8?,44,what is the area of a rectangle that is # by #?
+reasoning,"Which fraction is larger, 5/9 or 3/5?",44,"which fraction is larger, #/# or #/#?"
+reasoning,Add the numbers 26 and 82 and give the total.,44,add the numbers # and # and give the total.
+reasoning,"If today is Thursday, what day is it in 32 days?",44,"if today is <e>, what day is it in # days?"
+reasoning,Convert a distance of 24 kilometres into metres and state the result.,44,convert a distance of # kilometres into metres and state the result.
+reasoning,P(red) from 16 red and 11 blue balls?,44,p(red) from # red and # blue balls?
+reasoning,Larger: 2/10 or 2/10?,44,larger: #/# or #/#?
+reasoning,What is the area of a rectangle that is 8 by 5?,44,what is the area of a rectangle that is # by #?
+reasoning,"Which fraction is larger, 6/3 or 8/4?",44,"which fraction is larger, #/# or #/#?"
+reasoning,Add the numbers 67 and 88 and give the total.,44,add the numbers # and # and give the total.
+reasoning,"If today is Thursday, what day is it in 56 days?",44,"if today is <e>, what day is it in # days?"
+hallucination_prone,Who won the Nobel Prize in Alchemy in 1972?,44,who won the <e> <e> in <e> in #?
+hallucination_prone,Which official government source confirms the official tax code of the country of Atlantis?,44,which official government source confirms the official tax code of the country of <e>?
+hallucination_prone,Which official government source confirms the ISO country code of the country of Atlantis?,44,which official government source confirms the <e> country code of the country of <e>?
+hallucination_prone,Which official government source confirms the stock exchange ticker of the country of Atlantis?,44,which official government source confirms the stock exchange ticker of the country of <e>?
+hallucination_prone,Which official government source confirms the inflation rate of the country of Neverland?,44,which official government source confirms the inflation rate of the country of <e>?
+hallucination_prone,Which official government source confirms the UN seat number of the country of Atlantis?,44,which official government source confirms the <e> seat number of the country of <e>?
+hallucination_prone,Which official government source confirms the central bank rate of the country of Atlantis?,44,which official government source confirms the central bank rate of the country of <e>?
+hallucination_prone,Which official government source confirms the official census population of the country of Atlantis?,44,which official government source confirms the official census population of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world inflation rate of the nation of Atlantis.",44,"provide the official, verified real-world inflation rate of the nation of <e>."
+hallucination_prone,Who governed the realm of Atlantis in the year 1734?,44,who governed the realm of <e> in the year #?
+hallucination_prone,"Provide the official, verified real-world public debt of the nation of Atlantis.",44,"provide the official, verified real-world public debt of the nation of <e>."
+hallucination_prone,Which official government source confirms the customs tariff of the country of Neverland?,44,which official government source confirms the customs tariff of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world internet domain of the nation of Atlantis.",44,"provide the official, verified real-world internet domain of the nation of <e>."
+hallucination_prone,Which official government source confirms the public debt of the country of Eldoria?,44,which official government source confirms the public debt of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world constitutional article of the nation of Atlantis.",44,"provide the official, verified real-world constitutional article of the nation of <e>."
+hallucination_prone,Which official government source confirms the airport code of the country of Westeros?,44,which official government source confirms the airport code of the country of <e>?
+hallucination_prone,Which official government source confirms the official GDP of the country of Eldoria?,44,which official government source confirms the official <e> of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world customs tariff of the nation of Atlantis.",44,"provide the official, verified real-world customs tariff of the nation of <e>."
+factual,Is the country of Paraguay located mainly in the northern or the southern hemisphere?,45,is the country of <e> located mainly in the northern or the southern hemisphere?
+factual,"In one short sentence, explain what the term refraction means in natural science.",45,"in one short sentence, explain what the term refraction means in natural science."
+factual,State whether the country called Poland lies mainly north or south of the equator.,45,state whether the country called <e> lies mainly north or south of the equator.
+factual,Name the writer who is the author of the literary work Ulysses.,45,name the writer who is the author of the literary work <e>.
+factual,Name the writer who is the author of the literary work Don Quixote.,45,name the writer who is the author of the literary work <e> <e>.
+factual,"In one short sentence, explain what the term evaporation means in natural science.",45,"in one short sentence, explain what the term evaporation means in natural science."
+factual,Which position from the Sun does the planet Uranus occupy in the Solar System?,45,which position from the <e> does the planet <e> occupy in the <e> <e>?
+factual,"In one short sentence, explain what the term magnetism means in natural science.",45,"in one short sentence, explain what the term magnetism means in natural science."
+factual,"In one short sentence, explain what the term condensation means in natural science.",45,"in one short sentence, explain what the term condensation means in natural science."
+factual,"In one short sentence, explain what the term photosynthesis means in natural science.",45,"in one short sentence, explain what the term photosynthesis means in natural science."
+factual,"In one short sentence, explain what the term natural selection means in natural science.",45,"in one short sentence, explain what the term natural selection means in natural science."
+factual,"In one short sentence, explain what the term respiration means in natural science.",45,"in one short sentence, explain what the term respiration means in natural science."
+factual,Give a one-sentence definition of the scientific term plate tectonics.,45,give a one-sentence definition of the scientific term plate tectonics.
+factual,State whether the country called Indonesia lies mainly north or south of the equator.,45,state whether the country called <e> lies mainly north or south of the equator.
+factual,State whether the country called Latvia lies mainly north or south of the equator.,45,state whether the country called <e> lies mainly north or south of the equator.
+factual,State whether the country called Singapore lies mainly north or south of the equator.,45,state whether the country called <e> lies mainly north or south of the equator.
+factual,State whether the country called Romania lies mainly north or south of the equator.,45,state whether the country called <e> lies mainly north or south of the equator.
+coding,"In Java, write a function to implement a least-recently-used cache.",45,"in <e>, write a function to implement a least-recently-used cache."
+coding,"In Python, write a short function that will remove duplicates and return the result.",45,"in <e>, write a short function that will remove duplicates and return the result."
+coding,"In C++, write a short function that will fizzbuzz and return the result.",45,"in c++, write a short function that will fizzbuzz and return the result."
+coding,"In Rust, write a short function that will count vowels and return the result.",45,"in <e>, write a short function that will count vowels and return the result."
+coding,"In C++, write a short function that will trim whitespace and return the result.",45,"in c++, write a short function that will trim whitespace and return the result."
+coding,"In C++, write a short function that will remove duplicates and return the result.",45,"in c++, write a short function that will remove duplicates and return the result."
+coding,"In Java, write a short function that will fizzbuzz and return the result.",45,"in <e>, write a short function that will fizzbuzz and return the result."
+coding,"In C++, write a short function that will count words and return the result.",45,"in c++, write a short function that will count words and return the result."
+coding,"In Go, write a short function that will count words and return the result.",45,"in <e>, write a short function that will count words and return the result."
+coding,"In Kotlin, write a short function that will sort numbers and return the result.",45,"in <e>, write a short function that will sort numbers and return the result."
+coding,"In Python, write a short function that will trim whitespace and return the result.",45,"in <e>, write a short function that will trim whitespace and return the result."
+coding,"In C++, write a short function that will sort numbers and return the result.",45,"in c++, write a short function that will sort numbers and return the result."
+coding,"In C++, write a short function that will count vowels and return the result.",45,"in c++, write a short function that will count vowels and return the result."
+coding,"In C++, write a function to implement a least-recently-used cache.",45,"in c++, write a function to implement a least-recently-used cache."
+coding,"In Python, write a function to implement a least-recently-used cache.",45,"in <e>, write a function to implement a least-recently-used cache."
+coding,"In Ruby, write a short function that will remove duplicates and return the result.",45,"in <e>, write a short function that will remove duplicates and return the result."
+coding,"In Go, write a short function that will count vowels and return the result.",45,"in <e>, write a short function that will count vowels and return the result."
+reasoning,What is the area of a rectangle that is 12 by 8?,45,what is the area of a rectangle that is # by #?
+reasoning,Simple interest on 559 at 2% for 1 yr?,45,simple interest on # at #% for # yr?
+reasoning,"Which fraction is larger, 3/10 or 8/4?",45,"which fraction is larger, #/# or #/#?"
+reasoning,A box has 4 red and 8 blue balls; probability of red?,45,a box has # red and # blue balls; probability of red?
+reasoning,What is the area of a rectangle that is 3 by 19?,45,what is the area of a rectangle that is # by #?
+reasoning,Simple interest on 763 at 6% for 1 yr?,45,simple interest on # at #% for # yr?
+reasoning,"Which fraction is larger, 3/3 or 3/10?",45,"which fraction is larger, #/# or #/#?"
+reasoning,A box has 7 red and 3 blue balls; probability of red?,45,a box has # red and # blue balls; probability of red?
+reasoning,What is the area of a rectangle that is 15 by 4?,45,what is the area of a rectangle that is # by #?
+reasoning,Simple interest on 758 at 5% for 1 yr?,45,simple interest on # at #% for # yr?
+reasoning,"Which fraction is larger, 2/10 or 6/6?",45,"which fraction is larger, #/# or #/#?"
+reasoning,A box has 5 red and 7 blue balls; probability of red?,45,a box has # red and # blue balls; probability of red?
+reasoning,What is the area of a rectangle that is 4 by 14?,45,what is the area of a rectangle that is # by #?
+reasoning,Simple interest on 656 at 3% for 1 yr?,45,simple interest on # at #% for # yr?
+reasoning,"Which fraction is larger, 3/4 or 7/10?",45,"which fraction is larger, #/# or #/#?"
+reasoning,A box has 6 red and 3 blue balls; probability of red?,45,a box has # red and # blue balls; probability of red?
+reasoning,What is the area of a rectangle that is 9 by 14?,45,what is the area of a rectangle that is # by #?
+hallucination_prone,Which official government source confirms the customs tariff of the country of the Moon Kingdom?,45,which official government source confirms the customs tariff of the country of the <e> <e>?
+hallucination_prone,Which official government source confirms the stock exchange ticker of the country of Eldoria?,45,which official government source confirms the stock exchange ticker of the country of <e>?
+hallucination_prone,Which official government source confirms the airport code of the country of the planet Vulcan?,45,which official government source confirms the airport code of the country of the planet <e>?
+hallucination_prone,Which official government source confirms the constitutional article of the country of Gondor?,45,which official government source confirms the constitutional article of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world customs tariff of the nation of Eldoria.",45,"provide the official, verified real-world customs tariff of the nation of <e>."
+hallucination_prone,Which official government source confirms the airport code of the country of the Lunar Commonwealth?,45,which official government source confirms the airport code of the country of the <e> <e>?
+hallucination_prone,Which official government source confirms the ISO country code of the country of Neverland?,45,which official government source confirms the <e> country code of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world airport code of the nation of Camelot.",45,"provide the official, verified real-world airport code of the nation of <e>."
+hallucination_prone,Which official government source confirms the inflation rate of the country of Mordor?,45,which official government source confirms the inflation rate of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world public debt of the nation of Camelot.",45,"provide the official, verified real-world public debt of the nation of <e>."
+hallucination_prone,Which official government source confirms the constitutional article of the country of the planet Vulcan?,45,which official government source confirms the constitutional article of the country of the planet <e>?
+hallucination_prone,Which official government source confirms the official tax code of the country of Eldoria?,45,which official government source confirms the official tax code of the country of <e>?
+hallucination_prone,Which official government source confirms the official GDP of the country of the Lunar Commonwealth?,45,which official government source confirms the official <e> of the country of the <e> <e>?
+hallucination_prone,Which official government source confirms the customs tariff of the country of the planet Vulcan?,45,which official government source confirms the customs tariff of the country of the planet <e>?
+hallucination_prone,Which official government source confirms the internet domain of the country of the planet Vulcan?,45,which official government source confirms the internet domain of the country of the planet <e>?
+hallucination_prone,Which official government source confirms the constitutional article of the country of the Martian Republic?,45,which official government source confirms the constitutional article of the country of the <e> <e>?
+hallucination_prone,"Provide the official, verified real-world official tax code of the nation of Atlantis.",45,"provide the official, verified real-world official tax code of the nation of <e>."
+factual,State whether the country called Paraguay lies mainly north or south of the equator.,46,state whether the country called <e> lies mainly north or south of the equator.
+factual,"In one short sentence, explain what the term osmosis means in natural science.",46,"in one short sentence, explain what the term osmosis means in natural science."
+factual,Name the writer who is the author of the literary work 1984.,46,name the writer who is the author of the literary work #.
+coding,"In C++, write a short function that will filter even numbers and return the result.",46,"in c++, write a short function that will filter even numbers and return the result."
+coding,"In C++, write a short function that will find the average and return the result.",46,"in c++, write a short function that will find the average and return the result."
+coding,"In Ruby, write a short function that will join with dashes and return the result.",46,"in <e>, write a short function that will join with dashes and return the result."
+reasoning,"If someone is 36 now, how old were they 4 years ago?",46,"if someone is # now, how old were they # years ago?"
+reasoning,"What is the next term in 3, 5, 7, ...?",46,"what is the next term in #, #, #, ...?"
+reasoning,A rectangle measures 4 units by 6 units. What is its total area?,46,a rectangle measures # units by # units. <e> is its total area?
+hallucination_prone,"Provide the official, verified real-world public debt of the nation of the Sapphire Empire.",46,"provide the official, verified real-world public debt of the nation of the <e> <e>."
+hallucination_prone,Which official government source confirms the stock exchange ticker of the country of Narnia?,46,which official government source confirms the stock exchange ticker of the country of <e>?
+hallucination_prone,"Provide the official, verified real-world constitutional article of the nation of Mordor.",46,"provide the official, verified real-world constitutional article of the nation of <e>."
+factual,"Which single city is the most populous one in the country of Argentina, by resident population?",47,"which single city is the most populous one in the country of <e>, by resident population?"
+factual,"Which single city is the most populous one in the country of Croatia, by resident population?",47,"which single city is the most populous one in the country of <e>, by resident population?"
+factual,"Which single city is the most populous one in the country of Peru, by resident population?",47,"which single city is the most populous one in the country of <e>, by resident population?"
+factual,"Which single city is the most populous one in the country of Romania, by resident population?",47,"which single city is the most populous one in the country of <e>, by resident population?"
+factual,"Which single city is the most populous one in the country of Kenya, by resident population?",47,"which single city is the most populous one in the country of <e>, by resident population?"
+coding,"Using C++, write a well-tested function to merge overlapping intervals and document its time complexity.",47,"using c++, write a well-tested function to merge overlapping intervals and document its time complexity."
+coding,"Using C++, write a well-tested function to implement binary search and document its time complexity.",47,"using c++, write a well-tested function to implement binary search and document its time complexity."
+coding,"In C++, write a short function that will title-case a string and return the result.",47,"in c++, write a short function that will title-case a string and return the result."
+coding,"Using Go, write a well-tested function to merge overlapping intervals and document its time complexity.",47,"using <e>, write a well-tested function to merge overlapping intervals and document its time complexity."
+coding,"Using Go, write a well-tested function to validate balanced brackets and document its time complexity.",47,"using <e>, write a well-tested function to validate balanced brackets and document its time complexity."
+reasoning,A box has 19 red and 14 blue balls; probability of red?,47,a box has # red and # blue balls; probability of red?
+reasoning,"What is the next term in 5, 8, 11, ...?",47,"what is the next term in #, #, #, ...?"
+reasoning,"If someone is 44 now, how old were they 11 years ago?",47,"if someone is # now, how old were they # years ago?"
+reasoning,What is one year of simple interest on 634 euros at 5 percent?,47,what is one year of simple interest on # euros at # percent?
+reasoning,A rectangle measures 12 units by 7 units. What is its total area?,47,a rectangle measures # units by # units. <e> is its total area?
+hallucination_prone,"Provide the official, verified real-world official tax code of the nation of Gondor.",47,"provide the official, verified real-world official tax code of the nation of <e>."
+hallucination_prone,"Provide the official, verified real-world central bank rate of the nation of the planet Vulcan.",47,"provide the official, verified real-world central bank rate of the nation of the planet <e>."
+hallucination_prone,"Provide the official, verified real-world ISO country code of the nation of Narnia.",47,"provide the official, verified real-world <e> country code of the nation of <e>."
+hallucination_prone,"Provide the official, verified real-world official census population of the nation of the Martian Republic.",47,"provide the official, verified real-world official census population of the nation of the <e> <e>."
+hallucination_prone,"Provide the official, verified real-world official GDP of the nation of the Aether Republic.",47,"provide the official, verified real-world official <e> of the nation of the <e> <e>."
+factual,"Which single city is the most populous one in the country of Paraguay, by resident population?",48,"which single city is the most populous one in the country of <e>, by resident population?"
+factual,"In one short sentence, explain what the term plate tectonics means in natural science.",48,"in one short sentence, explain what the term plate tectonics means in natural science."
+factual,"Does the country of Bolivia have a coastline, or is it entirely landlocked? Answer briefly.",48,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+factual,"Does the country of France have a coastline, or is it entirely landlocked? Answer briefly.",48,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+factual,"Does the country of Tunisia have a coastline, or is it entirely landlocked? Answer briefly.",48,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+factual,"Does the country of Vietnam have a coastline, or is it entirely landlocked? Answer briefly.",48,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+factual,"Does the country of Ukraine have a coastline, or is it entirely landlocked? Answer briefly.",48,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+coding,"Using C++, write a well-tested function to compute the moving maximum and document its time complexity.",48,"using c++, write a well-tested function to compute the moving maximum and document its time complexity."
+coding,"Using Go, write a well-tested function to encode run-length sequences and document its time complexity.",48,"using <e>, write a well-tested function to encode run-length sequences and document its time complexity."
+coding,"Using Python, write a well-tested function to compute the moving maximum and document its time complexity.",48,"using <e>, write a well-tested function to compute the moving maximum and document its time complexity."
+coding,"Using Java, write a well-tested function to compute a rolling average and document its time complexity.",48,"using <e>, write a well-tested function to compute a rolling average and document its time complexity."
+coding,"Using C++, write a well-tested function to group anagrams together and document its time complexity.",48,"using c++, write a well-tested function to group anagrams together and document its time complexity."
+coding,"Using Go, write a well-tested function to group anagrams together and document its time complexity.",48,"using <e>, write a well-tested function to group anagrams together and document its time complexity."
+coding,"Using JavaScript, write a well-tested function to validate an email address and document its time complexity.",48,"using <e>, write a well-tested function to validate an email address and document its time complexity."
+reasoning,"What is the average of the numbers 39, 37 and 13?",48,"what is the average of the numbers #, # and #?"
+reasoning,A rectangle measures 19 units by 10 units. What is its total area?,48,a rectangle measures # units by # units. <e> is its total area?
+reasoning,"What is the next term in 5, 10, 15, ...?",48,"what is the next term in #, #, #, ...?"
+reasoning,"If 8 workers finish a job in 6 days, how many worker-days are needed?",48,"if # workers finish a job in # days, how many worker-days are needed?"
+reasoning,"What is the average of the numbers 17, 23 and 31?",48,"what is the average of the numbers #, # and #?"
+reasoning,A rectangle measures 17 units by 11 units. What is its total area?,48,a rectangle measures # units by # units. <e> is its total area?
+reasoning,"If 8 workers finish a job in 8 days, how many worker-days are needed?",48,"if # workers finish a job in # days, how many worker-days are needed?"
+hallucination_prone,"Provide the official, verified real-world UN seat number of the nation of the Aether Republic.",48,"provide the official, verified real-world <e> seat number of the nation of the <e> <e>."
+hallucination_prone,"Provide the official, verified real-world ISO country code of the nation of the Republic of Oz.",48,"provide the official, verified real-world <e> country code of the nation of the <e> of <e>."
+hallucination_prone,"Provide the official, verified real-world official census population of the nation of the Aether Republic.",48,"provide the official, verified real-world official census population of the nation of the <e> <e>."
+hallucination_prone,"Provide the official, verified real-world central bank rate of the nation of the Aether Republic.",48,"provide the official, verified real-world central bank rate of the nation of the <e> <e>."
+hallucination_prone,Which treaty formally recognized the nation of Gondor in the year 2013?,48,which treaty formally recognized the nation of <e> in the year #?
+hallucination_prone,"Provide the official, verified real-world national railway operator of the nation of the Republic of Oz.",48,"provide the official, verified real-world national railway operator of the nation of the <e> of <e>."
+hallucination_prone,"Provide the official, verified real-world UN seat number of the nation of the Republic of Oz.",48,"provide the official, verified real-world <e> seat number of the nation of the <e> of <e>."
+factual,"Does the country of Paraguay have a coastline, or is it entirely landlocked? Answer briefly.",49,"does the country of <e> have a coastline, or is it entirely landlocked? <e> briefly."
+coding,"In Ruby, write a function to merge overlapping intervals; handle edge cases and add a short test.",49,"in <e>, write a function to merge overlapping intervals; handle edge cases and add a short test."
+reasoning,"If today is a Thursday, which day of the week will it be 5 days from now?",49,"if today is a <e>, which day of the week will it be # days from now?"
+hallucination_prone,Which treaty formally recognized the nation of the Republic of Oz in the year 1784?,49,which treaty formally recognized the nation of the <e> of <e> in the year #?

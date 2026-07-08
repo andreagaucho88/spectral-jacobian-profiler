@@ -1,0 +1,28 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "dtype": "float32",
+    "device": "cpu",
+    "hardware": "macOS-26.1-arm64-arm-64bit | 12 logical cpus | torch 2.7.0",
+    "n_prompts": 8,
+    "k_top": 3,
+    "n_probes": 6,
+    "n_iter": 8,
+    "final_indices": [
+      -2
+    ],
+    "with_fisher": true,
+    "seed": 0
+  },
+  "status": "done",
+  "updated": "2026-07-07T16:01:09",
+  "progress": {
+    "final_index_-2": {
+      "factual": 8,
+      "_total": 32,
+      "coding": 8,
+      "reasoning": 8,
+      "hallucination_prone": 8
+    }
+  }
+}
