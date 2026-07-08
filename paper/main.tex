@@ -200,6 +200,21 @@
   booktitle={Findings of the Association for Computational Linguistics: EMNLP 2023},
   pages={967--976}, year={2023}
 }
+@article{qwen2025technical,
+  title={{Qwen2.5} Technical Report},
+  author={{Qwen Team}},
+  journal={arXiv preprint arXiv:2412.15115}, year={2025}
+}
+@article{allal2025smollm2,
+  title={{SmolLM2}: When Smol Goes Big --- Data-Centric Training of a Small Language Model},
+  author={Allal, Loubna Ben and Lozhkov, Anton and Bakouch, Elie and others},
+  journal={arXiv preprint arXiv:2502.02737}, year={2025}
+}
+@article{radford2019language,
+  title={Language Models are Unsupervised Multitask Learners},
+  author={Radford, Alec and Wu, Jeffrey and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
+  journal={OpenAI technical report}, year={2019}
+}
 \end{filecontents*}
 
 \title{\bfseries Matrix-Free Spectral Profiling of Prompt-Conditioned Input$\to$Output Jacobians in Transformer Language Models}
@@ -231,8 +246,10 @@ $\sigma_{\max}$ is only weakly related to output-entropy \emph{level} (Pearson $
 near-zero number compares a sensitivity to a level; the like-for-like comparison against the entropy's
 \emph{input sensitivity} $\|\nabla_{H_0}H\|$ gives $r=0.45$, which is \emph{mostly shared Jacobian
 magnitude} --- partialling out the bulk norm drops it to $0.10$--$0.30$ across models (residual CI
-including zero on two of three). So hidden and output response magnitudes co-vary through a common
-scale, leaving only a weak, model-dependent residual coupling. The leading value is also largely redundant with
+including zero on two of three), while a partialling-free geometric check finds the two input
+directions only partially aligned ($|\!\cos\angle(\nabla_{H_0}H,v_{\mathrm{lead}})|=0.41$,
+$\sim\!90\times$ chance but $\cos^2\!=\!0.24$). The coupling is thus a shared common scale plus a
+modest, genuinely directional residual --- neither independence nor strong coupling. The leading value is also largely redundant with
 the bulk norm for the categorical contrast ($r(\sigma_{\max},\lambda_{\mathrm{bulk}})=0.80$, expected
 from stable rank $\approx4$), and a trivial linear probe separates the categories at $99\%$, so the
 observables are characterizations of response geometry, not classifiers. The category orderings are
@@ -241,8 +258,7 @@ tracks entropy with an analytic skeleton; we therefore report the method as an \
 diagnostic}, not a general finding. Our positive contribution is the profiler and the controlled
 methodology; the substantive lesson is negative and worth stating: single-direction/level summaries
 of hidden geometry are easy to over-read, and the correct like-for-like comparisons must be made.
-All metrics are Euclidean and representation-dependent, and the sampled-direction statistic is not a
-Lyapunov exponent.
+All metrics are Euclidean and representation-dependent.
 \end{abstract}
 
 \keywords{Transformer language models, input$\to$output Jacobian, matrix-free spectral profiling,
@@ -322,7 +338,7 @@ $0.10$--$0.30$). We therefore report couplings and their decomposition, not a ``
   summaries of Jacobian geometry are easy to over-read. The near-zero $\sigma_{\max}$--entropy
   correlation is a sensitivity-vs-level artifact; the like-for-like comparison is coupled ($r=0.45$)
   but that coupling is mostly shared magnitude (partial correlation $0.10$--$0.30$); $\sigma_{\max}$
-  is $80\%$ redundant with the bulk norm for the categorical contrast; and a trivial linear probe
+  is strongly correlated with the bulk norm ($r=0.80$, i.e.\ $64\%$ shared variance) for the categorical contrast; and a trivial linear probe
   separates the categories at $99\%$. We report these couplings and their decomposition, not a
   ``dissociation.''
 \end{enumerate}
@@ -500,11 +516,21 @@ exact analogue of Algorithm~1's leading growth.
 For $v$ isotropic on the unit sphere $S^{n-1}$ one has $\mathbb E[vv^\top]=\tfrac1n I$, hence
 $\mathbb E\|Jv\|_2^2=\operatorname{tr}\!\big(J\,\mathbb E[vv^\top]\,J^\top\big)=\|J\|_F^2/n$
 exactly; this identity is the basis of the classical stochastic (Hutchinson) trace/Frobenius
-estimator \cite{hutchinson1990stochastic}. By the same isotropy $\|Jv\|$ concentrates around
-$\|J\|_F/\sqrt n$ with relative fluctuations $O(n^{-1/2})$. With $n\sim10^4$ the
-single-random-direction statistic of Algorithm~1 is therefore a nearly prompt-invariant
-\emph{bulk} quantity, and its normalized logarithm should track
-$\lambda_{\mathrm{bulk}}=\tfrac{1}{2L}\log(\|J\|_F^2/n)$. We estimate $\|J\|_F^2$ by the
+estimator \cite{hutchinson1990stochastic}. By the same isotropy $\|Jv\|_2$ concentrates around
+$\|J\|_F/\sqrt n$, but --- and this is easy to get wrong --- the \emph{relative} fluctuation of
+$\|Jv\|_2^2$ is set by the \emph{spectrum} of $A=J^\top J$, not by $n$: it is of order
+$\operatorname{tr}(A^2)^{1/2}/\operatorname{tr}(A)=r_{\mathrm{eff}}^{-1/2}$, where
+$r_{\mathrm{eff}}=\operatorname{tr}(A)^2/\operatorname{tr}(A^2)$ is the spectral participation ratio,
+comparable here to the stable rank $r_{\mathrm{stable}}\approx4$ reported below. With
+$r_{\mathrm{eff}}\approx4$ these single-direction fluctuations are \emph{not} small
+($\sim\!50\%$ on $\|Jv\|_2^2$), so the raw sampled amplification is prompt-noisy and the naive
+$n^{-1/2}$ concentration does \emph{not} apply. Two facts nonetheless make Algorithm~1's statistic a stable
+\emph{bulk} quantity: it is the normalized \emph{logarithm}
+$\lambda_L^{(\epsilon)}=\tfrac1L\log(\delta_L/\epsilon)$, so a tens-of-percent multiplicative swing
+on $\|Jv\|_2$ becomes only $O(\log(1.5)/L)\approx0.017$ in $\lambda$-units at $L=24$, and it is
+averaged over $K$ directions. Its normalized logarithm should therefore track
+$\lambda_{\mathrm{bulk}}=\tfrac{1}{2L}\log(\|J\|_F^2/n)$, and the empirical agreement (median relative
+error $3.3\%$; Figure~\ref{fig:bulk}) confirms this. We estimate $\|J\|_F^2$ by the
 \emph{unbiased} sphere estimator $n\cdot\mathrm{mean}_i\|J\xi_i\|_2^2$ (the mean of the squared
 probe norms \cite{hutchinson1990stochastic}; the Jensen-biased $n(\mathrm{mean}_i\|J\xi_i\|)^2$ is
 low by construction), and we report the anisotropy through the \emph{stable rank}
@@ -567,7 +593,8 @@ report them with the results.
 \label{sec:methods-data}
 
 We study two publicly available, instruction-tuned, decoder-only Transformers
-(Table~\ref{tab:models}), chosen to differ in scale and pre-training while sharing modern
+(Table~\ref{tab:models}) --- Qwen2.5-0.5B-Instruct \cite{qwen2025technical} and
+SmolLM2-360M-Instruct \cite{allal2025smollm2} --- chosen to differ in scale and pre-training while sharing modern
 architecture (rotary position embeddings \cite{su2024roformer}, RMSNorm pre-normalization
 \cite{zhang2019root} in place of LayerNorm \cite{ba2016layer}, and gated feed-forward blocks).
 For each
@@ -1073,7 +1100,7 @@ estimates for a fuller validation are provided with the code.
 
 \paragraph{A second architecture: LayerNorm.}
 Because our narrative involves the final normalization, we also profile GPT-2 (124M, classic
-\emph{LayerNorm}, a base non-instruct model; $n=16$/category), verifying that final\_index $=-1$ is the
+\emph{LayerNorm}, a base non-instruct model \cite{radford2019language}; $n=16$/category), verifying that final\_index $=-1$ is the
 true post-norm readout state ($\mathrm{lm\_head}(h_{-1})=\text{logits}$, as for the RMSNorm models).
 Being a base model, GPT-2 has no chat template, so the raw prompt string is tokenized with its native
 byte-level BPE and fed directly --- the same convention across Algorithm~1, Algorithm~2, and the
@@ -1140,7 +1167,7 @@ $95\%$ CI includes zero; Section~\ref{sec:controls}). We therefore
 \emph{do not} claim two independent axes. The one robust output-side statement is that
 impossible/fictional/hallucination-prone prompts are the entropy outlier --- a near-manipulation-check
 (such prompts have diffuse continuations by construction), not a hidden-state finding. On the hidden
-side, $\sigma_{\max}$ is $80\%$ redundant with the bulk norm for the categorical contrast; the
+side, $\sigma_{\max}$ is strongly correlated with the bulk norm ($r=0.80$, i.e.\ $64\%$ shared variance) for the categorical contrast; the
 Fisher/KL $\chi_F$ tracks entropy with an analytic reason and flips sign across models; and which
 class leads $\sigma_{\max}$ is model-specific (factual only on the two sub-billion instruction-tuned
 models; coding on GPT-2 and $\ge1.5$B). We are also careful about what this does \emph{not} say: we do
@@ -1151,7 +1178,7 @@ demonstration of how a level-vs-sensitivity or single-direction summary manufact
 ``dissociation'' that a magnitude-controlled comparison dissolves.
 
 \paragraph{Scale sanity check: a split, pre-specified outcome.}
-Because our primary models are sub-billion, we pre-specified (Section~\ref{sec:scale}) three readings of the
+Because our primary models are sub-billion, we pre-specified three readings of the
 intermediate-scale check (Section~\ref{sec:scale}). The completed check ($1.5$B and $3$B, $n=8$/cat)
 supports a \emph{split} of readings (i) and (ii), which we state honestly, and with an important
 scope limit: the scale check re-ran only the \emph{naive} level comparison, not the corrected
@@ -1252,6 +1279,35 @@ loop between the hidden-state response and the output distribution, and correlat
 prompt-by-prompt with the hidden-state response across scales is the natural continuation.
 
 \appendix
+\section{Prompt Categories and Examples}
+\label{sec:prompt-examples}
+All four categories are templated and, by construction, share a single token-length histogram (Qwen
+tokenizer, chat-templated length $34$--$49$ tokens; Kruskal--Wallis $p=1.000$ across categories;
+Section~\ref{sec:methods-lengthmatch}). Table~\ref{tab:prompt-examples} lists three representative
+prompts per category and the number of distinct templates in the $n{=}40$/category exact-Jacobian
+subset. The examples make two design facts visible: the \emph{reasoning} class collapses onto a handful
+of arithmetic templates (why we quarantine it from primary claims), and the
+\emph{hallucination-prone} class is an \emph{impossible-entity proxy} --- fictional or nonexistent
+referents (Westeros, Atlantis), \emph{not} verified hallucinations.
+
+\begin{table}[h]\centering\small
+\begin{tabular}{@{}l r p{8.7cm}@{}}
+\toprule
+Category & Templates & Representative prompts (token-length matched) \\
+\midrule
+factual             & 39 & ``What is photosynthesis?'';\; ``What is evaporation?'';\; ``Main language of Estonia?'' \\
+coding              & 40 & ``Java: sort numbers.'';\; ``Python: count vowels.'';\; ``Python: trim whitespace.'' \\
+reasoning           &  5 & ``6 km in metres?'';\; ``5 km in metres?'';\; ``2 km in metres?'' \\
+hallucination-prone & 28 & ``Capital of Westeros?'';\; ``Airport code of Atlantis?'';\; ``Constitutional article of Atlantis?'' \\
+\bottomrule
+\end{tabular}
+\caption{Representative prompts per category, with the count of distinct templates in the
+$n{=}40$/category exact-Jacobian subset (the low-diversity \emph{reasoning} class has only five). All
+prompts are drawn from the length-matched set (identical chat-templated token-length histograms across
+categories); the complete template inventory and per-model sets are released with the code.}
+\label{tab:prompt-examples}
+\end{table}
+
 \section{Robustness and Scope}
 \label{sec:robustness}
 We collect, in reviewer-facing form, the design choices that guard the reported couplings, and the
