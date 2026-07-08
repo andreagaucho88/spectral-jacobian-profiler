@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 FIG = ROOT/"paper"/"figures"; FIG.mkdir(exist_ok=True)
 QSLUG = "Qwen__Qwen2.5-0.5B-Instruct"
 CATS = ["factual","coding","reasoning","hallucination_prone"]
-CL = {"factual":"factual","coding":"coding","reasoning":"reasoning","hallucination_prone":"halluc.-prone"}
+CL = {"factual":"factual","coding":"coding","reasoning":"arithmetic","hallucination_prone":"imposs.-entity"}
 COL = {"factual":"#0072B2","coding":"#E69F00","reasoning":"#009E73","hallucination_prone":"#D55E00"}
 plt.rcParams.update({"figure.dpi":150,"savefig.dpi":300,"savefig.bbox":"tight","font.size":10,
     "axes.titlesize":11,"axes.labelsize":10,"axes.spines.top":False,"axes.spines.right":False,
@@ -41,7 +41,7 @@ for ax, (name, path, ci) in zip(axes, PANELS):
     ax.set_title(f"{name}\npre-norm: Pearson r={rr:+.2f}  ({ci})")
 axes[0].legend(fontsize=8, title="category", title_fontsize=8, loc="upper right")
 fig.suptitle("Hidden amplification $\\sigma_{\\max}$ vs. output-entropy LEVEL across three architectures "
-             "($R^2 \\leq 0.10$, sign unstable) — but the like-for-like sensitivity comparison is coupled (r=0.45, see text)",
+             "($R^2 \\leq 0.11$, sign unstable) — but the like-for-like sensitivity comparison is coupled (r=0.45, see text)",
              y=1.02, fontsize=10)
 fig.tight_layout()
 fig.savefig(FIG/"two_axis_sigma_entropy.pdf"); plt.close(fig)
@@ -76,7 +76,7 @@ a2.bar(xs2+w/2, resz.values, w, color=[COL[c] for c in CATS], alpha=0.5, hatch="
 a2.axhline(0, color="k", lw=0.6)
 a2.set_xticks(xs2); a2.set_xticklabels([CL[c] for c in CATS], rotation=20, ha="right")
 a2.set_ylabel("category mean (z-scored)")
-a2.set_title("Qwen: factual$\\leftrightarrow$hallucination collapses\nafter removing entropy (d: $-0.98\\to-0.19$)")
+a2.set_title("Qwen: factual$\\leftrightarrow$imposs.-entity collapses\nafter removing entropy (d: $-0.98\\to-0.19$)")
 a2.legend(fontsize=7)
 fig.suptitle(r"$\chi_F$ is entropy-related and not a stable axis: its entropy correlation even flips sign across models", y=1.02, fontsize=11)
 fig.tight_layout()

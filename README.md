@@ -102,6 +102,12 @@ profiler is the contribution; the case study is how to read it without over-clai
 Every model directory/file is keyed by a slug of the HF model name with `/` → `__`
 (e.g. `Qwen/Qwen2.5-0.5B-Instruct` → `Qwen__Qwen2.5-0.5B-Instruct`).
 
+**Category names.** The four categories are `factual`, `coding`, `reasoning`, and
+`hallucination_prone` in the code and released CSVs. The paper displays the last two as
+**`arithmetic`** (length matching reduces `reasoning` to terse unit conversions) and
+**`impossible-entity`** (a hallucination-prone proxy). The internal keys are unchanged, so the
+released data and the paper refer to the same categories under different display names.
+
 `final_index` convention: `-2` = **pre-norm** hidden state (matches the Algorithm-1 tracking),
 `-1` = **post-norm** (the actual input to the logit head). Radial growth is present pre-norm
 and removed post-norm, so pre-vs-post isolates radial from angular growth.

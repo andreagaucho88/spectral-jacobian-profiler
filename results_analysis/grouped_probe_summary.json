@@ -1,0 +1,22 @@
+{
+  "hidden d=896": {
+    "ungrouped": 0.994,
+    "grouped": 0.988
+  },
+  "hidden_grouped_recall_per_class": {
+    "factual": 0.97,
+    "coding": 1.0,
+    "reasoning": 1.0,
+    "hallucination_prone": 0.97
+  },
+  "4 spectral scalars": {
+    "ungrouped": 0.594,
+    "grouped": 0.519
+  },
+  "3 norm/ppl scalars": {
+    "ungrouped": 0.731,
+    "grouped": 0.715
+  },
+  "hidden_grouped": 0.988,
+  "verdict": "A (holds, >=90%)"
+}

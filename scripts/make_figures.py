@@ -19,8 +19,8 @@ QSLUG = "Qwen__Qwen2.5-0.5B-Instruct"
 
 # Okabe-Ito colourblind-safe palette, fixed per category everywhere.
 CATS = ["factual", "coding", "reasoning", "hallucination_prone"]
-CLABEL = {"factual": "factual", "coding": "coding", "reasoning": "reasoning",
-          "hallucination_prone": "halluc.-prone"}
+CLABEL = {"factual": "factual", "coding": "coding", "reasoning": "arithmetic",
+          "hallucination_prone": "imposs.-entity"}
 COL = {"factual": "#0072B2", "coding": "#E69F00",
        "reasoning": "#009E73", "hallucination_prone": "#D55E00"}
 
