@@ -314,7 +314,8 @@ as future work. Runtime uncertainty methods --- semantic entropy and its hidden-
 --- occupy that complementary niche (Section~\ref{sec:related}).
 
 \paragraph{Two notions, defined separately (an empirical, not assumed, relationship)}
-We keep two notions separate \emph{by definition} throughout --- whether they are empirically
+We keep two notions separate \emph{by definition} throughout (Figure~\ref{fig:pipeline} maps both, and
+every observable, onto the forward pass) --- whether they are empirically
 independent is a question we answer, not an assumption. \emph{Output uncertainty} is captured by functionals
 of the final distribution alone --- the Shannon entropy $H(p)=-\sum_i p_i\log p_i$ and the top-1
 probability $p_{\max}=\max_i p_i$. \emph{Hidden-state response} is captured by
@@ -432,6 +433,24 @@ sensitivity-to-sensitivity, magnitude-controlled comparisons must be made.
 % =====================================================================
 \section{Methods}
 \label{sec:methods}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{figures/pipeline_schematic.pdf}
+\caption{\textbf{Where each quantity lives on the forward pass.} A prompt's input embeddings $H_0$ are
+mapped by the $L$ Transformer blocks to the final-token hidden state $h_{L,T}$ (\emph{pre}-final-norm,
+read-out $-2$), then by the final RMSNorm to the \emph{post}-final-norm state (read-out $-1$), by the
+head to logits $z$, and by softmax to the output distribution $p$. \emph{Output-level} observables
+(entropy $H(p)$, top-1 $p_{\max}$) are functionals of $p$ alone. The \emph{hidden} observables are
+spectral summaries of the input$\to$hidden Jacobian $J=\partial h_{L,T}/\partial H_0$: the leading
+amplification $\sigma_{\max}$, the bulk norm $\|J\|_F$ (with the Algorithm-1 sampled-direction
+$\lambda_L^{(\epsilon)}$ tracking $\lambda_{\mathrm{bulk}}$), and the stable rank --- read out pre-norm
+(final\_index $-2$) and post-norm ($-1$). The Fisher/KL susceptibility $\chi_F$ measures how an input
+perturbation moves $p$ (spanning the whole pipeline), and the entropy input-gradient $\nabla_{H_0}H$ is
+the like-for-like partner of $\sigma_{\max}$ used in the corrected comparison of
+Section~\ref{sec:controls}. ``Pre/post-norm'' always refers to this final-norm read-out, not the
+pre-norm architecture.}
+\label{fig:pipeline}
+\end{figure}
 
 \subsection{A finite-depth dynamical-systems view}
 \label{sec:methods-view}
