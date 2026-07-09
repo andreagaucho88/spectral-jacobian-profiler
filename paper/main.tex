@@ -285,7 +285,7 @@ token; this distribution is directly observable, but the sequence of internal re
 traversed on the way to it is high-dimensional, hidden, and rarely examined directly, although
 mechanistic-interpretability work has begun to open it up \cite{elhage2021mathematical}.
 
-This opacity matters most for \emph{hallucination} --- fluent but unsupported output
+This opacity is especially relevant in uncertainty- and \emph{hallucination}-related settings --- fluent but unsupported output
 \cite{ji2023survey} --- which output-level analyses (factual correctness, calibration,
 truthfulness \cite{lin2022truthfulqa}) can measure but cannot tie to the internal computation. We
 therefore study the hidden computation directly, as a \emph{diagnostic geometry of
@@ -742,7 +742,7 @@ impossible-entity is the entropy/top-1 outlier in every model-and-set condition,
 effect sizes (up to $|d|\approx3.9$ on the un-matched sets). One caveat we state plainly: length
 matching alters the arithmetic class toward even terser unit conversions, which on the smaller SmolLM2 inflates
 its matched-set entropy \emph{above} the impossible-entity class (arithmetic $3.73$ vs.\
-hallucination $3.55$; $|d|$ only $0.44$). We therefore read output uncertainty on the un-matched
+impossible-entity $3.55$; $|d|$ only $0.44$). We therefore read output uncertainty on the un-matched
 sets, where impossible-entity is the clean outlier, and use the matched sets for the
 hidden-state axis (below). This split of datasets is deliberate, and it is worth stating why it is
 \emph{not} dataset-shopping: the output-uncertainty result is close to a \emph{manipulation check} of
@@ -1041,9 +1041,9 @@ $\chi_F^{\max}$ ranks factual \emph{lowest} ($1111$) and impossible-entity \emph
 arithmetic ($2045$) and coding ($1330$) between (Figure~\ref{fig:box}, right). This ordering is
 \emph{not} independent of the output-uncertainty axis. Across the $n=160$ prompts, $\chi_F^{\max}$ correlates with output entropy
 at Pearson $r=0.49$ (Spearman $0.56$), and when we regress $\chi_F$ on entropy and top-1 probability
-and test the category structure on the residuals, the factual-vs-hallucination contrast collapses
+and test the category structure on the residuals, the factual-vs-impossible-entity contrast collapses
 from $d=-0.98$ to $d=-0.19$ (residual permutation $p=0.46$; Figure~\ref{fig:confound}). The factual/
-hallucination separation on $\chi_F$ is thus largely a re-expression of their entropy difference.
+impossible-entity separation on $\chi_F$ is thus largely a re-expression of their entropy difference.
 We therefore \emph{do not} treat $\chi_F$ as an independent observable. It remains useful for a
 different reason: unlike the entropy of a static distribution, $\chi_F$ links an \emph{input
 perturbation} to \emph{movement} of the output distribution, and its residuals retain some
@@ -1059,7 +1059,7 @@ summary is that these Jacobian quantities are correlated mainly through shared m
 middle: $\chi_F^{\max}$ vs.\ output entropy on Qwen (Pearson $r=+0.49$) and SmolLM2 ($r=-0.20$) --- the
 correlation even \emph{flips sign} across models, so $\chi_F$ is not a stable output-side axis. Right
 (Qwen): category means of $\chi_F$ (z-scored), raw vs.\ residual after regressing out entropy and top-1
-probability; the factual$\leftrightarrow$hallucination ordering collapses (Cohen $d$: $-0.98\to-0.19$,
+probability; the factual$\leftrightarrow$impossible-entity ordering collapses (Cohen $d$: $-0.98\to-0.19$,
 $p=0.46$), while a residual coding/arithmetic contrast remains.}
 \label{fig:confound}
 \end{figure}
@@ -1255,11 +1255,11 @@ validated numerics, and the level-vs-sensitivity lesson --- that the near-zero $
 correlation is a sensitivity-vs-level artifact, and that the like-for-like, magnitude-controlled
 comparison leaves only a weak residual coupling. \emph{Medium} (replicated on both primary models but
 narrower): the bulk identity (Algorithm~1 realizes $\lambda_{\mathrm{bulk}}$) and the redundancy of
-$\sigma_{\max}$ with the bulk norm. Both follow from one structural fact --- the surprisingly low
-stable rank ($\approx4$ in $d\approx900$): prompt-conditioned input-to-hidden sensitivity is highly
-anisotropic, concentrated in a handful of input directions, which is exactly why a single random
-direction estimates the bulk norm rather than the leading amplification, and why the two are so
-correlated. \emph{Exploratory} (single-model or small-$n$, pre-specified where
+$\sigma_{\max}$ with the bulk norm. Both are consistent with one structural fact --- the surprisingly
+low stable rank ($\approx4$ in $d\approx900$): prompt-conditioned input-to-hidden sensitivity is highly
+anisotropic, concentrated in a handful of input directions. Isotropic random probes read the bulk norm
+regardless (the Hutchinson identity is spectrum-independent); the low rank is what makes the leading
+and bulk summaries meaningfully distinct yet tightly correlated ($r=0.80$). \emph{Exploratory} (single-model or small-$n$, pre-specified where
 possible): the geometric-alignment measurement, the specific category orderings, and the
 intermediate-scale check. One hypothesis we pre-specified (with no external registration) was \emph{refuted} by measurement --- the
 pre/post-norm reshuffle is not a radial-component removal (Appendix~\ref{sec:radial}) --- which we
@@ -1469,7 +1469,7 @@ precise scope of each.
   coding vs.\ arithmetic) are \emph{not} treated as equivalences: TOST at a $\pm0.5$\,SD margin is
   non-significant ($p=0.29$), so we describe them as underpowered, not equal.
   \item \textbf{$\chi_F$/entropy confound.} We test, rather than assume, that the Fisher/KL
-  susceptibility is independent of output entropy. It is not ($r=0.49$; the factual/hallucination
+  susceptibility is independent of output entropy. It is not ($r=0.49$; the factual/impossible-entity
   ordering collapses from $d=-0.98$ to $-0.19$ after conditioning on entropy; Figure~\ref{fig:confound}),
   so we report $\chi_F$ as an output-side, entropy-related measure and do \emph{not} treat it as a
   second independent axis. This is consistent with the $\chi_F$ analytic skeleton of
@@ -1538,7 +1538,11 @@ reshuffle is not a radial-component removal --- it reflects the final normalizat
 per-token RMS rescaling $1/\mathrm{rms}(h)$ and its learned per-dimension gain $\gamma$. Regressing
 $\sigma_{\max}^{\mathrm{post}}$ on the pure-rescaling prediction $\sigma_{\max}^{\mathrm{pre}}/\mathrm{rms}(h)$
 gives $\mathrm{R}^2=0.31$ (vs.\ $0.22$ for $\sigma_{\max}^{\mathrm{pre}}$ alone), so scalar RMS rescaling
-explains part of the reshuffle but most of it requires the per-dimension gain $\gamma$. Per-prompt values for all four categories are released
+explains part of the reshuffle but most of it requires the per-dimension gain $\gamma$. Strictly, the
+RMSNorm Jacobian also contains the derivative of the rms denominator (a projection along $\hat h$);
+given the measured tangentiality of the leading direction ($|\langle u_1,\hat h\rangle|\approx0.09$),
+this term is negligible for the leading amplification, so the residual beyond scalar rescaling is
+attributable to $\gamma$. Per-prompt values for all four categories are released
 (\texttt{results\_analysis/radial\_test.csv}).
 
 \section*{Reproducibility statement}
