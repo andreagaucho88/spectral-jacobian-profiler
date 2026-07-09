@@ -232,7 +232,7 @@
 }
 \end{filecontents*}
 
-\title{\bfseries Matrix-Free Spectral Profiling of Prompt-Conditioned Input-to-Output Jacobians in Transformer Language Models}
+\title{\bfseries Matrix-Free Spectral Profiling of Prompt-Conditioned Jacobians and Output Susceptibility in Transformer Language Models}
 
 \author{%
   Andrea Gaudiello\,\orcidlink{0000-0001-7721-8217}\\
@@ -248,29 +248,28 @@
 
 \begin{abstract}
 We present a matrix-free toolkit for \emph{offline spectral profiling} of the prompt-conditioned
-input-to-output Jacobian of Transformer language models --- the final-token hidden-state Jacobian at
-both final-norm read-out sites, plus an output-distribution susceptibility. From exact Jacobian--vector products it
-recovers, per prompt, the leading amplification $\sigma_{\max}$, an unbiased estimate of the bulk norm
-$\|J\|_F$, the stable rank, and a Fisher/KL output susceptibility $\chi_F$, with a cheap
+Jacobians of Transformer language models --- the final-token hidden-state Jacobian at both final-norm
+read-out sites, plus a Fisher/KL susceptibility of the output distribution. From exact Jacobian--vector
+products it recovers, per prompt, the leading amplification $\sigma_{\max}$, an unbiased estimate of
+the bulk norm $\|J\|_F$, the stable rank, and the output susceptibility $\chi_F$, with a cheap
 sampled-direction baseline and a numerical core validated against dense ground truth. We apply it to
 four prompt categories (factual, coding, arithmetic, impossible-entity) on Qwen2.5-0.5B,
 SmolLM2-360M and GPT-2, under exact token-length matching and cluster-robust, prompt-level inference.
-The case study is a controlled demonstration of how easily this geometry is over-read. The correlation
+The case study is a controlled demonstration of how easily this geometry is over-read: the correlation
 between $\sigma_{\max}$ and the output-entropy \emph{level} is weak at every model and scale tested
-($\mathrm{R}^2\le0.11$, sign unstable), but it compares a sensitivity to a level: against the entropy's
-input sensitivity $\|\nabla H\|$ the like-for-like correlation is $r=0.45$, mostly shared Jacobian
-magnitude --- partialling out the bulk norm leaves $0.10$--$0.30$ (residual CI including zero on two of
-three models) --- while the two input directions are only partially aligned (mean $|\!\cos|=0.41$,
-$\cos^2=0.24$). $\sigma_{\max}$ is largely redundant with the bulk norm for the categorical contrast
-($r=0.80$, stable rank $\approx4$), the category orderings are model- and scale-dependent, and a
+($\mathrm{R}^2\le0.11$, sign unstable), but it compares a sensitivity to a level. The like-for-like
+comparison against the entropy's input sensitivity gives $r=0.45$, and this is mostly a shared Jacobian
+scale: partialling out the bulk norm leaves a residual partial correlation of only $0.10$--$0.30$ (CI
+including zero on two of three models). The category orderings are model- and scale-dependent, and a
 trivial linear probe already separates the categories, so the observables characterize response
-geometry rather than classify prompts. We release the profiler, the length-matched prompt sets and all
-per-prompt results. The lesson: single-direction or level summaries of hidden geometry invite spurious
-dissociations that magnitude-controlled comparisons dissolve. All hidden-state metrics are Euclidean
-and representation-dependent.
+geometry rather than classify prompts (Results give the redundancy, geometric-alignment and probe
+numbers). We release the profiler, the length-matched prompt sets and all per-prompt results. The
+lesson: single-direction or level summaries of hidden geometry invite spurious dissociations that
+magnitude-controlled comparisons dissolve. All hidden-state metrics are Euclidean and
+representation-dependent.
 \end{abstract}
 
-\keywords{Transformer language models, input$\to$output Jacobian, matrix-free spectral profiling,
+\keywords{Transformer language models, prompt-conditioned Jacobian, output susceptibility, matrix-free spectral profiling,
 Jacobian--vector products, perturbation sensitivity, Fisher information, prompt-conditioned analysis,
 interpretability methodology}
 
@@ -346,11 +345,10 @@ $0.10$--$0.30$). We therefore report couplings and their decomposition, not a ``
   layers or directions as independent samples and controls the principal confounder.
   \item \textbf{A case study, reported as a cautionary lesson} (Section~\ref{sec:results}): naive
   summaries of Jacobian geometry are easy to over-read. The near-zero $\sigma_{\max}$--entropy
-  correlation is a sensitivity-vs-level artifact; the like-for-like comparison is coupled ($r=0.45$)
-  but that coupling is mostly shared magnitude (partial correlation $0.10$--$0.30$); $\sigma_{\max}$
-  is strongly correlated with the bulk norm ($r=0.80$, i.e.\ $64\%$ shared variance) for the categorical contrast; and a trivial linear probe
-  separates the categories at $99\%$. We report these couplings and their decomposition, not a
-  ``dissociation.''
+  correlation is a sensitivity-vs-level artifact; the correct like-for-like comparison is coupled but
+  mostly shared magnitude, $\sigma_{\max}$ is largely redundant with the bulk norm, and a trivial
+  linear probe already separates the categories (all numbers in Section~\ref{sec:controls}). We report
+  these couplings and their decomposition, not a ``dissociation.''
 \end{enumerate}
 
 % =====================================================================
@@ -376,7 +374,7 @@ The $\sigma_{\max}\!\sim\!10^3$ we measure (in input-embedding coordinates) is t
 of local adversarial sensitivity in that space; we study how it is conditioned on the prompt rather
 than regularize it. Our contribution is
 empirical and instrumental rather than theoretical: we do not analyze random or asymptotic-depth
-networks but \emph{profile the exact finite-depth input$\to$output Jacobian of a trained model,
+networks but \emph{profile the exact finite-depth input$\to$final-token Jacobian of a trained model,
 matrix-free}, and study how its spectrum varies with the prompt.
 
 \paragraph{Deep networks as dynamical systems}
@@ -716,7 +714,11 @@ difference \cite{cohen1988statistical}) and Cliff's $\delta$ (a rank-based, dist
 dominance measure \cite{cliff1993dominance}) --- and a two-sided permutation $p$-value ($10^4$
 relabelings), which is exact under the exchangeability null \cite{ernst2004permutation},
 Holm-corrected across the six pairs within each metric to control the family-wise error rate
-\cite{holm1979simple}. For the length control we additionally fit an OLS model of the metric on category
+\cite{holm1979simple}. All permutation $p$ use the add-one estimator $(b+1)/(B+1)$, so no reported $p$
+is literally zero: with $B=10^4$ prompt-level relabelings the raw floor is $\approx\!10^{-4}$, and
+after Holm correction over the six pairs the smallest values we report are of order $10^{-3}$;
+cluster/block permutations on the template id admit fewer relabelings and are likewise reported no
+smaller than $10^{-3}$. For the length control we additionally fit an OLS model of the metric on category
 with and without a token-length covariate, using standard errors clustered on the template
 identifier to account for the non-independence of near-duplicate templated prompts
 \cite{cameron2015practitioner}. We rely on Cliff's $\delta$ alongside Cohen's $d$ for contrasts involving the
@@ -744,7 +746,16 @@ matching alters the arithmetic class toward even terser unit conversions, which 
 its matched-set entropy \emph{above} the impossible-entity class (arithmetic $3.73$ vs.\
 hallucination $3.55$; $|d|$ only $0.44$). We therefore read output uncertainty on the un-matched
 sets, where impossible-entity is the clean outlier, and use the matched sets for the
-hidden-state axis (below).
+hidden-state axis (below). This split of datasets is deliberate, and it is worth stating why it is
+\emph{not} dataset-shopping: the output-uncertainty result is close to a \emph{manipulation check} of
+how the prompts were built --- impossible-entity prompts have diffuse continuations essentially by
+construction (there is no fact to retrieve) --- so it is not a categorical claim we place on equal
+footing with the hidden-state geometry, and it should be read on the sets where prompt construction is
+undistorted. Length matching, by contrast, is required for the hidden-state axis precisely because it
+distorts the arithmetic class (Section~\ref{sec:methods-lengthmatch}); forcing both axes onto one set
+would either reintroduce the length confound on the hidden side or corrupt the output-side outlier. We
+return to this asymmetry --- output uncertainty as a near-manipulation-check, not a second independent
+finding --- in Sections~\ref{sec:controls} and~\ref{sec:discussion}.
 
 \subsection{The hidden-state response is prompt-conditioned, not a length artifact}
 \label{sec:results-alg1}
@@ -831,13 +842,16 @@ $95\%$ CI $[-0.49,-0.04]$ that \emph{excludes} zero, versus $r=-0.01$, CI $[-0.2
 level correlation is weak on both but small-and-nonzero rather than clean-zero, and its magnitude and
 CI are model-dependent ($R^2\le0.09$ on the two primary models). \emph{(ii) Which pairwise contrast survives
 clustering is model-dependent.} On SmolLM2 factual $>$ impossible-entity is cluster-robust
-($d=1.40$, cluster permutation $p=0.000$) while factual $>$ coding is not ($d=0.34$, $p=0.19$) --- the
+($d=1.40$, cluster permutation $p<10^{-3}$) while factual $>$ coding is not ($d=0.34$, $p=0.19$) --- the
 mirror image of Qwen (factual $>$ coding robust, factual vs.\ impossible-entity underpowered),
 matching the model-dependence already seen in Algorithm~1. Neither model establishes factual above
-\emph{both} coding and arithmetic under clustering. \emph{(iii) The radial reading replicates.} At the
-post-norm site factual is no longer the most expansive ($\sigma_{\max}$: coding $88 >$ factual $79 >$
-impossible-entity $75 >$ arithmetic $72$; factual vs.\ coding $d=-0.47$), consistent, as on Qwen,
-with a radial component removed by RMSNorm. Finally, the Fisher/KL susceptibility $\chi_F$ does
+\emph{both} coding and arithmetic under clustering. \emph{(iii) The post-norm reordering replicates,
+but it is not radial.} At the post-norm site factual is no longer the most expansive ($\sigma_{\max}$:
+coding $88 >$ factual $79 >$ impossible-entity $75 >$ arithmetic $72$; factual vs.\ coding $d=-0.47$),
+the same reshuffle as on Qwen --- but the radial-component explanation is \emph{refuted} by direct
+measurement on Qwen (the leading amplification is tangential and no more radial for factual;
+Appendix~\ref{sec:radial}), so we attribute the reshuffle on both models to the final-norm gain, not
+to radial removal. Finally, the Fisher/KL susceptibility $\chi_F$ does
 \emph{not} replicate its ordering across models (its category ranking and even the sign of its
 correlation with entropy differ, $+0.49$ on Qwen vs.\ $-0.20$ on SmolLM2), further supporting our
 treatment of $\chi_F$ as an output-side, entropy-related measure rather than a stable axis.
@@ -974,7 +988,7 @@ and lowest for coding ($704.3$), with impossible-entity ($865.3$) and arithmetic
 (Figure~\ref{fig:box}, left). Because templated prompts are near-duplicates, we judge significance by
 \emph{cluster} permutation on the template id (distinct templates per category: factual $39$, coding
 $40$, impossible-entity $28$, arithmetic only $5$). Factual $>$ coding is large and cluster-robust
-($d=1.12$; cluster permutation $p=0.000$; cluster-bootstrap $95\%$ CI of the mean difference
+($d=1.12$; cluster permutation $p<10^{-3}$; cluster-bootstrap $95\%$ CI of the mean difference
 $[+133,+297]$). Factual $>$ arithmetic is also large ($d=1.08$) but is \emph{not} cluster-robust
 (cluster permutation $p=0.11$), because the arithmetic class is backed by only five templates; we
 report it as suggestive, not established. Factual and impossible-entity are statistically
@@ -1050,35 +1064,37 @@ $p=0.46$), while a residual coding/arithmetic contrast remains.}
 \label{fig:confound}
 \end{figure}
 
-\paragraph{Post-norm: the hidden ordering is consistent with a radial component.}
+\paragraph{Post-norm: the reordering is \emph{not} radial-component removal.}
 At the post-norm read-out (after the final RMSNorm) the hidden axis changes: factual is no longer
 the most expansive. The post-norm $\sigma_{\max}$ ordering is arithmetic ($5634$) $>$
-impossible-entity ($5256$) $>$ factual ($4840$) $>$ coding ($4447$), and factual is now
-significantly \emph{below} arithmetic ($d=-0.67$, Holm $p=0.014$) rather than above it
-(Figure~\ref{fig:prepost}). The final RMSNorm rescales the hidden state to unit root-mean-square,
-removing its radial component \cite{zhang2019root}; the pre-versus-post reversal is therefore
-\emph{consistent with} factual's excess pre-norm amplification lying largely along the radial
-direction, though we do not claim a definitive decomposition, as the two read-out sites also differ
-in the last block's transformation. We read only the pre$\to$post \emph{reordering}, not the absolute
-scale: the overall $\sigma_{\max}$ magnitude moves in \emph{opposite} directions across models
-(pre$\to$post rises $\sim\!5\times$ on Qwen but falls $\sim\!20\times$ on SmolLM2;
-Figure~\ref{fig:prepost}), because RMSNorm's rescaling folds in a model-specific learned gain $\gamma$
-and RMS level. That absolute change is uninterpreted; only which class \emph{leads} carries the radial
-reading, and the class-leadership reshuffle is the same (factual loses its lead) on both. The output
-response $\chi_F$ is, as expected, identical between
-the two sites (it depends on the logits, not the tracked hidden index), so the output-distribution
-ordering is norm-invariant, whereas the hidden-state ``factual is most
-expansive'' statement holds only pre-norm and is representation-dependent --- which tempers any
-reading of factual as internally the most perturbation-expansive class.
+impossible-entity ($5256$) $>$ factual ($4840$) $>$ coding ($4447$), factual now
+significantly \emph{below} arithmetic ($d=-0.67$, Holm $p=0.014$; Figure~\ref{fig:prepost}). A natural
+hypothesis is that factual's excess \emph{pre}-norm amplification lies along the radial direction
+$\hat h=h_{L,T}/\|h_{L,T}\|$, which the final RMSNorm removes \cite{zhang2019root}. We \emph{tested}
+this directly (Appendix~\ref{sec:radial}) rather than leaving it as ``consistent with''. It fails. With
+$u_1$ the leading \emph{left} singular vector, the radial alignment $|\langle u_1,\hat h\rangle|$
+averages only $0.09$ (random-direction baseline $\approx0.03$) and the radial fraction of the bulk
+$\|\hat h^\top J\|^2/\|J\|_F^2$ is only $\approx1\%$: the leading amplification is overwhelmingly
+\emph{tangential}, changing $h$'s direction rather than its norm. And, decisively, neither quantity is
+larger for factual than for coding (Cohen's $d=-0.07$ and $-0.09$; Mann--Whitney $p\approx0.4$), so
+factual's pre-norm excess is \emph{not} radial. The pre$\to$post reordering is therefore attributable
+to the final norm's learned per-dimension gain $\gamma$ and the last block's transformation, not to
+radial removal --- consistent with the absolute $\sigma_{\max}$ moving in \emph{opposite} directions
+across models (pre$\to$post $\sim\!5\times$ up on Qwen, $\sim\!20\times$ down on SmolLM2), a
+model-specific gain rather than a shared radial effect. The output response $\chi_F$ is, as expected,
+identical between the two sites (it depends on the logits, not the tracked hidden index), so the
+output-distribution ordering is norm-invariant, whereas the hidden ``factual is most expansive''
+statement holds only pre-norm and is representation-dependent.
 
 \begin{figure}[t]\centering
 \includegraphics[width=\linewidth]{figures/pre_post_norm_shift.pdf}
 \caption{Pre- vs.\ post-norm hidden amplification $\sigma_{\max}$ (mean $\pm$ SEM, $n=40$/category)
 for both models: Qwen2.5-0.5B (left), SmolLM2-360M (right); per-panel $y$-scales differ, and the
 absolute pre$\to$post change is opposite across models ($\sim\!5\times$ up on Qwen, $\sim\!20\times$
-down on SmolLM2 --- a model-specific final-norm gain, uninterpreted; see text). On both,
-factual leads only at the pre-norm site and the ordering rearranges post-norm, consistent with a
-radial component removed by RMSNorm.}
+down on SmolLM2 --- a model-specific final-norm gain; see text). On both,
+factual leads only at the pre-norm site and the ordering rearranges post-norm. Direct measurement
+(Appendix~\ref{sec:radial}) shows this reshuffle is \emph{not} a radial-component removal --- the
+leading amplification is tangential and no more radial for factual --- but the final-norm gain.}
 \label{fig:prepost}
 \end{figure}
 
@@ -1110,11 +1126,11 @@ post-norm & SmolLM2-360M & 40 & cod$>$fac$>$hal$>$rea & cod$>$fac$>$hal$>$rea & 
 $n_{\mathrm{iter}}=15$; numerical self-test PASS). ``c.r.''/``n.\,c.r.'' = cluster-robust / not
 cluster-robust under template-level permutation. On \emph{both} models factual has the highest
 pre-norm $\sigma_{\max}$ and the lowest entropy, but \emph{which} pairwise contrast survives
-clustering is model-dependent: factual $>$ coding on Qwen ($p=0.000$) vs.\ factual $>$
-impossible-entity on SmolLM2 ($p=0.000$); arithmetic-involving contrasts are never cluster-robust
+clustering is model-dependent: factual $>$ coding on Qwen ($p<10^{-3}$) vs.\ factual $>$
+impossible-entity on SmolLM2 ($p<10^{-3}$); arithmetic-involving contrasts are never cluster-robust
 (only five arithmetic templates), and factual vs.\ impossible-entity on Qwen is underpowered, not
-equal. At the post-norm site factual is no longer the most expansive on either model, consistent
-with a radial component removed by the final RMSNorm. The bulk identity replicates (Qwen rel.\ err.\
+equal. At the post-norm site factual is no longer the most expansive on either model; direct measurement
+(Appendix~\ref{sec:radial}) shows this is the final-norm gain, \emph{not} a radial component. The bulk identity replicates (Qwen rel.\ err.\
 $3.3\%$, $r=0.79$; SmolLM2 $1.9\%$, $r=0.88$); the ``---'' in the post-norm bulk column marks that the
 Algorithm-1 identity is defined only at the pre-norm site it tracks, so no post-norm bulk error is
 computed. The output ordering $\chi_F^{\max}$ is
@@ -1197,8 +1213,9 @@ lose. This reinforces the two conclusions above --- the \emph{smallness of the $
 level correlation} is architecture- and scale-robust (though its sign is not), whereas the
 \emph{factual-corner ordering} is specific to the two sub-billion instruction-tuned models. We stress
 that this scale/architecture robustness concerns only the naive level comparison; the corrected,
-magnitude-controlled comparison of Section~\ref{sec:controls} was run at $0.5$B, and the radial reading
-of the Qwen pre/post-norm difference remains a single-model observation.
+magnitude-controlled comparison of Section~\ref{sec:controls} was run at $0.5$B, and the direct radial
+test of the pre/post-norm difference (Appendix~\ref{sec:radial}, which \emph{refutes} the radial
+reading) is likewise a single-model measurement.
 
 % =====================================================================
 \section{Discussion}
@@ -1217,7 +1234,7 @@ factual $>$ coding, pre-norm $\sigma_{\max}$ & \S\ref{sec:results-alg2} & Qwen-0
 factual $>$ impossible-entity, pre-norm $\sigma_{\max}$ & \S\ref{sec:results-inversion} & SmolLM2 & cluster-robust; model-dependent mirror \\
 Bulk identity (Alg.\,1 $\approx\lambda_{\mathrm{bulk}}$) & \S\ref{sec:results-alg2}, Fig.\,\ref{fig:bulk} & both primary & replicated ($3.3\%$ / $1.9\%$) \\
 $\chi_F$ tracks entropy; category ordering collapses on residuals & \S\ref{sec:results-alg2} & both primary (sign flips) & \emph{not} an independent axis \\
-Post-norm reordering $\Rightarrow$ radial reading & \S\ref{sec:results-alg2} & both primary & consistent-with, not proven \\
+Post-norm reordering is \emph{not} radial (leading amplification tangential) & \S\ref{sec:results-alg2}, App.\,\ref{sec:radial} & Qwen-0.5B & radial hypothesis refuted; reordering is the final-norm gain \\
 Hallucination-prone $=$ entropy outlier & \S\ref{sec:results-output} & all conditions & robust; near-manipulation-check \\
 Every arithmetic-involving contrast & passim & 5 templates & never cluster-robust; suggestive \\
 \bottomrule
@@ -1230,8 +1247,22 @@ of exactly how far each result generalizes.}
 We set out to ask an internal question: beyond what the output distribution reveals, do prompts of
 different kinds drive the model through measurably different computational regimes?
 Table~\ref{tab:survives} maps every claim to its evidence, scope, and status; the prose below expands
-the load-bearing rows. Our primary contribution is instrumental: a matrix-free spectral profiler for the exact
-prompt-conditioned input$\to$output Jacobian, with a cheap baseline, correct cluster-aware inference,
+the load-bearing rows.
+
+\paragraph{Claim hierarchy.} We grade our claims by evidential strength, and ask readers to weight them
+accordingly. \emph{Strong} (method-level, robust across our models): the matrix-free profiler and its
+validated numerics, and the level-vs-sensitivity lesson --- that the near-zero $\sigma_{\max}$--entropy
+correlation is a sensitivity-vs-level artifact, and that the like-for-like, magnitude-controlled
+comparison leaves only a weak residual coupling. \emph{Medium} (replicated on both primary models but
+narrower): the bulk identity (Algorithm~1 realizes $\lambda_{\mathrm{bulk}}$) and the redundancy of
+$\sigma_{\max}$ with the bulk norm. \emph{Exploratory} (single-model or small-$n$, pre-specified where
+possible): the geometric-alignment measurement, the specific category orderings, and the
+intermediate-scale check. One hypothesis we pre-registered was \emph{refuted} by measurement --- the
+pre/post-norm reshuffle is not a radial-component removal (Appendix~\ref{sec:radial}) --- which we
+report as such. The rest of this section expands the strong and medium tiers.
+
+Our primary contribution is instrumental: a matrix-free spectral profiler for the exact
+prompt-conditioned input$\to$final-token Jacobian (plus $\chi_F$), with a cheap baseline, correct cluster-aware inference,
 and a validated numerical core. The scientific lesson of the case study is deliberately measured. The
 leading hidden amplification and the output-entropy \emph{level} are only weakly related
 ($\mathrm{R}^2\le0.11$ at every scale, sign unstable; distance correlation $0.20$), but this is \emph{not} evidence that hidden and output
@@ -1335,8 +1366,10 @@ make no claim to detect hallucinations. \emph{(4)~Representation dependence.} Th
 metrics $\chi_L^{(\epsilon)}$, $\lambda_L^{(\epsilon)}$, and $\sigma_{\max}$ are Euclidean in the
 model's native coordinates and are not reparameterization-invariant; only the Fisher/KL response
 $\chi_F$ is intrinsic to the output distribution, and even it is induced by a perturbation fixed in
-input-embedding coordinates. The pre/post-norm reversal is \emph{consistent with} a radial component
-removed by RMSNorm, not a proven decomposition. \emph{(5)~Not a Lyapunov exponent.}
+input-embedding coordinates. We had read the pre/post-norm reversal as \emph{consistent with} a radial
+component removed by RMSNorm; a direct test (Appendix~\ref{sec:radial}) \emph{refutes} that --- the
+leading amplification is tangential --- so we attribute the reversal to the final-norm gain, not a
+radial decomposition. \emph{(5)~Not a Lyapunov exponent.}
 $\lambda_L^{(\epsilon)}$ is a sampled-direction, finite-depth response; it is neither a leading nor an
 asymptotic Lyapunov exponent, and a random direction systematically underestimates the leading
 growth (hence the exact-Jacobian cross-check). \emph{(6)~Deployment cost.} Algorithm~2 is offline
@@ -1363,9 +1396,9 @@ model-dependent residual, not a two-axis dissociation.
 
 \paragraph{Future work.}
 The most valuable next steps target the physics of the measurement. The exact-Jacobian validation
-should be completed across both models and the post-norm read-out (Table~\ref{tab:alg2}); the
-pre-norm/post-norm difference isolates the radial growth removed by the final RMSNorm and tests
-the representation-dependence directly. The per-direction distribution's upper tail
+should be completed across both models and the post-norm read-out (Table~\ref{tab:alg2}). Our
+radial test (Appendix~\ref{sec:radial}) was run only on Qwen; repeating it on SmolLM2 would confirm
+that the pre/post reshuffle is the final-norm gain there too. The per-direction distribution's upper tail
 ($p_{90}$--$p_{99}$) and anisotropy, which a direction average discards, should be reported. The
 representation-dependence can be further probed by checking whether the orderings survive
 alternative distance definitions (whitening by the per-layer hidden-state covariance, or angular
@@ -1425,7 +1458,7 @@ precise scope of each.
   \emph{block} permutation on the template id (and cluster-robust OLS \cite{cameron2015practitioner}),
   not prompt-level permutation alone. Cluster-robust results: the small $\sigma_{\max}$/entropy
   \emph{level} correlation ($r=-0.01$, cluster-bootstrap $95\%$ CI $[-0.21,0.17]$) and factual $>$
-  coding ($d=1.12$, cluster permutation $p=0.000$). Not cluster-robust: factual $>$ arithmetic
+  coding ($d=1.12$, cluster permutation $p<10^{-3}$). Not cluster-robust: factual $>$ arithmetic
   ($p=0.11$) and every arithmetic-involving contrast, given only five arithmetic templates --- reported
   as suggestive.
   \item \textbf{Equivalence testing.} Non-significant contrasts (factual vs.\ impossible-entity,
@@ -1438,33 +1471,17 @@ precise scope of each.
   second independent axis. This is consistent with the $\chi_F$ analytic skeleton of
   Section~\ref{sec:results-alg2} ($\chi_F^{\max}\le\tfrac12\lambda_{\max}(F)\,\sigma_{\max}(J_z)^2$,
   with $\lambda_{\max}(F)\to0$ at both entropy extremes).
-  \item \textbf{The coupling is magnitude-dominated across prompts, directionally partial within (the correct comparison).} The headline
-  $\sigma_{\max}\!-\!H(p)$ number compares a sensitivity to a level. The like-for-like comparison
-  uses the entropy input-gradient norm $\|\nabla_{H_0}H\|$ (one backward): $r(\|\nabla_{H_0}H\|,
-  \sigma_{\max})=0.45$ (Qwen, $n=160$), but partialling out the bulk norm $\lambda_{\mathrm{bulk}}$
-  (itself $0.80$-correlated with $\sigma_{\max}$) drops the partial correlation to $0.10$ (bootstrap
-  $95\%$ CI $[-0.09,0.29]$). Replicated with one backward per prompt, the partial correlation is $0.30$
-  on SmolLM2 ($n=160$, CI $[0.16,0.44]$) and $0.30$ on GPT-2 ($n=64$, CI $[-0.27,0.61]$): a weak,
-  model-dependent residual once shared magnitude is removed, with the residual CI including zero on two
-  of three models. The shared driver is verified from both sides: $\lambda_{\mathrm{bulk}}$ is
-  $0.80$-correlated with $\sigma_{\max}$ and $0.50$-correlated with $\|\nabla_{H_0}H\|$ on Qwen ($0.27$
-  SmolLM2, $0.38$ GPT-2), so the shrinkage removes a genuine common scale, not just a collinear
-  covariate. A partialling-free geometric check corroborates this and adds nuance: the leading
-  hidden-stretch direction $v_{\mathrm{lead}}$ and the entropy input-gradient $\nabla_{H_0}H$ (same
-  $T\times d$ space) have mean $|\!\cos|=0.41$ (Qwen, $n=160$). Both concentrate on the last token
-  positions, so we compare against a \emph{position-matched} null (random directions with
-  $\nabla_{H_0}H$'s per-position energy profile), which is $0.0075$ (vs.\ the fully-random
-  $\sqrt{2/(\pi N)}=0.0046$); $|\!\cos|=0.41$ is still $\approx\!55\times$ this null and $97.5\%$ of
-  prompts exceed their own null, so the alignment is genuine within-position structure. But only
-  $\overline{\cos^2}=0.24$, so the directions are partially aligned --- not orthogonal and not
-  collinear. There is also a
-  weak \emph{nonlinear} dependence of $\sigma_{\max}$ on the entropy level that Pearson $r$ ($-0.01$)
-  misses: pooled distance correlation $0.20$ (permutation $p=0.04$ over $2000$ label shuffles). This is
-  \emph{not} merely between-category centroid separation --- the \emph{within-category} mean distance
-  correlation is $0.30$ ($0.24,0.25,0.51,0.21$ for factual/coding/arithmetic/impossible-entity; each
-  from $n=40$, where the distance-correlation estimator is upward-biased), comparable to or above the
-  pooled value, so a weak dependence persists inside each class. It remains weak in absolute terms and
-  does not alter the magnitude-dominated conclusion.
+  \item \textbf{The coupling is magnitude-dominated (the correct comparison).} Full derivation and
+  per-model numbers are in Section~\ref{sec:controls}; in brief, the like-for-like
+  $r(\|\nabla_{H_0}H\|,\sigma_{\max})=0.45$ drops to a partial correlation of $0.10$--$0.30$ (residual
+  CI including zero on two of three models) once the bulk norm is removed, the shared driver
+  $\lambda_{\mathrm{bulk}}$ is verified from both sides ($0.80$-correlated with $\sigma_{\max}$, $0.50$
+  with $\|\nabla_{H_0}H\|$), and a partialling-free geometric check ($|\!\cos|=0.41$, $\approx\!55\times$
+  a position-matched null, but $\overline{\cos^2}=0.24$) leaves only a modest, genuinely directional
+  residual. One appendix-only detail: a weak \emph{nonlinear} dependence that Pearson misses (pooled
+  distance correlation $0.20$, permutation $p=0.04$) is \emph{not} merely centroid separation --- the
+  within-category mean is $0.30$ ($n=40$/class, upward-biased) --- so it persists inside each class
+  while staying weak.
   \item \textbf{Convergence residuals.} The spectral estimates are matrix-free and iterative; we
   store a per-prompt subspace residual and report it. At $n_{\mathrm{iter}}=15$ the median residual
   is $4\times10^{-4}$ with $5\%$ of prompts above $10^{-2}$, so the reported effects (cross-tier
@@ -1476,8 +1493,9 @@ precise scope of each.
   $\|J\|_F/\sqrt N$, not the leading amplification --- so the flat sampled-direction contrast is a
   prediction, not a null result.
   \item \textbf{Pre/post-norm analysis.} We profile both read-out sites. The hidden ordering
-  differs between them (factual leads only pre-norm), \emph{consistent with} a radial component
-  removed by the final RMSNorm; the output-distribution ordering $\chi_F^{\max}$ is identical at both
+  differs between them (factual leads only pre-norm); a direct test (Appendix~\ref{sec:radial})
+  \emph{refutes} a radial-component reading --- the leading amplification is tangential --- so this is
+  the final-norm gain. The output-distribution ordering $\chi_F^{\max}$ is identical at both
   sites (it depends on the logits, not the tracked hidden index).
   \item \textbf{Numerical self-test.} The estimator ships a self-test against dense linear-algebra
   ground truth (leading singular values to machine precision; unbiased Frobenius estimator; the
@@ -1491,6 +1509,30 @@ precise scope of each.
   $n$/category, read under the three pre-specified outcomes of Section~\ref{sec:discussion}, and is
   never a scaling law.
 \end{itemize}
+
+\section{Radial vs.\ Tangential Decomposition (a pre-specified test of the radial reading)}
+\label{sec:radial}
+The pre/post-norm reshuffle (Section~\ref{sec:results-alg2}) suggested that factual's excess pre-norm
+amplification lies along the \emph{radial} direction $\hat h=h_{L,T}/\|h_{L,T}\|$, which the final
+RMSNorm removes. We test this directly on the Qwen $n=40$/category prompts. From Algorithm~2 we already
+have the leading right singular vector $v_1$ and $\sigma_{\max}$; the leading \emph{left} singular
+vector is $u_1=Jv_1/\sigma_{\max}$ (one extra JVP), and the radial row of the Jacobian is
+$\hat h^\top J=\nabla_{H_0}\|h_{L,T}\|$ (one VJP). We report (i) the radial alignment of the leading
+direction $|\langle u_1,\hat h\rangle|$ and (ii) the radial fraction of the bulk
+$\rho=\|\hat h^\top J\|^2/\|J\|_F^2$. \textbf{Pre-specified prediction} (stated before running):
+factual has higher $|\langle u_1,\hat h\rangle|$ and $\rho$ than coding.
+
+\textbf{Outcome: refuted.} The leading amplification is overwhelmingly \emph{tangential}:
+$|\langle u_1,\hat h\rangle|$ averages $0.09$ across categories (random-direction baseline
+$1/\sqrt{N}\!\approx\!0.03$) and $\rho\approx0.011$ (baseline $1/N\!\approx\!0.001$), i.e.\ only about
+$1\%$ of the Jacobian's energy changes the norm of $h$; the rest rotates its direction. And the
+category contrast goes the \emph{wrong} way for the prediction: factual is not above coding on either
+measure ($|\langle u_1,\hat h\rangle|$ factual $0.086$ vs.\ coding $0.091$, Cohen's $d=-0.07$,
+Mann--Whitney $p=0.41$; $\rho$ factual $0.011$ vs.\ coding $0.012$, $d=-0.09$, $p=0.45$; both
+$n=40$). Factual's pre-norm $\sigma_{\max}$ excess is therefore \emph{not} radial, so the pre/post
+reshuffle is not a radial-component removal --- it reflects the final norm's learned per-dimension gain
+$\gamma$ and the last block's transformation. Per-prompt values for all four categories are released
+(\texttt{results\_analysis/radial\_test.csv}).
 
 \section*{Reproducibility statement}
 The profiler (\texttt{spectral.py}, \texttt{runner.py}), the length-matched prompt generator

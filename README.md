@@ -1,9 +1,9 @@
 # Spectral Jacobian Profiler
 
-**Matrix-free spectral profiling of prompt-conditioned input→output Jacobians in Transformer language models.**
+**Matrix-free spectral profiling of prompt-conditioned Jacobians and output susceptibility in Transformer language models.**
 
 This repository is the reference implementation and full artifact for the paper
-*Matrix-Free Spectral Profiling of Prompt-Conditioned Input→Output Jacobians in
+*Matrix-Free Spectral Profiling of Prompt-Conditioned Jacobians and Output Susceptibility in
 Transformer Language Models* (`paper/main.tex`). It provides a small, dependency-light
 toolkit that, for a single prompt, recovers spectral summaries of the exact
 input→final-token Jacobian **J = ∂h<sub>L,T</sub> / ∂H₀** without ever materializing it —
@@ -38,7 +38,7 @@ The paper is deliberately framed as a **methods contribution with a cautionary c
 not a "dissociation" findings paper. The reproducible chain:
 
 - The leading amplification `sigma_max` is only **weakly related to the output-entropy
-  *level*** (`R² ≤ 0.10` at every model and scale tested, sign unstable) — but that compares a
+  *level*** (`R² ≤ 0.11` at every model and scale tested, sign unstable) — but that compares a
   hidden-state *sensitivity* to an output *level*, which is the wrong comparison.
 - The **like-for-like** comparison against the entropy's *input sensitivity* `‖∇_{H₀}H‖`
   gives `r = 0.45`, which is **mostly shared Jacobian magnitude**: partialling out the bulk
@@ -46,7 +46,7 @@ not a "dissociation" findings paper. The reproducible chain:
   **includes zero on two of three**).
 - A **collinearity-free geometric check** (`cos∠(∇_{H₀}H, v_lead)` = 0.41) against a
   **position-matched null** — random directions carrying ∇H's per-position energy profile
-  (null = 0.008; ~53× against it, 97.5% of prompts exceed their own null) — shows the two input
+  (null = 0.0075; ~55× against it, 97.5% of prompts exceed their own null) — shows the two input
   directions are **partially aligned** (`cos² = 0.24`): a genuine within-position directional
   overlap, **not** a positional-support artifact, but modest.
 - `sigma_max` is **strongly correlated with the bulk norm** for the categorical contrast
@@ -109,8 +109,9 @@ Every model directory/file is keyed by a slug of the HF model name with `/` → 
 released data and the paper refer to the same categories under different display names.
 
 `final_index` convention: `-2` = **pre-norm** hidden state (matches the Algorithm-1 tracking),
-`-1` = **post-norm** (the actual input to the logit head). Radial growth is present pre-norm
-and removed post-norm, so pre-vs-post isolates radial from angular growth.
+`-1` = **post-norm** (the actual input to the logit head). Pre-vs-post isolates the final-norm
+effect; a direct test (paper App. C) shows the leading amplification is *tangential*, so the pre/post
+reshuffle is the final-norm gain, not radial-component removal.
 
 ---
 
@@ -210,7 +211,7 @@ cd paper && pdflatex main && bibtex main && pdflatex main && pdflatex main
 ```bibtex
 @misc{gaudiello2026spectral,
   title  = {Matrix-Free Spectral Profiling of Prompt-Conditioned
-            Input-to-Output Jacobians in Transformer Language Models},
+            Jacobians and Output Susceptibility in Transformer Language Models},
   author = {Gaudiello, Andrea},
   year   = {2026},
   note   = {\url{https://github.com/andreagaucho88/spectral-jacobian-profiler}}

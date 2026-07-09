@@ -1,0 +1,23 @@
+{
+  "n": 160,
+  "cos_u1_hhat": {
+    "by_cat": {
+      "factual": 0.086,
+      "coding": 0.091,
+      "reasoning": 0.087,
+      "hallucination_prone": 0.068
+    },
+    "factual_vs_coding_d": -0.07,
+    "MWU_p_fac>cod": 0.4068
+  },
+  "rho_radial": {
+    "by_cat": {
+      "factual": 0.011,
+      "coding": 0.012,
+      "reasoning": 0.009,
+      "hallucination_prone": 0.009
+    },
+    "factual_vs_coding_d": -0.09,
+    "MWU_p_fac>cod": 0.454
+  }
+}
