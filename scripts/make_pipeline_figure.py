@@ -62,7 +62,7 @@ span(X[0], X[1], 3.42, C_JAC,
      "Algorithm 2 (pre-norm) + Algorithm 1 sampled-direction $\\lambda_L^{(\\epsilon)}$")
 span(X[0], X[2], 2.42, C_HID,
      "$\\partial h_{L,T}^{\\,\\mathrm{post}}/\\partial H_0$ :  $\\sigma_{\\max}$ (post-norm)",
-     "Algorithm 2 (post-norm) — radial component removed by the final norm")
+     "Algorithm 2 (post-norm) — the final normalization changes the hidden metric (App. C)")
 span(X[0], X[4], 1.42, C_FISH,
      "$\\chi_F$ :  Fisher/KL output susceptibility",
      "how an input perturbation moves the output distribution $p$")

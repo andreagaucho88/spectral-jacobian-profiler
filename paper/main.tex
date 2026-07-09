@@ -285,20 +285,18 @@ token; this distribution is directly observable, but the sequence of internal re
 traversed on the way to it is high-dimensional, hidden, and rarely examined directly, although
 mechanistic-interpretability work has begun to open it up \cite{elhage2021mathematical}.
 
-This opacity is especially relevant for \emph{hallucination}: fluent but unsupported, false,
-or non-faithful output \cite{ji2023survey}. Most analyses operate at the level of the generated
-text --- factual correctness, calibration, or benchmark truthfulness \cite{lin2022truthfulqa}.
-Such output-level measurements are necessary, but they cannot tell us whether prompts that tend
-to elicit hallucination drive the model through internally different computational regimes. We
-therefore ask a complementary, \emph{internal} question: do impossible-entity prompts induce
-hidden-state trajectories that respond more strongly to a small change in the input than those
-induced by prompts requiring constrained reasoning or factual recall? Throughout, when we speak
-of a trajectory being more or less \emph{responsive}, this is shorthand for a larger or smaller
-finite-depth perturbation response, made quantitative below by the metrics $\chi_L^{(\epsilon)}$,
-$\lambda_L^{(\epsilon)}$, and $g_l$; we never use ``stability'' in a looser, undefined sense.
-In particular, we do \emph{not} claim to observe chaos, and we do not estimate true Lyapunov
-spectra; we measure a finite-depth, Lyapunov-inspired response along sampled directions, and
-we later cross-check it against the exact Jacobian's leading direction.
+This opacity matters most for \emph{hallucination} --- fluent but unsupported output
+\cite{ji2023survey} --- which output-level analyses (factual correctness, calibration,
+truthfulness \cite{lin2022truthfulqa}) can measure but cannot tie to the internal computation. We
+therefore study the hidden computation directly, as a \emph{diagnostic geometry of
+prompt-conditioned Jacobians}: for a fixed prompt we profile the spectrum of the Jacobian mapping
+input perturbations to the final-token hidden state, and ask whether prompts built to induce output
+uncertainty (impossible, fictional, or temporally invalid entities --- an uncertainty-inducing
+proxy) drive the model through a measurably different perturbation regime than factual-recall or
+arithmetic prompts. When we call a trajectory more or less \emph{responsive} we mean a larger or
+smaller finite-depth perturbation response, made quantitative below; we claim no chaos and estimate
+no Lyapunov spectra, and cross-check the sampled response against the exact Jacobian's leading
+direction.
 
 \paragraph{Scope and positioning}
 This work is an exercise in \emph{interpretability} --- a diagnostic geometry of
@@ -524,7 +522,7 @@ future work.
 \end{minipage}}
 \end{center}
 
-$\lambda_L^{(\epsilon)}$ is a finite-depth, Lyapunov-inspired, sampled-direction response. It is
+$\lambda_L^{(\epsilon)}$ is a finite-depth, sampled-direction perturbation response. It is
 \emph{not} an asymptotic Lyapunov exponent, and it is \emph{not} a leading finite-time exponent
 --- a random direction reports amplification along $\Xi$ only. This is the gap Algorithm~2 fills.
 
@@ -851,7 +849,7 @@ coding $88 >$ factual $79 >$ impossible-entity $75 >$ arithmetic $72$; factual v
 the same reshuffle as on Qwen --- but the radial-component explanation is \emph{refuted} by direct
 measurement on Qwen (the leading amplification is tangential and no more radial for factual;
 Appendix~\ref{sec:radial}), so we attribute the reshuffle on both models to the final-norm gain, not
-to radial removal. Finally, the Fisher/KL susceptibility $\chi_F$ does
+to radial removal (the radial test itself was run on Qwen; Appendix~\ref{sec:radial}). Finally, the Fisher/KL susceptibility $\chi_F$ does
 \emph{not} replicate its ordering across models (its category ranking and even the sign of its
 correlation with entropy differ, $+0.49$ on Qwen vs.\ $-0.20$ on SmolLM2), further supporting our
 treatment of $\chi_F$ as an output-side, entropy-related measure rather than a stable axis.
@@ -894,13 +892,15 @@ magnitude-controlled coupling is \emph{weak and model-dependent} ($0.10$--$0.30$
 
 We pre-empt the obvious objection --- that partialling a covariate $0.80$-correlated with
 $\sigma_{\max}$ mechanically shrinks the partial, so the drop is collinearity arithmetic rather than
-evidence of shared magnitude. It is the shared magnitude: $\lambda_{\mathrm{bulk}}$ is shown
-independently to drive \emph{both} sides. It is $r=0.80$-correlated with $\sigma_{\max}$ \emph{and}
+evidence of shared magnitude. Consistent with a dominant shared-scale component,
+$\lambda_{\mathrm{bulk}}$ is independently correlated with \emph{both} sides: it is
+$r=0.80$-correlated with $\sigma_{\max}$ \emph{and}
 $r(\|\nabla_{H_0}H\|,\lambda_{\mathrm{bulk}})=0.50$ on Qwen ($0.27$ SmolLM2, $0.38$ GPT-2) --- on Qwen
 the entropy sensitivity tracks the bulk norm \emph{more} tightly than it tracks $\sigma_{\max}$ itself
-($0.50>0.45$). So a single common scale (big Jacobians are big everywhere) sits behind the raw $0.45$,
-and removing it is removing a real common cause, not manufacturing a null. We report this
-decomposition, not a single number.
+($0.50>0.45$). So the correlations are compatible with a single common scale (big Jacobians are big
+everywhere) behind the raw $0.45$; these are correlational data and we do \emph{not} identify
+$\lambda_{\mathrm{bulk}}$ as a causal mediator, only report that its removal is what shrinks the
+partial. We report this decomposition, not a single number.
 
 \paragraph{A collinearity-free check: the directions are partially aligned.}
 Partialling removes a covariate correlated with $\sigma_{\max}$, so a skeptic could call the drop
@@ -1078,7 +1078,7 @@ $\|\hat h^\top J\|^2/\|J\|_F^2$ is only $\approx1\%$: the leading amplification 
 \emph{tangential}, changing $h$'s direction rather than its norm. And, decisively, neither quantity is
 larger for factual than for coding (Cohen's $d=-0.07$ and $-0.09$; Mann--Whitney $p\approx0.4$), so
 factual's pre-norm excess is \emph{not} radial. The pre$\to$post reordering is therefore attributable
-to the final norm's learned per-dimension gain $\gamma$ and the last block's transformation, not to
+to the final norm alone --- its per-token RMS rescaling $1/\mathrm{rms}(h)$ and learned gain $\gamma$ --- not to
 radial removal --- consistent with the absolute $\sigma_{\max}$ moving in \emph{opposite} directions
 across models (pre$\to$post $\sim\!5\times$ up on Qwen, $\sim\!20\times$ down on SmolLM2), a
 model-specific gain rather than a shared radial effect. The output response $\chi_F$ is, as expected,
@@ -1255,9 +1255,13 @@ validated numerics, and the level-vs-sensitivity lesson --- that the near-zero $
 correlation is a sensitivity-vs-level artifact, and that the like-for-like, magnitude-controlled
 comparison leaves only a weak residual coupling. \emph{Medium} (replicated on both primary models but
 narrower): the bulk identity (Algorithm~1 realizes $\lambda_{\mathrm{bulk}}$) and the redundancy of
-$\sigma_{\max}$ with the bulk norm. \emph{Exploratory} (single-model or small-$n$, pre-specified where
+$\sigma_{\max}$ with the bulk norm. Both follow from one structural fact --- the surprisingly low
+stable rank ($\approx4$ in $d\approx900$): prompt-conditioned input-to-hidden sensitivity is highly
+anisotropic, concentrated in a handful of input directions, which is exactly why a single random
+direction estimates the bulk norm rather than the leading amplification, and why the two are so
+correlated. \emph{Exploratory} (single-model or small-$n$, pre-specified where
 possible): the geometric-alignment measurement, the specific category orderings, and the
-intermediate-scale check. One hypothesis we pre-registered was \emph{refuted} by measurement --- the
+intermediate-scale check. One hypothesis we pre-specified (with no external registration) was \emph{refuted} by measurement --- the
 pre/post-norm reshuffle is not a radial-component removal (Appendix~\ref{sec:radial}) --- which we
 report as such. The rest of this section expands the strong and medium tiers.
 
@@ -1474,9 +1478,9 @@ precise scope of each.
   \item \textbf{The coupling is magnitude-dominated (the correct comparison).} Full derivation and
   per-model numbers are in Section~\ref{sec:controls}; in brief, the like-for-like
   $r(\|\nabla_{H_0}H\|,\sigma_{\max})=0.45$ drops to a partial correlation of $0.10$--$0.30$ (residual
-  CI including zero on two of three models) once the bulk norm is removed, the shared driver
-  $\lambda_{\mathrm{bulk}}$ is verified from both sides ($0.80$-correlated with $\sigma_{\max}$, $0.50$
-  with $\|\nabla_{H_0}H\|$), and a partialling-free geometric check ($|\!\cos|=0.41$, $\approx\!55\times$
+  CI including zero on two of three models) once the bulk norm is removed, $\lambda_{\mathrm{bulk}}$
+  is independently correlated with both sides ($0.80$ with $\sigma_{\max}$, $0.50$ with $\|\nabla_{H_0}H\|$),
+  consistent with a dominant shared scale (no causal identification), and a partialling-free geometric check ($|\!\cos|=0.41$, $\approx\!55\times$
   a position-matched null, but $\overline{\cos^2}=0.24$) leaves only a modest, genuinely directional
   residual. One appendix-only detail: a weak \emph{nonlinear} dependence that Pearson misses (pooled
   distance correlation $0.20$, permutation $p=0.04$) is \emph{not} merely centroid separation --- the
@@ -1530,8 +1534,11 @@ category contrast goes the \emph{wrong} way for the prediction: factual is not a
 measure ($|\langle u_1,\hat h\rangle|$ factual $0.086$ vs.\ coding $0.091$, Cohen's $d=-0.07$,
 Mann--Whitney $p=0.41$; $\rho$ factual $0.011$ vs.\ coding $0.012$, $d=-0.09$, $p=0.45$; both
 $n=40$). Factual's pre-norm $\sigma_{\max}$ excess is therefore \emph{not} radial, so the pre/post
-reshuffle is not a radial-component removal --- it reflects the final norm's learned per-dimension gain
-$\gamma$ and the last block's transformation. Per-prompt values for all four categories are released
+reshuffle is not a radial-component removal --- it reflects the final normalization alone (the only operation between the two read-out sites): its
+per-token RMS rescaling $1/\mathrm{rms}(h)$ and its learned per-dimension gain $\gamma$. Regressing
+$\sigma_{\max}^{\mathrm{post}}$ on the pure-rescaling prediction $\sigma_{\max}^{\mathrm{pre}}/\mathrm{rms}(h)$
+gives $\mathrm{R}^2=0.31$ (vs.\ $0.22$ for $\sigma_{\max}^{\mathrm{pre}}$ alone), so scalar RMS rescaling
+explains part of the reshuffle but most of it requires the per-dimension gain $\gamma$. Per-prompt values for all four categories are released
 (\texttt{results\_analysis/radial\_test.csv}).
 
 \section*{Reproducibility statement}
