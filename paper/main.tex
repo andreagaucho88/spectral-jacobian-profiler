@@ -960,7 +960,7 @@ category probe does not provide.
 
 \paragraph{The output-uncertainty signal is not a single-token artifact.}
 Replacing the first-token entropy with the mean entropy over the first eight \emph{generated} tokens
-(greedy) leaves impossible-entity prompts the outlier (halluc-vs-others $|d|=0.9$--$2.1$, vs.\
+(greedy) leaves impossible-entity prompts the outlier (impossible-entity-vs-others $|d|=0.9$--$2.1$, vs.\
 $1.0$--$2.9$ single-token; correlation $0.65$), so the output axis is not an artifact of the chat
 template's near-deterministic first token. We nonetheless read the output axis as close to a
 manipulation check: impossible-entity prompts have diffuse continuations largely by construction.
@@ -1124,7 +1124,9 @@ post-norm & SmolLM2-360M & 40 & cod$>$fac$>$hal$>$rea & cod$>$fac$>$hal$>$rea & 
 \end{tabular}
 \caption{Algorithm-2 exact-Jacobian profiling, both models, both read-out sites ($n=40$/category,
 $n_{\mathrm{iter}}=15$; numerical self-test PASS). ``c.r.''/``n.\,c.r.'' = cluster-robust / not
-cluster-robust under template-level permutation. On \emph{both} models factual has the highest
+cluster-robust under template-level permutation. In the ordering columns \emph{fac}/\emph{cod} are
+factual/coding, and \emph{rea}/\emph{hal} abbreviate the internal data keys
+\texttt{reasoning}/\texttt{hallucination\_prone} (display names arithmetic/impossible-entity). On \emph{both} models factual has the highest
 pre-norm $\sigma_{\max}$ and the lowest entropy, but \emph{which} pairwise contrast survives
 clustering is model-dependent: factual $>$ coding on Qwen ($p<10^{-3}$) vs.\ factual $>$
 impossible-entity on SmolLM2 ($p<10^{-3}$); arithmetic-involving contrasts are never cluster-robust
@@ -1235,7 +1237,7 @@ factual $>$ impossible-entity, pre-norm $\sigma_{\max}$ & \S\ref{sec:results-inv
 Bulk identity (Alg.\,1 $\approx\lambda_{\mathrm{bulk}}$) & \S\ref{sec:results-alg2}, Fig.\,\ref{fig:bulk} & both primary & replicated ($3.3\%$ / $1.9\%$) \\
 $\chi_F$ tracks entropy; category ordering collapses on residuals & \S\ref{sec:results-alg2} & both primary (sign flips) & \emph{not} an independent axis \\
 Post-norm reordering is \emph{not} radial (leading amplification tangential) & \S\ref{sec:results-alg2}, App.\,\ref{sec:radial} & Qwen-0.5B & radial hypothesis refuted; reordering is the final-norm gain \\
-Hallucination-prone $=$ entropy outlier & \S\ref{sec:results-output} & all conditions & robust; near-manipulation-check \\
+Impossible-entity $=$ entropy outlier (hallucination-prone proxy) & \S\ref{sec:results-output} & all conditions & robust; near-manipulation-check \\
 Every arithmetic-involving contrast & passim & 5 templates & never cluster-robust; suggestive \\
 \bottomrule
 \end{tabular}
